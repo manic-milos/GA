@@ -10,7 +10,6 @@ namespace CFLP_GA.IteratedLocalSearch
     {
         public int[] vars;
         public Problem problem;
-        int sumCapacityVal = -1;
         public Solution(Problem problem)
         {
             this.problem = problem;
@@ -23,24 +22,7 @@ namespace CFLP_GA.IteratedLocalSearch
 
         public int sumCapacity()
         {
-            if (sumCapacityVal < 0)
-            {
-                int sum = 0;
-                for (int i = 0; i < vars.Length; i++)
-                {
-                    sum += vars[i] * problem.s[i];
-                }
-                //sumCapacityVal = sum;
-                return sum;
-            }
-            else
-            {
-                return sumCapacityVal;
-            }
-        }
-        public double evaluate()
-        {
-            throw new NotImplementedException("fitness->evaluation");
+            return problem.sumCapacity(vars);
         }
         public static Solution generateRandom(Problem problem)
         {
@@ -70,7 +52,6 @@ namespace CFLP_GA.IteratedLocalSearch
             set
             {
                 this.vars[i] = value;
-                sumCapacityVal = -1;
             }
         }
         public override bool Equals(object obj)

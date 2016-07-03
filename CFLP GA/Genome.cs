@@ -21,14 +21,7 @@ namespace CFLP_GA
         }
         public bool checkGenome()
         {
-            if (!problem.checkCardinalityContraint(genes))
-                return false;
-            int sum = sumCapacity();
-            if (sum < problem.SumDemands)
-            {
-                return false;
-            }
-            return true;
+            return problem.checkSolution(genes, sumCapacity());
         }
         public Genome adjust()
         {
@@ -51,13 +44,7 @@ namespace CFLP_GA
         {
             if (sumCapacityVal < 0)
             {
-                int sum = 0;
-                for (int i = 0; i < genes.Length; i++)
-                {
-                    sum += genes[i] * problem.s[i];
-                }
-                sumCapacityVal = sum;
-                return sum;
+                return problem.sumCapacity(genes);
             }
             else
             {
