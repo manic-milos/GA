@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE9D2761-2F83-4F79-9588-B8B1900D218B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CFLP_GA</RootNamespace>
+    <AssemblyName>CFLP GA</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlledRandom.cs" />
+    <Compile Include="Crossover\CrossoverMatching\CrossoverMatchingBase.cs" />
+    <Compile Include="Crossover\CrossoverMatching\PairwiseCrossMatching.cs" />
+    <Compile Include="FItnessCalculators\EvaluationCache.cs" />
+    <Compile Include="FItnessCalculators\FitnessCalculatorBase.cs" />
+    <Compile Include="FItnessCalculators\MinDemandFitnessCalculator.cs" />
+    <Compile Include="GenomeAdjusters\GenomeAdjusterBase.cs" />
+    <Compile Include="GenomeAdjusters\MinLeftCapacityAdjuster.cs" />
+    <Compile Include="GenePopulation.cs" />
+    <Compile Include="FItnessCalculators\PriceMinFitnessCalculator.cs" />
+    <Compile Include="GenomeAdjusters\MinPriceAdjuster.cs" />
+    <Compile Include="GenomeAdjusters\RandomAdjuster.cs" />
+    <Compile Include="InitialPopulation\InitialPopulationBase.cs" />
+    <Compile Include="InitialPopulation\RandomInitialPopulation.cs" />
+    <Compile Include="InitialPopulation\UnfeasableDeciders\FactorUnfeasableDecider.cs" />
+    <Compile Include="InitialPopulation\UnfeasableDeciders\UnfeasableDecider.cs" />
+    <Compile Include="InitialPopulation\UnfeasableProblemException.cs" />
+    <Compile Include="IteratedLocalSearch\AcceptanceCriteria\AcceptanceCriterionBase.cs" />
+    <Compile Include="IteratedLocalSearch\AcceptanceCriteria\BetterWalk.cs" />
+    <Compile Include="IteratedLocalSearch\AcceptanceCriteria\RandomWalk.cs" />
+    <Compile Include="IteratedLocalSearch\AcceptanceCriteria\RestartWalk.cs" />
+    <Compile Include="IteratedLocalSearch\ILS.cs" />
+    <Compile Include="IteratedLocalSearch\InitialSolutionGenerators\InitialSolutionGeneratorBase.cs" />
+    <Compile Include="IteratedLocalSearch\InitialSolutionGenerators\OneDistributerGenerator.cs" />
+    <Compile Include="IteratedLocalSearch\InitialSolutionGenerators\RandomSolutionGenerator.cs" />
+    <Compile Include="IteratedLocalSearch\InitialSolutionGenerators\UnfeasableSolutionDecider\IterationUnfeasableDecider.cs" />
+    <Compile Include="IteratedLocalSearch\InitialSolutionGenerators\UnfeasableSolutionDecider\UnfeasableSolutionDeciderBase.cs" />
+    <Compile Include="IteratedLocalSearch\LocalSearch\LocalSearchBase.cs" />
+    <Compile Include="IteratedLocalSearch\LocalSearch\OneFlipLS.cs" />
+    <Compile Include="IteratedLocalSearch\Perturbation\AdaptivePerturbation.cs" />
+    <Compile Include="IteratedLocalSearch\Perturbation\BinomialPerturbation.cs" />
+    <Compile Include="IteratedLocalSearch\Perturbation\OneFlipPerturbation.cs" />
+    <Compile Include="IteratedLocalSearch\Perturbation\OneSwitchPerturbation.cs" />
+    <Compile Include="IteratedLocalSearch\Perturbation\PerturbationBase.cs" />
+    <Compile Include="IteratedLocalSearch\Perturbation\SwitchPerturbation.cs" />
+    <Compile Include="IteratedLocalSearch\Perturbation\SwitchWorstPerturbation.cs" />
+    <Compile Include="IteratedLocalSearch\Solution.cs" />
+    <Compile Include="IteratedLocalSearch\StoppingCriteria\DimensionStoppingCriterion.cs" />
+    <Compile Include="IteratedLocalSearch\StoppingCriteria\IterationalStoppingCriterion.cs" />
+    <Compile Include="IteratedLocalSearch\StoppingCriteria\PlateauStoppingCriterion.cs" />
+    <Compile Include="IteratedLocalSearch\StoppingCriteria\StoppingCriterionBase.cs" />
+    <Compile Include="IteratedLocalSearch\StoppingCriteria\TimeStoppingCriterion.cs" />
+    <Compile Include="Mutation\Mutators\Tests\BaseTest.cs" />
+    <Compile Include="Mutation\Mutators\Tests\MutatorTestBase.cs" />
+    <Compile Include="Mutation\Mutators\Tests\MutatorTests.cs" />
+    <Compile Include="Mutation\Mutators\Random1MoveMutator.cs" />
+    <Compile Include="Mutation\Mutators\RandomWithPreferenceMutator.cs" />
+    <Compile Include="Replacement\AppendingReplacement.cs" />
+    <Compile Include="Criteria\GenerationLimitCriterion.cs" />
+    <Compile Include="GeneticAlgorithm.cs" />
+    <Compile Include="Genome.cs" />
+    <Compile Include="Crossover\GenomeCrossover\GenomeCrossBase.cs" />
+    <Compile Include="Mutation\Mutations\MutationBase.cs" />
+    <Compile Include="Mutation\Mutators\MutatorBase.cs" />
+    <Compile Include="Problem.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Mutation\Mutators\Random1FlipMutator.cs" />
+    <Compile Include="Replacement\GenerationReplacement.cs" />
+    <Compile Include="Replacement\TrimmingReplacement.cs" />
+    <Compile Include="Reports\ExecutionReportBase.cs" />
+    <Compile Include="Reports\ShortTabularFunctionalReport.cs" />
+    <Compile Include="Reports\ShortIterationalFunctionalReport.cs" />
+    <Compile Include="Reports\ShortTabularReport.cs" />
+    <Compile Include="Reports\ShortIterationalReport.cs" />
+    <Compile Include="Reports\VerboseFunctionalReport.cs" />
+    <Compile Include="Reports\VerboseIterationalFunctionalReport.cs" />
+    <Compile Include="Reports\VerboseIterationalReport.cs" />
+    <Compile Include="Reports\VerboseTabularReport.cs" />
+    <Compile Include="Selection\RandomSelector.cs" />
+    <Compile Include="Replacement\ReplacementBase.cs" />
+    <Compile Include="Selection\RankBasedSelector.cs" />
+    <Compile Include="Selection\RouletteSelector.cs" />
+    <Compile Include="Selection\SelectorBase.cs" />
+    <Compile Include="Selection\TournamentSelector.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Criteria\StoppingCriterionBase.cs" />
+    <Compile Include="Mutation\Mutations\SureRandomMutation.cs" />
+    <Compile Include="Crossover\GenomeCrossover\PairUniformCross.cs" />
+    <Compile Include="TestOnData.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
