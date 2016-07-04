@@ -26,7 +26,7 @@ namespace CFLP_GA
             GenePopulation selected = new GenePopulation(ga);
             for(int i=0;i<crossPool;i++)
             {
-                double pick=ga.settings.getRandomDouble();
+                double pick=ControlledRandom.getRandomDouble();
                 int ind = 0;
                 double current = getRankBasedProbability(ind, candidates.Count);
                 while(current<pick)

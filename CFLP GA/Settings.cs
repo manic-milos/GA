@@ -10,31 +10,9 @@ namespace CFLP_GA
     {
 
         public int initialPopulation = 20;
-        public int randomSeed = 15;
-        public Random rand;
-        public Settings()
-        {
-            rand = new Random(randomSeed);
-        }
-        public Settings(int randomSeed)
-        {
-            rand = new Random(randomSeed);
-        }
-
-        public Settings(int initialPopulation,
-                            int randomSeed = 15)
-        :this(randomSeed)
+        public Settings(int initialPopulation=20)
         {
             this.initialPopulation = initialPopulation;
-            this.randomSeed = randomSeed;
-        }
-        public int getRandomFromRange(int a, int b)
-        {
-            return rand.Next(a, b);
-        }
-        public double getRandomDouble()
-        {
-            return rand.NextDouble();
         }
     }
 }

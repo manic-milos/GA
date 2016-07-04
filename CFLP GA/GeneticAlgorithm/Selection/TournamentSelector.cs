@@ -33,7 +33,7 @@ namespace CFLP_GA
                 int maxind = 0;
                 for(int j=0;j<tournamentSize;j++)
                 {
-                    int ind = ga.settings.getRandomFromRange(0, n);
+                    int ind = ControlledRandom.getRandomFromRange(0, n);
                     double fit = candidates[ind].fitness();
                     if(fit>max)
                     {

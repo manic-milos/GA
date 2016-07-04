@@ -50,7 +50,7 @@ namespace CFLP_GA
             Genome randgen = new Genome(ga);
             for (int i = 0; i < randgen.genes.Length; i++)
             {
-                int r = ga.settings.getRandomFromRange(0, 2);
+                int r = ControlledRandom.getRandomFromRange(0, 2);
                 randgen[i] = r;
             }
             return randgen;

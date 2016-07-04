@@ -36,7 +36,7 @@ namespace CFLP_GA
                 }
                 if (ones.Count == 0)
                     return null;
-                int ind = ga.settings.getRandomFromRange(0, ones.Count);
+                int ind = ControlledRandom.getRandomFromRange(0, ones.Count);
                 g[ones[ind]] = 0;
                 return ga.adjustGenome(g);
             }

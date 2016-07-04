@@ -43,7 +43,7 @@ namespace CFLP_GA
         }
         private int drawOne(Dictionary<int,double> parts,int n,GeneticAlgorithm ga)
         {
-            double draw = ga.settings.rand.NextDouble();
+            double draw = ControlledRandom.getRandomDouble();
             double sum = 0;
             for(int i=0;i<n;i++)
             {

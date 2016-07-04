@@ -21,7 +21,7 @@ namespace CFLP_GA
             {
                 crossing.Include(
                     genePool.ElementAt(
-                    ga.settings.getRandomFromRange(0, genePool.Count)));
+                    ControlledRandom.getRandomFromRange(0, genePool.Count)));
             }
             return crossing;
         }
