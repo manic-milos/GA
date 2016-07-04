@@ -45,13 +45,13 @@
     <Compile Include="ControlledRandom.cs" />
     <Compile Include="Crossover\CrossoverMatching\CrossoverMatchingBase.cs" />
     <Compile Include="Crossover\CrossoverMatching\PairwiseCrossMatching.cs" />
-    <Compile Include="FItnessCalculators\EvaluationCache.cs" />
-    <Compile Include="FItnessCalculators\EvaluatorBase.cs" />
-    <Compile Include="FItnessCalculators\MinDemandEvaluator.cs" />
+    <Compile Include="Evaluators\EvaluationCache.cs" />
+    <Compile Include="Evaluators\EvaluatorBase.cs" />
+    <Compile Include="Evaluators\MinDemandEvaluator.cs" />
     <Compile Include="GenomeAdjusters\GenomeAdjusterBase.cs" />
     <Compile Include="GenomeAdjusters\MinLeftCapacityAdjuster.cs" />
     <Compile Include="GenePopulation.cs" />
-    <Compile Include="FItnessCalculators\PriceMinEvaluator.cs" />
+    <Compile Include="Evaluators\PriceMinEvaluator.cs" />
     <Compile Include="GenomeAdjusters\MinPriceAdjuster.cs" />
     <Compile Include="GenomeAdjusters\RandomAdjuster.cs" />
     <Compile Include="InitialPopulation\InitialPopulationBase.cs" />
