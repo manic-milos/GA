@@ -21,7 +21,7 @@ namespace CFLP_GA
             GeneticAlgorithm ga)
         {
             Dictionary<int, Genome> candidates = new Dictionary<int, Genome>();
-            GenePopulation parents = new GenePopulation();
+            GenePopulation parents = new GenePopulation(ga);
             int n=0;
             foreach(Genome g in population)
             {

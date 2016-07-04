@@ -21,6 +21,7 @@ namespace CFLP_GA
         long missCount = 0;
         public EvaluationCache(int cleaningPeriod=1000)
         {
+            throw new NotImplementedException("bugs bugs...");
             this.cleaningPeriod = cleaningPeriod;
         }
         public double checkCache(int[] vars)

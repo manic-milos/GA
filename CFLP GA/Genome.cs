@@ -9,29 +9,30 @@ namespace CFLP_GA
     class Genome : IComparable<Genome>
     {
         public int[] genes;
-        public GeneticAlgorithm geneticAlgorithm;
-        Problem problem;
+        public Problem problem;
         double fitnessVal = double.NaN;
-        int sumCapacityVal = -1;
+        public EvaluatorBase fitnessCalc;
         public Genome(GeneticAlgorithm ga)
         {
-            this.geneticAlgorithm = ga;
             problem = ga.problem;
             genes = new int[problem.m];
+            this.fitnessCalc = ga.fitnessCalc;
+        }
+        public Genome(Problem problem, EvaluatorBase fitnessCalc)
+        {
+            this.problem = problem;
+            genes = new int[problem.m];
+            this.fitnessCalc = fitnessCalc;
         }
         public bool checkGenome()
         {
             return problem.checkSolution(genes, sumCapacity());
         }
-        public Genome adjust()
-        {
-            return geneticAlgorithm.adjustGenome(this);
-        }
         public double fitness()
         {
             if (double.IsNaN(fitnessVal))
             {
-                fitnessVal = geneticAlgorithm.fitness(this);
+                fitnessVal = fitnessCalc.Fitness(this);
                 return fitnessVal;
             }
             else
@@ -42,14 +43,7 @@ namespace CFLP_GA
         }
         public int sumCapacity()
         {
-            if (sumCapacityVal < 0)
-            {
-                return problem.sumCapacity(genes);
-            }
-            else
-            {
-                return sumCapacityVal;
-            }
+            return problem.sumCapacity(genes);
         }
         public static Genome generateRandom(GeneticAlgorithm ga)
         {
@@ -63,7 +57,7 @@ namespace CFLP_GA
         }
         public Genome Clone()
         {
-            Genome copy = new Genome(geneticAlgorithm);
+            Genome copy = new Genome(this.problem, this.fitnessCalc);
             for (int i = 0; i < problem.m; i++)
             {
                 copy[i] = this[i];
@@ -79,7 +73,6 @@ namespace CFLP_GA
             set
             {
                 this.genes[i] = value;
-                sumCapacityVal = -1;
             }
         }
         // override object.Equals
@@ -127,6 +120,42 @@ namespace CFLP_GA
         public static implicit operator string(Genome g)
         {
             return g.ToString();
+        }
+        public static bool operator ==(Genome o, Genome s)
+        {
+            try
+            {
+                return o.Equals(s);
+            }
+            catch (NullReferenceException)
+            {
+                try
+                {
+                    return s.Equals(o);
+                }
+                catch (NullReferenceException)
+                {
+                    return true;
+                }
+            }
+        }
+        public static bool operator !=(Genome o, Genome s)
+        {
+            try
+            {
+                return !o.Equals(s);
+            }
+            catch (NullReferenceException)
+            {
+                try
+                {
+                    return !s.Equals(o);
+                }
+                catch (NullReferenceException)
+                {
+                    return false;
+                }
+            }
         }
     }
 }

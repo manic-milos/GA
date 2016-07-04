@@ -9,9 +9,9 @@ namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
     class BetterWalk:AcceptanceCriterionBase
     {
         protected override Solution accept(Solution newSol, Solution oldSol,
-            FitnessCalculatorBase evaluator)
+            EvaluatorBase evaluator)
         {
-            if(evaluator.Fitness(newSol)<evaluator.Fitness(oldSol))
+            if(evaluator.Evaluate(newSol)<evaluator.Evaluate(oldSol))
             {
                 return newSol;
             }

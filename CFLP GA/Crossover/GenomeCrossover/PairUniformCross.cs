@@ -22,7 +22,7 @@ namespace CFLP_GA
             Genome p2 = parents[1];
             for (int i = 0; i < ga.problem.m; i++)
             {
-                if (ga.settings.getRandomFromRange(0, 2) == 0)
+                if (ControlledRandom.getRandomFromRange(0, 2) == 0)
                 {
                     c1[i] = p1[i];
                     c2[i] = p2[i];
@@ -33,8 +33,8 @@ namespace CFLP_GA
                     c2[i] = p1[i];
                 }
             }
-            children.Add(c1.adjust());
-            children.Add(c2.adjust());
+            children.Add(ga.adjustGenome(c1));
+            children.Add(ga.adjustGenome(c2));
             return children;
         }
     }

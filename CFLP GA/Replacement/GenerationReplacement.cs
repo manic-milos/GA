@@ -17,7 +17,7 @@ namespace CFLP_GA
         {
             if(trim!=null)
             {
-                children = trim.Replace(children, new GenePopulation());
+                children = trim.Replace(children, new GenePopulation(parents.ga));
             }
             return children;
         }

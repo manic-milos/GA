@@ -38,7 +38,7 @@ namespace CFLP_GA
                     return null;
                 int ind = ga.settings.getRandomFromRange(0, ones.Count);
                 g[ones[ind]] = 0;
-                return g.adjust();
+                return ga.adjustGenome(g);
             }
             else if (g.sumCapacity() < problem.SumDemands)
             {

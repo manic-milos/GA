@@ -45,7 +45,7 @@ namespace CFLP_GA
                 if (ind >= 0)
                 {
                     g[ind] = 0;
-                    return g.adjust();
+                    return ga.adjustGenome(g);
                 }
                 return null;
 

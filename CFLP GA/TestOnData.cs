@@ -37,7 +37,7 @@ namespace CFLP_GA
                 var crossoverMatch = new PairwiseCrossMatching(crossover);
                 var replacer = new GenerationReplacement(new TrimmingReplacement(300));
                 replacer.AddInheritanceSelector(new TrimmingReplacement(10));
-                var fitnessCalc = new MinDemandFitnessCalculator();
+                var fitnessCalc = new MinDemandEvaluator();
                 var adjuster = new RandomAdjuster();
                 var initialPopulation = new RandomInitialPopulation(50);
                 GeneticAlgorithm ga = new GeneticAlgorithm(selector, criterion,
@@ -67,14 +67,14 @@ namespace CFLP_GA
                 problem.load(new StreamReader(file));
                 var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(int.MaxValue);
                 IteratedLocalSearch.ILS ils = new IteratedLocalSearch.ILS(problem,
-                    new MinDemandFitnessCalculator(),
+                    new MinDemandEvaluator(),
                     new IteratedLocalSearch.LocalSearch.OneFlipLS(),
                     new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(
                         problem,
                         decider, 0.8),
                     new IteratedLocalSearch.Perturbation.AdaptivePerturbation(
                         new IteratedLocalSearch.Perturbation.SwitchWorstPerturbation(
-                            new MinDemandFitnessCalculator()),//problematicno,ima dve instance iste klase na razlicita mesta
+                            new MinDemandEvaluator()),//problematicno,ima dve instance iste klase na razlicita mesta
                         50,0.9,0.01
                         ),
                     new IteratedLocalSearch.AcceptanceCriteria.RestartWalk(

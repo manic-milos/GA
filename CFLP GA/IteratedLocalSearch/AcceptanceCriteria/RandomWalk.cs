@@ -8,7 +8,7 @@ namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
 {
     class RandomWalk:AcceptanceCriterionBase
     {
-        protected override Solution accept(Solution newSol, Solution oldSol, FitnessCalculatorBase evaluator)
+        protected override Solution accept(Solution newSol, Solution oldSol, EvaluatorBase evaluator)
         {
             return newSol;
         }

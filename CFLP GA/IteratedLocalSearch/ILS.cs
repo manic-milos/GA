@@ -9,14 +9,14 @@ namespace CFLP_GA.IteratedLocalSearch
     class ILS
     {
         public Problem problem;
-        public FitnessCalculatorBase evaluator;
+        public EvaluatorBase evaluator;
         public LocalSearch.LocalSearchBase localSearch;
         public InitialSolutionGenerators.InitialSolutionGeneratorBase generator;
         public Perturbation.PerturbationBase perturber;
         public AcceptanceCriteria.AcceptanceCriterionBase acceptanceCriterion;
         public StoppingCriteria.StoppingCriterionBase stoppingCriterion;
         public ILS(Problem problem,
-            FitnessCalculatorBase evaluator,
+            EvaluatorBase evaluator,
             LocalSearch.LocalSearchBase localSearch,
             InitialSolutionGenerators.InitialSolutionGeneratorBase generator,
             Perturbation.PerturbationBase perturber,
@@ -45,19 +45,19 @@ namespace CFLP_GA.IteratedLocalSearch
             {
                 Console.WriteLine("iteration:"+stoppingCriterion.IterationInfoAll());
                 s = localSearch.GetBestLocal(s, evaluator);
-                if(evaluator.Fitness(s)<evaluator.Fitness(globalBest))
+                if(evaluator.Evaluate(s)<evaluator.Evaluate(globalBest))
                 {
                     globalBest = s;
                 }
-                Console.WriteLine("local best:\t"+s+","+evaluator.Fitness(s));
+                Console.WriteLine("local best:\t"+s+","+evaluator.Evaluate(s));
                 Solution perturbed = perturber.Perturb(s);
-                Console.WriteLine("perturbed:\t"+perturbed+","+evaluator.Fitness(perturbed));
+                Console.WriteLine("perturbed:\t"+perturbed+","+evaluator.Evaluate(perturbed));
                 s = acceptanceCriterion.Accept(perturbed, s, evaluator);
             }
             Console.WriteLine("best solution:");
-            Console.WriteLine(globalBest+" "+evaluator.Fitness(globalBest));
+            Console.WriteLine(globalBest+" "+evaluator.Evaluate(globalBest));
             Console.Read();
-            return evaluator.Fitness(s);
+            return evaluator.Evaluate(s);
         }
     }
 }

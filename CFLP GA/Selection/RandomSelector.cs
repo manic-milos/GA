@@ -16,7 +16,7 @@ namespace CFLP_GA
         protected override GenePopulation select(GenePopulation genePool,
             GeneticAlgorithm ga)
         {
-            GenePopulation crossing = new GenePopulation();
+            GenePopulation crossing = new GenePopulation(ga);
             for (int i = 0; i < crossPool; i++)
             {
                 crossing.Include(

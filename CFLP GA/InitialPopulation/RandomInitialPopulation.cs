@@ -17,7 +17,7 @@ namespace CFLP_GA
         }
         protected override GenePopulation create(GeneticAlgorithm ga)
         {
-            GenePopulation Genes = new GenePopulation();
+            GenePopulation Genes = new GenePopulation(ga);
             int i = 0;
             while (i++ < size)
             {

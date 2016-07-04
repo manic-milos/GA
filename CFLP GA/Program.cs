@@ -13,7 +13,7 @@ namespace CFLP_GA
         static void Main(string[] args)
         {
             TestOnData test = new TestOnData();
-            test.testILS(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances");
+            test.test(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances");
             Console.Read();
             Problem problem = new Problem();
             problem.load(new StreamReader(@"F:\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances\cap61"));
@@ -28,7 +28,7 @@ namespace CFLP_GA
             var crossoverMatch = new PairwiseCrossMatching(crossover);
             var replacer=new GenerationReplacement(new TrimmingReplacement(300));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
-            var fitnessCalc=new MinDemandFitnessCalculator();
+            var fitnessCalc=new MinDemandEvaluator();
             var adjuster=new RandomAdjuster();
             var initialPopulation = new RandomInitialPopulation(50);
             ga = new GeneticAlgorithm(selector, criterion,

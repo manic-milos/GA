@@ -15,7 +15,7 @@ namespace CFLP_GA
             Genome g1 = g.Clone();
             for(int i=0;i<g1.genes.Length;i++)
             {
-                double p = g1.geneticAlgorithm.settings.rand.NextDouble();
+                double p = ControlledRandom.getRandomDouble();
                 if (g1[i] == 1)
                 {
                     if (p < onePreference)
@@ -32,7 +32,7 @@ namespace CFLP_GA
                 }
 
             }
-            return g1.adjust();
+            return g1;
         }
     }
 }

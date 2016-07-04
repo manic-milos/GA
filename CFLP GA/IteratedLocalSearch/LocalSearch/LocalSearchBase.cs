@@ -15,7 +15,7 @@ namespace CFLP_GA.IteratedLocalSearch.LocalSearch
         HashSet<Solution> localOptimums = new HashSet<Solution>();
 
         public Solution GetBestLocal(Solution s,
-            FitnessCalculatorBase evaluator)
+            EvaluatorBase evaluator)
         {
             time.Restart();
             var prev = s;
@@ -35,6 +35,6 @@ namespace CFLP_GA.IteratedLocalSearch.LocalSearch
             return bestLocal;
         }
         protected abstract Solution getBestLocal(Solution s,
-            FitnessCalculatorBase evaluator);
+            EvaluatorBase evaluator);
     }
 }

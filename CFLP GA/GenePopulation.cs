@@ -12,12 +12,16 @@ namespace CFLP_GA
         public static Stopwatch time = new Stopwatch();
         public static TimeSpan includeTime = new TimeSpan(0);
         public static TimeSpan appendTime = new TimeSpan(0);
-
+        public GeneticAlgorithm ga;
+        public GenePopulation(GeneticAlgorithm ga)
+        {
+            this.ga = ga;
+        }
         public void Include(Genome g)
         {
             if (g == null)
                 return;
-            Genome g1 = g.adjust();
+            Genome g1 = ga.adjustGenome(g);
             if (g1 == null)
                 return;
             if(!g.checkGenome())
@@ -30,7 +34,7 @@ namespace CFLP_GA
             {
                 if (g.checkGenome() == false)
                 {
-                    Console.WriteLine("jebem ti mater");
+                    Console.WriteLine("greska");
                     this.Remove(g);
                 }
             }
@@ -38,7 +42,7 @@ namespace CFLP_GA
             {
                 if (g.checkGenome() == false)
                 {
-                    Console.WriteLine("jebem ti mater");
+                    Console.WriteLine("greska");
                     other.Remove(g);
                 }
             }
@@ -51,7 +55,7 @@ namespace CFLP_GA
             foreach (Genome g in this)
             {
                 s += g.ToString() + " "
-                    + g.fitness()
+                    + ga.fitness(g)
                     + Environment.NewLine;
             }
             return s;

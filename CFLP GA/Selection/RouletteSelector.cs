@@ -33,7 +33,7 @@ namespace CFLP_GA
             {
                 parts[i] = parts[i] / sum;
             }
-            GenePopulation parents = new GenePopulation();
+            GenePopulation parents = new GenePopulation(ga);
 
             for(int i=0;i<crossPool;i++)
             {

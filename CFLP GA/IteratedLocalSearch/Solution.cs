@@ -15,6 +15,11 @@ namespace CFLP_GA.IteratedLocalSearch
             this.problem = problem;
             vars = new int[problem.m];
         }
+        public Solution(Genome genome)
+            :this(genome.problem)
+        {
+            vars = genome.genes;
+        }
         public bool check()
         {
             return problem.checkSolution(vars, sumCapacity());
@@ -71,6 +76,42 @@ namespace CFLP_GA.IteratedLocalSearch
             }
             return true;
         }
+        public static bool operator==(Solution o,Solution s)
+        {
+            try
+            {
+                return o.Equals(s);
+            }
+            catch(NullReferenceException)
+            {
+                try
+                {
+                    return s.Equals(o);
+                }
+                catch(NullReferenceException)
+                {
+                    return true;
+                }
+            }
+        }
+        public static bool operator !=(Solution o, Solution s)
+        {
+            try
+            {
+                return !o.Equals(s);
+            }
+            catch (NullReferenceException)
+            {
+                try
+                {
+                    return !s.Equals(o);
+                }
+                catch (NullReferenceException)
+                {
+                    return false;
+                }
+            }
+        }
         public override int GetHashCode()
         {
             return base.GetHashCode();
@@ -88,6 +129,10 @@ namespace CFLP_GA.IteratedLocalSearch
         public static implicit operator string(Solution s)
         {
             return s.ToString();
+        }
+        public static implicit operator Solution(Genome g)
+        {
+            return new Solution(g);
         }
     }
 }

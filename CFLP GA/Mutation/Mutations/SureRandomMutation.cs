@@ -13,7 +13,7 @@ namespace CFLP_GA
         {
             for (int i = 0; i < howMany; i++)
             {
-                int ind = ga.settings.getRandomFromRange(0, genePool.Count);
+                int ind = ControlledRandom.getRandomFromRange(0, genePool.Count);
                 Genome g = genePool.ElementAt(ind);
                 Genome g1 = mutator.Mutate(g);
                 genePool.Include(g1);

@@ -11,10 +11,10 @@ namespace CFLP_GA
         protected override Genome mutate(Genome g)
         {
             Genome copy = g.Clone();
-            int position = copy.geneticAlgorithm.settings.getRandomFromRange(
+            int position = ControlledRandom.getRandomFromRange(
                 0, copy.genes.Length - 1);
             copy[position] = 1 - copy[position];
-            return copy.adjust();
+            return copy;
         }
     }
 }

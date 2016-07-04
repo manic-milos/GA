@@ -23,7 +23,7 @@ namespace CFLP_GA
                 candidates.Add(g);
             }
             candidates.Reverse();
-            GenePopulation selected = new GenePopulation();
+            GenePopulation selected = new GenePopulation(ga);
             for(int i=0;i<crossPool;i++)
             {
                 double pick=ga.settings.getRandomDouble();

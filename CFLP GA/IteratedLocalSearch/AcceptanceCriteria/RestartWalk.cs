@@ -20,7 +20,7 @@ namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
             this.defaultWalk = defaultWalk;
             this.randomGen = randomGen;
         }
-        protected override Solution accept(Solution newSol, Solution oldSol, FitnessCalculatorBase evaluator)
+        protected override Solution accept(Solution newSol, Solution oldSol, EvaluatorBase evaluator)
         {
             if(i<n)
             {

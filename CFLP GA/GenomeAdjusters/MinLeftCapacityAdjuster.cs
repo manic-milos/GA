@@ -46,7 +46,7 @@ namespace CFLP_GA
                 } while (capacities[ind] >= 0);
                 if (capacities[ind] == 0)
                     return null;
-                return g.adjust();
+                return ga.adjustGenome(g);
 
             }
             else if (g.sumCapacity() < problem.SumDemands)

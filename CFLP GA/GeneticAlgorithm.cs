@@ -12,7 +12,7 @@ namespace CFLP_GA
         public MutationBase mutation;
         public CrossoverMatchingBase genomeCross;
         public ReplacementBase replacer;
-        public FitnessCalculatorBase fitnessCalc;
+        public EvaluatorBase fitnessCalc;
         public GenomeAdjusterBase adjuster;
         public InitialPopulationBase initialPopulation;
         public Settings settings = new Settings();
@@ -23,7 +23,7 @@ namespace CFLP_GA
             MutationBase mutation,
             CrossoverMatchingBase genomeCross,
             ReplacementBase replacer,
-            FitnessCalculatorBase fitnessCalc,
+            EvaluatorBase fitnessCalc,
             GenomeAdjusterBase adjuster,
             InitialPopulationBase initialPopulation,
             Problem problem)
@@ -119,7 +119,8 @@ namespace CFLP_GA
                 GenePopulation children = crossover(parents,report);
                 Genes = replacement(Genes, children,report);
                 if (report == null)
-                    Console.WriteLine(stoppingCriterion.CurrentIteration() + ":" + Genes.Min + " " + Genes.Min.fitness() + " " + Genes.Max.fitness() + " " + Genes.Count);
+                    Console.WriteLine(stoppingCriterion.CurrentIteration() + ":" + Genes.Min + " " +
+                        fitness(Genes.Min) + " " + fitness(Genes.Max) + " " + Genes.Count);
                 else
                     report.ReportIteration(stoppingCriterion, Genes);
             }
@@ -127,7 +128,7 @@ namespace CFLP_GA
             //Console.WriteLine(Genes.Min);
             //Console.WriteLine(fitness(Genes.Min));
             //Console.Read();
-            return Genes.Min.fitness();
+            return fitness(Genes.Min);
         }
     }
 }

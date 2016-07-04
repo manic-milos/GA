@@ -8,8 +8,8 @@ namespace CFLP_GA.IteratedLocalSearch.Perturbation
 {
     class SwitchWorstPerturbation:OneSwitchPerturbation
     {
-        FitnessCalculatorBase evaluator;
-        public SwitchWorstPerturbation(FitnessCalculatorBase evaluator)
+        EvaluatorBase evaluator;
+        public SwitchWorstPerturbation(EvaluatorBase evaluator)
         {
             this.evaluator = evaluator;
         }
@@ -22,7 +22,7 @@ namespace CFLP_GA.IteratedLocalSearch.Perturbation
                 if (s[i] > 0)
                 {
                     s[i] = 0;
-                    double v = evaluator.Fitness(s);
+                    double v = evaluator.Evaluate(s);
                     if(v<min)
                     {
                         min = v;

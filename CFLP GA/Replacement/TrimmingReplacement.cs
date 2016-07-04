@@ -16,7 +16,7 @@ namespace CFLP_GA
         protected override GenePopulation replace(GenePopulation parents, GenePopulation children)
         {
             GenePopulation whole = parents.Append(children);
-            GenePopulation survivors = new GenePopulation();
+            GenePopulation survivors = new GenePopulation(whole.ga);
             //Console.WriteLine("count pre:"+whole.Count);
             #region enumerator
             var iterator = whole.GetEnumerator();

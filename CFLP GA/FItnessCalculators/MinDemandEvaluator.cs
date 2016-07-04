@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace CFLP_GA
 {
-    class MinDemandFitnessCalculator : FitnessCalculatorBase
+    class MinDemandEvaluator : EvaluatorBase
     {
 
-        protected override double fitness(int[] g, 
+        protected override double evaluate(int[] g, 
             Problem p, int[] leftCapacities = null)
         {
             if(p.sumCapacity(g)<p.SumDemands)
@@ -53,7 +53,7 @@ namespace CFLP_GA
             }
             return objf;
         }
-        public MinDemandFitnessCalculator(EvaluationCache cache = null)
+        public MinDemandEvaluator(EvaluationCache cache = null)
             : base(cache)
         { }
     }

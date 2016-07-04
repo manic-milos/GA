@@ -16,7 +16,7 @@ namespace CFLP_GA
 
         protected override GenePopulation crossGenomes(GenePopulation crossPool, GeneticAlgorithm ga)
         {
-            GenePopulation children = new GenePopulation();
+            GenePopulation children = new GenePopulation(ga);
             foreach (Genome p1 in crossPool)
             {
                 foreach (Genome p2 in crossPool)

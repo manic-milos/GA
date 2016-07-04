@@ -20,13 +20,13 @@ namespace CFLP_GA
                 else
                     zeros.Add(i);
             }
-            int ind1 = copy.geneticAlgorithm.settings.getRandomFromRange(
+            int ind1 = ControlledRandom.getRandomFromRange(
                 0, ones.Count);
-            int ind0 = copy.geneticAlgorithm.settings.getRandomFromRange(
+            int ind0 = ControlledRandom.getRandomFromRange(
                 0, zeros.Count);
             copy[ind1] = 0;
             copy[ind0] = 1;
-            return copy.adjust();
+            return copy;
         }
     }
 }
