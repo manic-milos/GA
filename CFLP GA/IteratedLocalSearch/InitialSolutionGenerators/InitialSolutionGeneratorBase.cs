@@ -20,8 +20,16 @@ namespace CFLP_GA.IteratedLocalSearch.InitialSolutionGenerators
         }
         public Solution Generate()
         {
+            Reports.IterationalReport.Report("generating initial solution...");
+            Solution s = generate();
+            if(s==null)
+            {
+                Reports.ShortReport.Report("unfeasable...");
+                return null;
+            }
             //TODO time i report
-            return generate();
+            Reports.IterationalReport.Report("initial solution generated: "+s);
+            return s;
         }
         protected abstract Solution generate();
     }

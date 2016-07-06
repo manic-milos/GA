@@ -11,7 +11,9 @@ namespace CFLP_GA.IteratedLocalSearch.Perturbation
         public Solution Perturb(Solution s)
         {
             //TODO time i report
-            return perturb(s);
+            Solution perturbed=perturb(s);
+            return perturbed;
+
         }
         protected abstract Solution perturb(Solution s);
     }

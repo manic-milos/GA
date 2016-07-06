@@ -9,8 +9,10 @@ namespace CFLP_GA
 {
     class TestOnData
     {
-        public bool testBothOnFolder(string path)
+        public bool testBothOnFolder(string path,int iter=-1)
         {
+            StreamWriter writer = new StreamWriter("results.txt");
+            IteratedLocalSearch.Reports.ShortReport.Init(writer);
             string[] files;
             if (!Directory.Exists(path))
             {
@@ -22,8 +24,19 @@ namespace CFLP_GA
             }
             foreach (string file in files)
             {
+                Console.WriteLine(Path.GetFileName(file));
+                IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
                 testGAOnFile(file);
                 testILSOnFile(file);
+                if(iter==0)
+                {
+                    writer.Dispose();
+                    return true;
+                }
+                else
+                {
+                    iter--;
+                }
             }
             return true;
         }
@@ -40,13 +53,13 @@ namespace CFLP_GA
             }
             foreach (string file in files)
             {
+                Console.WriteLine(Path.GetFileName(file));
                 testGAOnFile(file);
             }
             return true;
         }
         public bool testGAOnFile(string file)
         {
-            Console.WriteLine(file);
             //Console.Read();
             Problem problem = new Problem();
             problem.load(new StreamReader(file));
@@ -72,6 +85,8 @@ namespace CFLP_GA
         }
         public bool testILSOnFolder(string path)
         {
+            StreamWriter writer = new StreamWriter("results.txt");
+            IteratedLocalSearch.Reports.ShortReport.Init(writer);
             string[] files;
             if (!Directory.Exists(path))
             {
@@ -83,17 +98,18 @@ namespace CFLP_GA
             }
             foreach (string file in files)
             {
+                Console.WriteLine(Path.GetFileName(file));
+                IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
                 testILSOnFile(file);
             }
             return true;
         }
         public bool testILSOnFile(string file)
         {
-            Console.WriteLine(file);
             //Console.Read();
             Problem problem = new Problem();
             problem.load(new StreamReader(file));
-            var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(int.MaxValue);
+            var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(10000);
             IteratedLocalSearch.ILS ils = new IteratedLocalSearch.ILS(problem,
                 new MinDemandEvaluator(),
                 new IteratedLocalSearch.LocalSearch.OneFlipLS(),
@@ -106,7 +122,7 @@ namespace CFLP_GA
                     50, 0.9, 0.01
                     ),
                 new IteratedLocalSearch.AcceptanceCriteria.RestartWalk(
-                    100, new IteratedLocalSearch.AcceptanceCriteria.BetterWalk(),
+                    500, new IteratedLocalSearch.AcceptanceCriteria.BetterWalk(),
                     new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem,
                         decider, 0.3)),
                 new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(1000).AppendStoppingCriteria(

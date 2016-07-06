@@ -15,7 +15,6 @@ namespace CFLP_GA
         public EvaluatorBase fitnessCalc;
         public GenomeAdjusterBase adjuster;
         public InitialPopulationBase initialPopulation;
-        public Settings settings = new Settings();
         public Problem problem;
         public GeneticAlgorithm(
             SelectorBase selector,

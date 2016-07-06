@@ -13,7 +13,8 @@ namespace CFLP_GA
         static void Main(string[] args)
         {
             TestOnData test = new TestOnData();
-            test.testBothOnFolder(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances");
+            test.testBothOnFolder(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances",
+                5);
             Console.Read();
             Problem problem = new Problem();
             problem.load(new StreamReader(@"F:\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances\cap61"));

@@ -22,16 +22,21 @@ namespace CFLP_GA.IteratedLocalSearch.Perturbation
                 if (s[i] > 0)
                 {
                     s[i] = 0;
-                    double v = evaluator.Evaluate(s);
-                    if(v<min)
+                    if (s.check())
                     {
-                        min = v;
-                        mini = i;
+                        double v = evaluator.Evaluate(s);
+                        if (v < min)
+                        {
+                            min = v;
+                            mini = i;
+                        }
                     }
                     s[i] = 1;
                 }
 
             }
+            if (mini < 0)
+                return null;
             int pos = ControlledRandom.getRandomFromRange(0, s.vars.Length);
             var perturbed = s.Clone();
             perturbed[mini] = s[pos];

@@ -23,6 +23,7 @@ namespace CFLP_GA.Reports
         {
             base.ReportEnd(criterion, g);
             reportTime(writer, ga);
+            
         }
         public static void reportTime(TextWriter writer, GeneticAlgorithm ga)
         {

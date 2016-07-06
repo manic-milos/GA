@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
 {
     class RestartWalk:AcceptanceCriterionBase
-    {//TODO uporedjivanje posebno(predicate)
+    {
         public int i = 0;
         public int n = int.MaxValue;
         public AcceptanceCriterionBase defaultWalk;
@@ -32,16 +32,27 @@ namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
                 previous=s;
                 return s;
             }
-            return restart();
+            Solution restarted=restart();
+            if (restarted != null)
+                return restarted;
+            return defaultWalk.Accept(newSol, oldSol, evaluator);
 
         }
         private Solution restart()
         {
-            Console.WriteLine("restart...");
-            Console.Read();
-            this.i = 0;
-            previous = null;
-            return randomGen.Generate();
+            Reports.IterationalReport.Report("restart...");
+            
+            Solution s= randomGen.Generate();
+            if(s!=null)
+            {
+                this.i = 0;
+                previous = null;
+            }
+            else
+            {
+                Reports.IterationalReport.Report("failed...");
+            }
+            return s;
         }
     }
 }

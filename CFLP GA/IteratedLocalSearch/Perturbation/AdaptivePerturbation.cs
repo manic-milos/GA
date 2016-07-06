@@ -39,9 +39,13 @@ namespace CFLP_GA.IteratedLocalSearch.Perturbation
                 {
                     break;
                 }
-                s = defaultPerturbation.Perturb(s);
+                Solution perturbed = defaultPerturbation.Perturb(s);
+                if (perturbed != null)
+                    s = perturbed;
+                else
+                    break;
             }
-            Console.WriteLine("stopped at:" + i);
+            Reports.VerboseReport.Report("stopped at:" + i);
             return s;
         }
     }

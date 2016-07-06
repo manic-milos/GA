@@ -34,29 +34,41 @@ namespace CFLP_GA.IteratedLocalSearch
         }
         public double execute()
         {
-            Console.WriteLine("generating initial solution");
             Solution s = generator.Generate();
-            Console.WriteLine("solution generated:"+s);
             if (s == null)
                 return double.NaN;
-            Console.WriteLine("solution exists");
             Solution globalBest = s;
             while (!stoppingCriterion.CheckIfEnd(s,globalBest))
             {
-                Console.WriteLine("iteration:"+stoppingCriterion.IterationInfoAll());
+                Reports.IterationalReport.Report("iteration:"+stoppingCriterion.IterationInfoAll());
                 s = localSearch.GetBestLocal(s, evaluator);
                 if(evaluator.Evaluate(s)<evaluator.Evaluate(globalBest))
                 {
+
+                    Reports.VerboseReport.Report("global best changed from " + globalBest + " to " + s);
                     globalBest = s;
                 }
-                Console.WriteLine("local best:\t"+s+","+evaluator.Evaluate(s));
+                Reports.IterationalReport.Report("local best:\t"+s+","+evaluator.Evaluate(s));
                 Solution perturbed = perturber.Perturb(s);
-                Console.WriteLine("perturbed:\t"+perturbed+","+evaluator.Evaluate(perturbed));
-                s = acceptanceCriterion.Accept(perturbed, s, evaluator);
+                if (perturbed == null)
+                {
+                    Reports.IterationalReport.Report("perturbed null");
+                }
+                else
+                {
+                    Reports.IterationalReport.Report("perturbed:\t" + perturbed + "," + evaluator.Evaluate(perturbed));
+                    Solution accepted = acceptanceCriterion.Accept(perturbed, s, evaluator);
+                    if(accepted==null)
+                        Console.WriteLine("wrong");
+                }
+                Reports.IterationalReport.IterationEnd("solution accepted: " + s);
             }
-            Console.WriteLine("best solution:");
-            Console.WriteLine(globalBest+" "+evaluator.Evaluate(globalBest));
-            Console.Read();
+            Reports.IterationalReport.FinalIteration("best solution:");
+            Reports.ShortReport.Report(evaluator.Evaluate(globalBest) + " " + globalBest);
+            if(!s.check())
+            {
+                throw new Exception("Solution is not correct");
+            }
             return evaluator.Evaluate(s);
         }
     }

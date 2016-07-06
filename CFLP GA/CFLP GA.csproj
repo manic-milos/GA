@@ -78,6 +78,9 @@
     <Compile Include="IteratedLocalSearch\Perturbation\PerturbationBase.cs" />
     <Compile Include="IteratedLocalSearch\Perturbation\SwitchPerturbation.cs" />
     <Compile Include="IteratedLocalSearch\Perturbation\SwitchWorstPerturbation.cs" />
+    <Compile Include="IteratedLocalSearch\Reports\IterationalReport.cs" />
+    <Compile Include="IteratedLocalSearch\Reports\ShortReport.cs" />
+    <Compile Include="IteratedLocalSearch\Reports\VerboseReport.cs" />
     <Compile Include="IteratedLocalSearch\Solution.cs" />
     <Compile Include="IteratedLocalSearch\StoppingCriteria\DimensionStoppingCriterion.cs" />
     <Compile Include="IteratedLocalSearch\StoppingCriteria\IterationalStoppingCriterion.cs" />
@@ -117,7 +120,6 @@
     <Compile Include="GeneticAlgorithm\Selection\RouletteSelector.cs" />
     <Compile Include="GeneticAlgorithm\Selection\SelectorBase.cs" />
     <Compile Include="GeneticAlgorithm\Selection\TournamentSelector.cs" />
-    <Compile Include="Settings.cs" />
     <Compile Include="GeneticAlgorithm\Criteria\StoppingCriterionBase.cs" />
     <Compile Include="GeneticAlgorithm\Mutation\Mutations\SureRandomMutation.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\GenomeCrossover\PairUniformCross.cs" />
