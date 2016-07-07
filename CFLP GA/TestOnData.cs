@@ -9,7 +9,7 @@ namespace CFLP_GA
 {
     class TestOnData
     {
-        public bool testBothOnFolder(string path,int iter=-1)
+        public bool testBothOnFolder(string path)
         {
             StreamWriter writer = new StreamWriter("results.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
@@ -24,19 +24,19 @@ namespace CFLP_GA
             }
             foreach (string file in files)
             {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(true);
+                    if(key.Key==ConsoleKey.Escape)
+                    {
+                        writer.Dispose();
+                        return true;
+                    }
+                }
                 Console.WriteLine(Path.GetFileName(file));
                 IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
                 testGAOnFile(file);
                 testILSOnFile(file);
-                if(iter==0)
-                {
-                    writer.Dispose();
-                    return true;
-                }
-                else
-                {
-                    iter--;
-                }
             }
             return true;
         }
