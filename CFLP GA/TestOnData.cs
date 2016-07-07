@@ -11,7 +11,7 @@ namespace CFLP_GA
     {
         public bool testBothOnFolder(string path)
         {
-            StreamWriter writer = new StreamWriter("initialresults.txt");
+            StreamWriter writer = new StreamWriter("results.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             string[] files;
             if (!Directory.Exists(path))
