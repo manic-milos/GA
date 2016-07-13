@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,6 +35,8 @@ namespace CFLP_GA.IteratedLocalSearch
         }
         public double execute()
         {
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Restart();
             Solution s = generator.Generate();
             if (s == null)
                 return double.NaN;
@@ -60,6 +63,7 @@ namespace CFLP_GA.IteratedLocalSearch
                     Solution accepted = acceptanceCriterion.Accept(perturbed, s, evaluator);
                     if(accepted==null)
                         Console.WriteLine("wrong");
+                    s = accepted;
                 }
                 Reports.IterationalReport.IterationEnd("solution accepted: " + s);
             }
@@ -69,6 +73,8 @@ namespace CFLP_GA.IteratedLocalSearch
             {
                 throw new Exception("Solution is not correct");
             }
+            stopwatch.Stop();
+            Reports.ShortReport.Report(stopwatch.Elapsed.ToString());
             return evaluator.Evaluate(s);
         }
     }

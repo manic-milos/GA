@@ -11,7 +11,7 @@ namespace CFLP_GA
     {
         public bool testBothOnFolder(string path)
         {
-            StreamWriter writer = new StreamWriter("results.txt");
+            StreamWriter writer = new StreamWriter("resultspopravljenbagtime.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             string[] files;
             if (!Directory.Exists(path))
@@ -85,7 +85,7 @@ namespace CFLP_GA
         }
         public bool testILSOnFolder(string path)
         {
-            StreamWriter writer = new StreamWriter("results.txt");
+            StreamWriter writer = new StreamWriter("resultspopravljenbag.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             string[] files;
             if (!Directory.Exists(path))
@@ -117,8 +117,7 @@ namespace CFLP_GA
                     problem,
                     decider, 0.8),
                 new IteratedLocalSearch.Perturbation.AdaptivePerturbation(
-                    new IteratedLocalSearch.Perturbation.SwitchWorstPerturbation(
-                        new MinDemandEvaluator()),//problematicno,ima dve instance iste klase na razlicita mesta
+                    new IteratedLocalSearch.Perturbation.OneSwitchPerturbation(),//problematicno,ima dve instance iste klase na razlicita mesta
                     50, 0.9, 0.01
                     ),
                 new IteratedLocalSearch.AcceptanceCriteria.RestartWalk(
@@ -126,8 +125,7 @@ namespace CFLP_GA
                     new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem,
                         decider, 0.3)),
                 new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(1000).AppendStoppingCriteria(
-                    new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000).AppendStoppingCriteria(
-                    new IteratedLocalSearch.StoppingCriteria.PlateauStoppingCriterion(500)))
+                    new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
                         );
             ils.execute();
             return true;

@@ -60,6 +60,8 @@ namespace CFLP_GA.Reports
             Report(g);
             writer.WriteLine("overall time=" + overallExecutionTime.Elapsed);
             IteratedLocalSearch.Reports.ShortReport.Report(
+                overallExecutionTime.Elapsed.ToString());
+            IteratedLocalSearch.Reports.ShortReport.Report(
                 g.Min.fitness() + g.Min);
         }
     }

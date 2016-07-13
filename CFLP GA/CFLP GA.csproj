@@ -59,6 +59,7 @@
     <Compile Include="GeneticAlgorithm\InitialPopulation\UnfeasableDeciders\FactorUnfeasableDecider.cs" />
     <Compile Include="GeneticAlgorithm\InitialPopulation\UnfeasableDeciders\UnfeasableDecider.cs" />
     <Compile Include="GeneticAlgorithm\InitialPopulation\UnfeasableProblemException.cs" />
+    <Compile Include="HashedVars.cs" />
     <Compile Include="IteratedLocalSearch\AcceptanceCriteria\AcceptanceCriterionBase.cs" />
     <Compile Include="IteratedLocalSearch\AcceptanceCriteria\BetterWalk.cs" />
     <Compile Include="IteratedLocalSearch\AcceptanceCriteria\RandomWalk.cs" />

@@ -6,30 +6,31 @@ using System.Threading.Tasks;
 
 namespace CFLP_GA.IteratedLocalSearch.Perturbation
 {
-    class AdaptivePerturbation:BinomialPerturbation
+    class AdaptivePerturbation : BinomialPerturbation
     {
         Solution previous = null;
         double initialProbability;
         double increasingPercent;
         public AdaptivePerturbation(PerturbationBase defaultPerturbation,
-            int maxPerturbations,double initialProbability=0.8,
-            double increasingPercent=0.1)
-            :base(defaultPerturbation,maxPerturbations,initialProbability)
+            int maxPerturbations, double initialProbability = 0.8,
+            double increasingPercent = 0.1)
+            : base(defaultPerturbation, maxPerturbations, initialProbability)
         {
             this.increasingPercent = increasingPercent;
             this.initialProbability = initialProbability;
         }
         protected override Solution perturb(Solution s)
         {
-            if(previous!=null && previous.Equals(s))
+            if (previous != null && previous.Equals(s))
             {
-                p=p+increasingPercent*(1-p);
+                p = p + increasingPercent * (1 - p);
             }
             else
             {
                 previous = s;
                 p = initialProbability;
             }
+            Solution good = s;
             s = s.Clone();
             int i;
             for (i = 0; i < maxPerturbations; i++)
@@ -40,13 +41,14 @@ namespace CFLP_GA.IteratedLocalSearch.Perturbation
                     break;
                 }
                 Solution perturbed = defaultPerturbation.Perturb(s);
-                if (perturbed != null)
-                    s = perturbed;
-                else
-                    break;
+                if (perturbed.check())
+                {
+                    good = perturbed;
+                }
+                s = perturbed;
             }
             Reports.VerboseReport.Report("stopped at:" + i);
-            return s;
+            return good;
         }
     }
 }

@@ -33,8 +33,7 @@ namespace CFLP_GA.IteratedLocalSearch.Reports
         {
             if (!shortReport)
                 Console.WriteLine(message);
-            else
-                Console.Write("\r");
+            Console.WriteLine();
             iteration = 0;
         }
     }
