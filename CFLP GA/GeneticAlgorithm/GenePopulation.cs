@@ -30,7 +30,8 @@ namespace CFLP_GA
         }
         public GenePopulation Append(GenePopulation other)
         {
-            foreach(Genome g in this)
+            time.Restart();
+            foreach (Genome g in this)
             {
                 if (g.checkGenome() == false)
                 {
@@ -47,6 +48,8 @@ namespace CFLP_GA
                 }
             }
             this.UnionWith(other);
+            time.Stop();
+            appendTime += time.Elapsed;
             return this;
         }
         public override string ToString()

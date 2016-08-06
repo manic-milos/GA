@@ -106,6 +106,7 @@ namespace CFLP_GA
             catch(UnfeasableProblemException e)
             {
                 Console.WriteLine(e.Message);
+                IteratedLocalSearch.Reports.ShortReport.Report("Unfeasable problem...");
                 return double.NaN;
             }
             //Console.WriteLine(Genes.Min);
@@ -123,6 +124,7 @@ namespace CFLP_GA
                 else
                     report.ReportIteration(stoppingCriterion, Genes);
             }
+            Console.WriteLine("Pairwise cross matching:" + PairwiseCrossMatching.crossTime);
             report.ReportEnd(stoppingCriterion, Genes);
             //Console.WriteLine(Genes.Min);
             //Console.WriteLine(fitness(Genes.Min));

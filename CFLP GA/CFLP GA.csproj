@@ -43,11 +43,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlledRandom.cs" />
+    <Compile Include="GeneticAlgorithm\Criteria\UnfeasableProblemStoppingCriterion.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\CrossoverMatching\CrossoverMatchingBase.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\CrossoverMatching\PairwiseCrossMatching.cs" />
     <Compile Include="Evaluators\EvaluationCache.cs" />
     <Compile Include="Evaluators\EvaluatorBase.cs" />
     <Compile Include="Evaluators\MinDemandEvaluator.cs" />
+    <Compile Include="GeneticAlgorithm\Crossover\CrossoverMatching\StochasticCrossMatching.cs" />
     <Compile Include="GeneticAlgorithm\GenomeAdjusters\GenomeAdjusterBase.cs" />
     <Compile Include="GeneticAlgorithm\GenomeAdjusters\MinLeftCapacityAdjuster.cs" />
     <Compile Include="GeneticAlgorithm\GenePopulation.cs" />

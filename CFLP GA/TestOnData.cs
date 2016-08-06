@@ -11,7 +11,7 @@ namespace CFLP_GA
     {
         public bool testBothOnFolder(string path)
         {
-            StreamWriter writer = new StreamWriter("resultspopravljenbagtime.txt");
+            StreamWriter writer = new StreamWriter("results2-4unfeasable_ne_pise.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             string[] files;
             if (!Directory.Exists(path))
@@ -71,7 +71,7 @@ namespace CFLP_GA
             var mutator = new RandomWithPreferenceMutator();
             var mutation = new SureRandomMutation(mutator);
             var crossover = new PairUniformCross();
-            var crossoverMatch = new PairwiseCrossMatching(crossover);
+            var crossoverMatch = new StochasticCrossMatching(crossover,50);
             var replacer = new GenerationReplacement(new TrimmingReplacement(300));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
             var fitnessCalc = new MinDemandEvaluator();
