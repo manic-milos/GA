@@ -126,6 +126,7 @@
     <Compile Include="GeneticAlgorithm\Criteria\StoppingCriterionBase.cs" />
     <Compile Include="GeneticAlgorithm\Mutation\Mutations\SureRandomMutation.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\GenomeCrossover\PairUniformCross.cs" />
+    <Compile Include="TestList.cs" />
     <Compile Include="TestOnData.cs" />
   </ItemGroup>
   <ItemGroup>

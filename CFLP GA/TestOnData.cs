@@ -13,16 +13,10 @@ namespace CFLP_GA
         {
             StreamWriter writer = new StreamWriter("results2-4unfeasable_ne_pise.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
-            string[] files;
-            if (!Directory.Exists(path))
-            {
-                files = new string[] { path };
-            }
-            else
-            {
-                files = Directory.GetFiles(path);
-            }
-            foreach (string file in files)
+            TestList testlist = new TestList(path);
+            //testlist.loadAllFilesFromBaseFolder();
+            testlist.loadSelectFiles(new List<string>() { "capa1_1" });
+            foreach (string file in testlist.files)
             {
                 if (Console.KeyAvailable)
                 {

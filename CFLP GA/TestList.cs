@@ -14,8 +14,9 @@ namespace CFLP_GA
         public TestList(string basePath)
         {
             files = new List<string>();
+            this.basePath = basePath;
         }
-        public void loadAllFilesFromFolder()
+        public List<string> loadAllFilesFromBaseFolder()
         {
             string[] sfiles;
             if (!Directory.Exists(basePath))
@@ -27,10 +28,15 @@ namespace CFLP_GA
                 sfiles = Directory.GetFiles(basePath);
             }
             files = sfiles.ToList<string>();
+            return this.files;
         }
-        public void loadSelectFiles(List<string> files)
+        public List<string> loadSelectFiles(List<string> files)
         {
-            this.files = files;
+            foreach(string file in files)
+            {
+                this.files.Add(Path.Combine(basePath, file));
+            }
+            return this.files;
         }
     }
 }
