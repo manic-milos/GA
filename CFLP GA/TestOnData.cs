@@ -16,6 +16,8 @@ namespace CFLP_GA
             TestList testlist = new TestList(path);
             //testlist.loadAllFilesFromBaseFolder();
             testlist.loadSelectFiles(new List<string>() { "capa1_5", "capa1_6" });
+            ResultReport results = new ResultReport();
+            results.AddWriter(new StreamWriter("test.txt"));
             foreach (string file in testlist.files)
             {
                 if (Console.KeyAvailable)
@@ -29,10 +31,12 @@ namespace CFLP_GA
                 }
                 Console.WriteLine(Path.GetFileName(file));
                 IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
-                testGAOnFile(file);
-                testILSOnFile(file);
+                results.Broadcast(Path.GetFileName(file));
+                results.Broadcast(testGAOnFile(file).ToString());
+                results.Broadcast(testILSOnFile(file).ToString());
             }
             writer.Dispose();
+            results.DisposeWriters();
             return true;
         }
         public bool testGAOnFolder(string path)
@@ -53,7 +57,7 @@ namespace CFLP_GA
             }
             return true;
         }
-        public bool testGAOnFile(string file)
+        public double testGAOnFile(string file)
         {
             //Console.Read();
             Problem problem = new Problem();
@@ -75,8 +79,8 @@ namespace CFLP_GA
             GeneticAlgorithm ga = new GeneticAlgorithm(selector, criterion,
                 mutation, crossoverMatch, replacer, fitnessCalc,
                 adjuster, initialPopulation, problem);
-            ga.execute(new Reports.ShortTabularFunctionalReport());
-            return true;
+            return ga.execute(new Reports.ShortTabularFunctionalReport());
+            
         }
         public bool testILSOnFolder(string path)
         {
@@ -99,7 +103,7 @@ namespace CFLP_GA
             }
             return true;
         }
-        public bool testILSOnFile(string file)
+        public double testILSOnFile(string file)
         {
             //Console.Read();
             Problem problem = new Problem();
@@ -122,8 +126,7 @@ namespace CFLP_GA
                 new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(1000).AppendStoppingCriteria(
                     new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
                         );
-            ils.execute();
-            return true;
+            return ils.execute();
         }
     }
 }
