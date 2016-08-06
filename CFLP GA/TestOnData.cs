@@ -11,11 +11,11 @@ namespace CFLP_GA
     {
         public bool testBothOnFolder(string path)
         {
-            StreamWriter writer = new StreamWriter("results2-4unfeasable_ne_pise.txt");
+            StreamWriter writer = new StreamWriter("results3-1testlist.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             TestList testlist = new TestList(path);
             //testlist.loadAllFilesFromBaseFolder();
-            testlist.loadSelectFiles(new List<string>() { "capa1_1" });
+            testlist.loadSelectFiles(new List<string>() { "capa1_5", "capa1_6" });
             foreach (string file in testlist.files)
             {
                 if (Console.KeyAvailable)
@@ -32,6 +32,7 @@ namespace CFLP_GA
                 testGAOnFile(file);
                 testILSOnFile(file);
             }
+            writer.Dispose();
             return true;
         }
         public bool testGAOnFolder(string path)
