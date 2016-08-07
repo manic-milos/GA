@@ -40,8 +40,6 @@ namespace CFLP_GA.IteratedLocalSearch
         }
         public double execute(out Solution result,Solution initialSolution = null)
         {
-            Stopwatch stopwatch = new Stopwatch();
-            stopwatch.Restart();
             Solution s=initialSolution;
             if(initialSolution==null)
                 s = generator.Generate();
@@ -83,9 +81,8 @@ namespace CFLP_GA.IteratedLocalSearch
             {
                 throw new Exception("Solution is not correct");
             }
-            stopwatch.Stop();
-            Reports.ShortReport.Report(stopwatch.Elapsed.ToString());
             result = s;
+
             return evaluator.Evaluate(s);
         }
     }

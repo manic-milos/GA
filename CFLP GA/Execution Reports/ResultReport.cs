@@ -19,8 +19,7 @@ namespace CFLP_GA.Execution_Reports
             writers.Add(writer);
             return this;
         }
-        
-        public void Broadcast(string message)
+        public virtual void Broadcast(string message)
         {
             foreach(StreamWriter writer in writers)
             {

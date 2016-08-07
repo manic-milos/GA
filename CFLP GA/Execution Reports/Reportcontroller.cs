@@ -15,6 +15,7 @@ namespace CFLP_GA.Execution_Reports
             SHORT_TIME, VERBOSE_TIME, ITER_SHORT_TIME, ITER_VERB_TIME
         };
         static Dictionary<int, List<ReportBase>> chain = new Dictionary<int, List<ReportBase>>();
+        public static TimeReport timeReport = new TimeReport();
         public static void AddReport(int level, ReportBase newReport)
         {
             List<ReportBase> reportList;
@@ -50,7 +51,9 @@ namespace CFLP_GA.Execution_Reports
             verboseResultReport.AddWriter(new StreamWriter("verb_results.txt"));
             AddReport(2, verboseResultReport);
 
-
+            ResultReport timeReport = new ResultReport();
+            timeReport.AddWriter(new StreamWriter("time_results.txt"));
+            AddReport(3, timeReport);
         }
         public static void RestartReports()
         {

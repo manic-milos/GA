@@ -138,6 +138,7 @@ namespace CFLP_GA
         }
         public double execute(out Genome result,Reports.ExecutionReportBase report = null)
         {
+            
             GenePopulation Genes = start(report);
             if (Genes == null)
             {

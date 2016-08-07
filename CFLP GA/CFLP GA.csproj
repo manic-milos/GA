@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ControlledRandom.cs" />
+    <Compile Include="Execution Reports\OverallTimeReport.cs" />
     <Compile Include="Execution Reports\ReportBase.cs" />
     <Compile Include="Execution Reports\ReportController.cs" />
+    <Compile Include="Execution Reports\TimeReport.cs" />
     <Compile Include="GeneticAlgorithm\Criteria\UnfeasableProblemStoppingCriterion.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\CrossoverMatching\CrossoverMatchingBase.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\CrossoverMatching\PairwiseCrossMatching.cs" />
@@ -129,7 +131,7 @@
     <Compile Include="GeneticAlgorithm\Criteria\StoppingCriterionBase.cs" />
     <Compile Include="GeneticAlgorithm\Mutation\Mutations\SureRandomMutation.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\GenomeCrossover\PairUniformCross.cs" />
-    <Compile Include="ResultReport.cs" />
+    <Compile Include="Execution Reports\ResultReport.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="TestOnData.cs" />
   </ItemGroup>
