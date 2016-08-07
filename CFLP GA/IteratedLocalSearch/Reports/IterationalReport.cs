@@ -10,13 +10,18 @@ namespace CFLP_GA.IteratedLocalSearch.Reports
     {
         public static bool shortReport=true;
         static int iteration=0;
+        public static bool on = true;
         public static void Report(string message)
         {
+            if (!on)
+                return;
             if(!shortReport)
                 Console.WriteLine(message);
         }
         public static void IterationEnd(string message)
         {
+            if (!on)
+                return;
             if (!shortReport)
                 Console.WriteLine(message);
             else
@@ -31,6 +36,8 @@ namespace CFLP_GA.IteratedLocalSearch.Reports
         }
         public static void FinalIteration(string message)
         {
+            if (!on)
+                return;
             if (!shortReport)
                 Console.WriteLine(message);
             Console.WriteLine();

@@ -71,18 +71,18 @@ namespace CFLP_GA
             Reports.ExecutionReportBase report = null)
         {
             GenePopulation crossed = genomeCross.CrossGenomes(mating, this);
-            if(report!=null)
+            if (report != null)
             {
                 report.Report(genomeCross, crossed);
             }
             return crossed;
         }
-        public GenePopulation replacement(GenePopulation genePool, 
+        public GenePopulation replacement(GenePopulation genePool,
             GenePopulation children,
-            Reports.ExecutionReportBase report=null)
+            Reports.ExecutionReportBase report = null)
         {
-            GenePopulation replaced= replacer.Replace(genePool, children);
-            if(report!=null)
+            GenePopulation replaced = replacer.Replace(genePool, children);
+            if (report != null)
             {
                 report.Report(replacer, replaced);
             }
@@ -92,7 +92,7 @@ namespace CFLP_GA
         {
             return fitnessCalc.Fitness(g, leftCapacities);
         }
-        public double execute(Reports.ExecutionReportBase report=null)
+        public GenePopulation start(Reports.ExecutionReportBase report = null)
         {
             if (report != null)
             {
@@ -103,33 +103,59 @@ namespace CFLP_GA
             {
                 Genes = createInitialPopulation(report);
             }
-            catch(UnfeasableProblemException e)
+            catch (UnfeasableProblemException e)
             {
                 Console.WriteLine(e.Message);
                 IteratedLocalSearch.Reports.ShortReport.Report("Unfeasable problem...");
+                return null;
+            }
+            stoppingCriterion.Init(this);
+            return Genes;
+        }
+        public GenePopulation iteration(GenePopulation Genes, Reports.ExecutionReportBase report = null)
+        {
+            mutate(Genes);
+            GenePopulation parents = select(Genes, report);
+            GenePopulation children = crossover(parents, report);
+            Genes = replacement(Genes, children, report);
+            if (report == null)
+                Console.WriteLine(stoppingCriterion.CurrentIteration() + ":" + Genes.Min + " " +
+                    fitness(Genes.Min) + " " + fitness(Genes.Max) + " " + Genes.Count);
+            else
+                report.ReportIteration(stoppingCriterion, Genes);
+            return Genes;
+
+        }
+        public GenePopulation end(GenePopulation Genes,Reports.ExecutionReportBase report=null)
+        {
+            report.ReportEnd(stoppingCriterion, Genes);
+            return Genes;
+        }
+        public double execute(Reports.ExecutionReportBase report = null)
+        {
+            Genome res;
+            return execute(out res, report);
+        }
+        public double execute(out Genome result,Reports.ExecutionReportBase report = null)
+        {
+            GenePopulation Genes = start(report);
+            if (Genes == null)
+            {
+                result = null;
                 return double.NaN;
             }
             //Console.WriteLine(Genes.Min);
             //Console.WriteLine(fitness(Genes.Min));
-            stoppingCriterion.Init(this);
             while (!stoppingCriterion.CheckStoppingCriterion(Genes))
             {
-                mutate(Genes);
-                GenePopulation parents = select(Genes,report);
-                GenePopulation children = crossover(parents,report);
-                Genes = replacement(Genes, children,report);
-                if (report == null)
-                    Console.WriteLine(stoppingCriterion.CurrentIteration() + ":" + Genes.Min + " " +
-                        fitness(Genes.Min) + " " + fitness(Genes.Max) + " " + Genes.Count);
-                else
-                    report.ReportIteration(stoppingCriterion, Genes);
+                Genes = iteration(Genes, report);
             }
-            Console.WriteLine("Pairwise cross matching:" + PairwiseCrossMatching.crossTime);
-            report.ReportEnd(stoppingCriterion, Genes);
+            Genes = end(Genes, report);
             //Console.WriteLine(Genes.Min);
             //Console.WriteLine(fitness(Genes.Min));
             //Console.Read();
-            return fitness(Genes.Min);
+            result = Genes.Min;
+            return result.fitness();
         }
     }
 }

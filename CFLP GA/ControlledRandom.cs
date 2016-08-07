@@ -18,5 +18,9 @@ namespace CFLP_GA
         {
             return rand.NextDouble();
         }
+        public static void reset()
+        {
+            rand = new Random(randomSeed);
+        }
     }
 }

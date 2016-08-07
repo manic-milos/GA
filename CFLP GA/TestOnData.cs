@@ -4,39 +4,57 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CFLP_GA.Execution_Reports;
 
 namespace CFLP_GA
 {
     class TestOnData
     {
-        public bool testBothOnFolder(string path)
+        public bool testSelectOnFolder(string path, bool GAf = true, bool ILSf = true, bool GAAf = true)
         {
-            StreamWriter writer = new StreamWriter("results3-1testlist.txt");
+            StreamWriter writer = new StreamWriter("results4-1popravljenrandomseed.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             TestList testlist = new TestList(path);
-            //testlist.loadAllFilesFromBaseFolder();
-            testlist.loadSelectFiles(new List<string>() { "capa1_5", "capa1_6" });
-            ResultReport results = new ResultReport();
-            results.AddWriter(new StreamWriter("test.txt"));
+            testlist.loadAllFilesFromBaseFolder();
+            //testlist.loadSelectFiles(new List<string>() { "pn71" });
+            ReportController.HelperSetup();
             foreach (string file in testlist.files)
             {
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey(true);
-                    if(key.Key==ConsoleKey.Escape)
+                    if (key.Key == ConsoleKey.Escape)
                     {
                         writer.Dispose();
+                        ReportController.Dispose();
                         return true;
                     }
                 }
                 Console.WriteLine(Path.GetFileName(file));
                 IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
-                results.Broadcast(Path.GetFileName(file));
-                results.Broadcast(testGAOnFile(file).ToString());
-                results.Broadcast(testILSOnFile(file).ToString());
+                
+                ReportController.Broadcast(1,Path.GetFileName(file));
+                if (GAf)
+                {
+                    ReportController.Broadcast(2, "GA:");
+                    ReportController.Broadcast(1, testGAOnFile(file).ToString());
+                    ControlledRandom.reset();
+                }
+                if (ILSf)
+                {
+                    ReportController.Broadcast(2, "ILS:");
+                    ReportController.Broadcast(1, testILSOnFile(file).ToString());
+                    ControlledRandom.reset();
+                }
+                if (GAAf)
+                {
+                    ReportController.Broadcast(2, "GAA:");
+                    ReportController.Broadcast(1, testHybridOnFile(file).ToString());
+                    ControlledRandom.reset();
+                }
             }
             writer.Dispose();
-            results.DisposeWriters();
+            ReportController.Dispose();
             return true;
         }
         public bool testGAOnFolder(string path)
@@ -70,7 +88,7 @@ namespace CFLP_GA
             var mutator = new RandomWithPreferenceMutator();
             var mutation = new SureRandomMutation(mutator);
             var crossover = new PairUniformCross();
-            var crossoverMatch = new StochasticCrossMatching(crossover,50);
+            var crossoverMatch = new StochasticCrossMatching(crossover, 50);
             var replacer = new GenerationReplacement(new TrimmingReplacement(300));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
             var fitnessCalc = new MinDemandEvaluator();
@@ -79,8 +97,14 @@ namespace CFLP_GA
             GeneticAlgorithm ga = new GeneticAlgorithm(selector, criterion,
                 mutation, crossoverMatch, replacer, fitnessCalc,
                 adjuster, initialPopulation, problem);
-            return ga.execute(new Reports.ShortTabularFunctionalReport());
-            
+            Genome result;
+            double value= ga.execute(out result,new Reports.ShortTabularFunctionalReport());
+            if (!double.IsNaN(value))
+            {
+                ReportController.Broadcast(2, result.ToString());
+            }
+            return value;
+
         }
         public bool testILSOnFolder(string path)
         {
@@ -126,7 +150,30 @@ namespace CFLP_GA
                 new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(1000).AppendStoppingCriteria(
                     new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
                         );
-            return ils.execute();
+            IteratedLocalSearch.Solution result;
+            double value= ils.execute(out result);
+            if (!double.IsNaN(value))
+            {
+                ReportController.Broadcast(2, result.ToString());
+            }
+            return value;
+
+        }
+        public double testHybridOnFile(string file)
+        {
+            Problem problem = new Problem();
+            problem.load(new StreamReader(file));
+            Hybrid.GAAdvanced gaa = new Hybrid.GAAdvanced(problem);
+            gaa.setupGA();
+            gaa.setupILS();
+            CFLP_GA.IteratedLocalSearch.Solution result;
+
+            double value= gaa.execute(out result,new Reports.ShortTabularFunctionalReport());
+            if(!double.IsNaN(value))
+            {
+                ReportController.Broadcast(2, result.ToString());
+            }
+            return value;
         }
     }
 }

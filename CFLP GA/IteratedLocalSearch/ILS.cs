@@ -33,13 +33,23 @@ namespace CFLP_GA.IteratedLocalSearch
             this.acceptanceCriterion = acceptanceCriterion;
             this.stoppingCriterion = stoppingCriterion;
         }
-        public double execute()
+        public double execute(Solution initialSolution = null)
+        {
+            Solution result;
+            return execute(out result, initialSolution);
+        }
+        public double execute(out Solution result,Solution initialSolution = null)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Restart();
-            Solution s = generator.Generate();
+            Solution s=initialSolution;
+            if(initialSolution==null)
+                s = generator.Generate();
             if (s == null)
+            {
+                result = null;
                 return double.NaN;
+            }
             Solution globalBest = s;
             while (!stoppingCriterion.CheckIfEnd(s,globalBest))
             {
@@ -75,6 +85,7 @@ namespace CFLP_GA.IteratedLocalSearch
             }
             stopwatch.Stop();
             Reports.ShortReport.Report(stopwatch.Elapsed.ToString());
+            result = s;
             return evaluator.Evaluate(s);
         }
     }

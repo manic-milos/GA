@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CFLP_GA
+namespace CFLP_GA.Execution_Reports
 {
-    class ResultReport
+    class ResultReport:ReportBase
     {
         List<StreamWriter> writers;
         public ResultReport()
@@ -19,6 +19,7 @@ namespace CFLP_GA
             writers.Add(writer);
             return this;
         }
+        
         public void Broadcast(string message)
         {
             foreach(StreamWriter writer in writers)
@@ -32,6 +33,16 @@ namespace CFLP_GA
             {
                 writer.Dispose();
             }
+        }
+
+        public override void report(string message)
+        {
+            Broadcast(message);
+        }
+
+        public override void Dispose()
+        {
+            DisposeWriters();
         }
     }
 }
