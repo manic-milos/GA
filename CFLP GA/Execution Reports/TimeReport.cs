@@ -7,52 +7,32 @@ using System.Threading.Tasks;
 
 namespace CFLP_GA.Execution_Reports
 {
-    class TimeReport : ResultReport
+    class TimeReport
     {
-        Dictionary<string, TimeSpan> times = new Dictionary<string, TimeSpan>();
+        Dictionary<string, Stopwatch> times = new Dictionary<string, Stopwatch>();
         public TimeReport()
-            : base()
         {
 
         }
-        public override void Broadcast(string name)
+        public void startMeasuring(string name)
         {
-            TimeSpan timespan;
-            if (times.TryGetValue(name, out timespan))
-            {
-                base.Broadcast(name + ":" + timespan.ToString());
-            }
-            else
-            {
-                base.Broadcast(name + " not meassured");
-            }
+            Stopwatch tmp = new Stopwatch();
+            times[name] = tmp;
+            tmp.Start();
         }
-        public virtual void addTime(TimeSpan time, string name)
+        public TimeSpan stopMeasuring(string name)
         {
-            TimeSpan timespan;
-            if (times.TryGetValue(name, out timespan))
-            {
-                times[name] = timespan + time;
-            }
-            else
-            {
-                times[name] = new TimeSpan(0)+time;
-            }
+            Stopwatch tmp = times[name];
+            tmp.Stop();
+            return tmp.Elapsed;
         }
-        public virtual void resetTime(string name)
+        public void continueMeasuring(string name)
         {
-            times[name] = new TimeSpan(0);
+            times[name].Start();
         }
-        public static Stopwatch startMeasuring()
+        public TimeSpan getTime(string name)
         {
-            Stopwatch s=new Stopwatch();
-            s.Start();
-            return s;
-        }
-        public static TimeSpan stopMeasuring(Stopwatch time)
-        {
-            time.Stop();
-            return time.Elapsed;
+            return times[name].Elapsed;
         }
     }
 }

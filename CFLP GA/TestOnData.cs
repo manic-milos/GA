@@ -37,27 +37,27 @@ namespace CFLP_GA
                 if (GAf)
                 {
                     ReportController.Broadcast(2, "GA:");
-                    var stopwatch = Execution_Reports.TimeReport.startMeasuring();
+                    Execution_Reports.ReportController.timeReport.startMeasuring("GA");
                     ReportController.Broadcast(1, testGAOnFile(file).ToString());
-                    var time = Execution_Reports.TimeReport.stopMeasuring(stopwatch);
+                    TimeSpan time=Execution_Reports.ReportController.timeReport.stopMeasuring("GA");
                     Execution_Reports.ReportController.Broadcast(3, time.ToString());
                     ControlledRandom.reset();
                 }
                 if (ILSf)
                 {
                     ReportController.Broadcast(2, "ILS:");
-                    var stopwatch = Execution_Reports.TimeReport.startMeasuring();
+                    Execution_Reports.ReportController.timeReport.startMeasuring("ILS");
                     ReportController.Broadcast(1, testILSOnFile(file).ToString());
-                    var time = Execution_Reports.TimeReport.stopMeasuring(stopwatch);
+                    TimeSpan time = Execution_Reports.ReportController.timeReport.stopMeasuring("ILS");
                     Execution_Reports.ReportController.Broadcast(3, time.ToString());
                     ControlledRandom.reset();
                 }
                 if (GAAf)
                 {
                     ReportController.Broadcast(2, "GAA:");
-                    var stopwatch = Execution_Reports.TimeReport.startMeasuring();
+                    Execution_Reports.ReportController.timeReport.startMeasuring("GAA");
                     ReportController.Broadcast(1, testHybridOnFile(file).ToString());
-                    var time = Execution_Reports.TimeReport.stopMeasuring(stopwatch);
+                    TimeSpan time = Execution_Reports.ReportController.timeReport.stopMeasuring("GAA");
                     Execution_Reports.ReportController.Broadcast(3, time.ToString());
                     ControlledRandom.reset();
                 }

@@ -76,7 +76,7 @@ namespace CFLP_GA.IteratedLocalSearch
                 Reports.IterationalReport.IterationEnd("solution accepted: " + s);
             }
             Reports.IterationalReport.FinalIteration("best solution:");
-            Reports.ShortReport.Report(evaluator.Evaluate(globalBest) + " " + globalBest);
+            Reports.IterationalReport.Report(evaluator.Evaluate(globalBest) + " " + globalBest);
             if(!s.check())
             {
                 throw new Exception("Solution is not correct");
