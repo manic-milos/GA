@@ -58,7 +58,7 @@ namespace CFLP_GA
             foreach (Genome g in this)
             {
                 s += g.ToString() + " "
-                    + ga.fitness(g)
+                    + g.fitness()
                     + Environment.NewLine;
             }
             return s;

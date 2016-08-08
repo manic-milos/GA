@@ -107,7 +107,7 @@ namespace CFLP_GA
                 mutation, crossoverMatch, replacer, fitnessCalc,
                 adjuster, initialPopulation, problem);
             Genome result;
-            double value= ga.execute(out result,new Reports.ShortTabularFunctionalReport());
+            double value= ga.execute(out result);
             if (!double.IsNaN(value))
             {
                 ReportController.Broadcast(2, result.ToString());

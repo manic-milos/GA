@@ -9,7 +9,7 @@ namespace CFLP_GA.Execution_Reports
 {
     class ResultReport:ReportBase
     {
-        List<StreamWriter> writers;
+        protected List<StreamWriter> writers;
         public ResultReport()
         {
             writers = new List<StreamWriter>();

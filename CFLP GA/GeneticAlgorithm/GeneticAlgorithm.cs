@@ -112,34 +112,35 @@ namespace CFLP_GA
             stoppingCriterion.Init(this);
             return Genes;
         }
-        public GenePopulation iteration(GenePopulation Genes, Reports.ExecutionReportBase report = null)
+        public GenePopulation iteration(GenePopulation Genes)
         {
             mutate(Genes);
-            GenePopulation parents = select(Genes, report);
-            GenePopulation children = crossover(parents, report);
-            Genes = replacement(Genes, children, report);
-            if (report == null)
-                Console.WriteLine(stoppingCriterion.CurrentIteration() + ":" + Genes.Min + " " +
-                    fitness(Genes.Min) + " " + fitness(Genes.Max) + " " + Genes.Count);
-            else
-                report.ReportIteration(stoppingCriterion, Genes);
+            GenePopulation parents = select(Genes);
+            GenePopulation children = crossover(parents);
+            Genes = replacement(Genes, children);
+            //if (report == null)
+            //    Console.WriteLine(stoppingCriterion.CurrentIteration() + ":" + Genes.Min + " " +
+            //        fitness(Genes.Min) + " " + fitness(Genes.Max) + " " + Genes.Count);
+            //else
+            //    report.ReportIteration(stoppingCriterion, Genes);
             return Genes;
 
         }
-        public GenePopulation end(GenePopulation Genes,Reports.ExecutionReportBase report=null)
+        public GenePopulation end(GenePopulation Genes, Reports.ExecutionReportBase report = null)
         {
-            report.ReportEnd(stoppingCriterion, Genes);
+            if (report != null)
+                report.ReportEnd(stoppingCriterion, Genes);
             return Genes;
         }
-        public double execute(Reports.ExecutionReportBase report = null)
+        public double execute()
         {
             Genome res;
-            return execute(out res, report);
+            return execute(out res);
         }
-        public double execute(out Genome result,Reports.ExecutionReportBase report = null)
+        public double execute(out Genome result)
         {
-            
-            GenePopulation Genes = start(report);
+            Execution_Reports.ReportController.progressReport.startCounting();
+            GenePopulation Genes = start();
             if (Genes == null)
             {
                 result = null;
@@ -149,9 +150,11 @@ namespace CFLP_GA
             //Console.WriteLine(fitness(Genes.Min));
             while (!stoppingCriterion.CheckStoppingCriterion(Genes))
             {
-                Genes = iteration(Genes, report);
+                Genes = iteration(Genes);
+                Execution_Reports.ReportController.progressReport.addCount();
             }
-            Genes = end(Genes, report);
+            Genes = end(Genes);
+            Execution_Reports.ReportController.progressReport.endCount();
             //Console.WriteLine(Genes.Min);
             //Console.WriteLine(fitness(Genes.Min));
             //Console.Read();

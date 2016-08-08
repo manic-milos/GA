@@ -40,6 +40,7 @@ namespace CFLP_GA.IteratedLocalSearch
         }
         public double execute(out Solution result,Solution initialSolution = null)
         {
+            Execution_Reports.ReportController.progressReport.startCounting();
             Solution s=initialSolution;
             if(initialSolution==null)
                 s = generator.Generate();
@@ -74,6 +75,7 @@ namespace CFLP_GA.IteratedLocalSearch
                     s = accepted;
                 }
                 Reports.IterationalReport.IterationEnd("solution accepted: " + s);
+                Execution_Reports.ReportController.progressReport.addCount();
             }
             Reports.IterationalReport.FinalIteration("best solution:");
             Reports.IterationalReport.Report(evaluator.Evaluate(globalBest) + " " + globalBest);
@@ -82,7 +84,7 @@ namespace CFLP_GA.IteratedLocalSearch
                 throw new Exception("Solution is not correct");
             }
             result = s;
-
+            Execution_Reports.ReportController.progressReport.endCount();
             return evaluator.Evaluate(s);
         }
     }

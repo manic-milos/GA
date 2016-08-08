@@ -16,6 +16,7 @@ namespace CFLP_GA.Execution_Reports
         };
         static Dictionary<int, List<ReportBase>> chain = new Dictionary<int, List<ReportBase>>();
         public static TimeReport timeReport = new TimeReport();
+        public static ProgressReport progressReport = new ProgressReport();
         public static void AddReport(int level, ReportBase newReport)
         {
             List<ReportBase> reportList;
@@ -54,6 +55,7 @@ namespace CFLP_GA.Execution_Reports
             ResultReport timeReport = new ResultReport();
             timeReport.AddWriter(new StreamWriter("time_results.txt"));
             AddReport(3, timeReport);
+
 
             AddReport(10, new ConsoleReport());
         }

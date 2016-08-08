@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ControlledRandom.cs" />
     <Compile Include="Execution Reports\ConsoleReport.cs" />
+    <Compile Include="Execution Reports\ProgressReport.cs" />
     <Compile Include="Execution Reports\ReportBase.cs" />
     <Compile Include="Execution Reports\ReportController.cs" />
     <Compile Include="Execution Reports\TimeReport.cs" />

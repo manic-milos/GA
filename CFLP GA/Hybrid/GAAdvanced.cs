@@ -61,7 +61,7 @@ namespace CFLP_GA.Hybrid
         }
         public double execute(out IteratedLocalSearch.Solution result,Reports.ExecutionReportBase report=null)
         {
-            GenePopulation Genes=ga.start(report);
+            GenePopulation Genes=ga.start();
             if (Genes == null)
             {
                 result = null;
@@ -69,9 +69,9 @@ namespace CFLP_GA.Hybrid
             }
             while (!ga.stoppingCriterion.CheckStoppingCriterion(Genes))
             {
-                Genes = ga.iteration(Genes, report);
+                Genes = ga.iteration(Genes);
             }
-            Genes = ga.end(Genes, report);
+            Genes = ga.end(Genes);
             double min = Genes.Min.fitness();
             result = Genes.Min;
             foreach(Genome g in Genes)
