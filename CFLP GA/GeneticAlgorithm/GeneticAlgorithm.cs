@@ -99,16 +99,7 @@ namespace CFLP_GA
                 report.Initialize(this);
             }
             GenePopulation Genes;
-            try
-            {
-                Genes = createInitialPopulation(report);
-            }
-            catch (UnfeasableProblemException e)
-            {
-                Console.WriteLine(e.Message);
-                IteratedLocalSearch.Reports.ShortReport.Report("Unfeasable problem...");
-                return null;
-            }
+            Genes = createInitialPopulation(report);
             stoppingCriterion.Init(this);
             return Genes;
         }
@@ -151,7 +142,7 @@ namespace CFLP_GA
             while (!stoppingCriterion.CheckStoppingCriterion(Genes))
             {
                 Genes = iteration(Genes);
-                Execution_Reports.ReportController.progressReport.addCount();
+                Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.CurrentIteration());
             }
             Genes = end(Genes);
             Execution_Reports.ReportController.progressReport.endCount();

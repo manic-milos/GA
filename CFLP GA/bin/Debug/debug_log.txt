@@ -320,6 +320,7 @@ ILS:
 736145193
 00:00:03.8387992
 GAA:
+UnfeasableProblemException:Unfeasable problem:Not able to create initial solution
 Problem unfeasable
 NaN
 00:00:29.3136881
@@ -390,25 +391,20 @@ GAA:
 00:04:47.3632199
 capa1_6
 GA:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
 Problem unfeasable
 NaN
 00:00:00.6810935
 ILS:
+UnfeasableProblemException:Unfeasable problem:Not able to create initial solution
 Problem unfeasable
 NaN
 00:00:00.0757482
 GAA:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
 Problem unfeasable
 NaN
 00:00:00.6782469
 capa2
 GA:
-[0000000000000000000000000010000000010000000010000000000000000001000000000000000100000000010100001000]
-562386190
-00:00:06.2820891
-ILS:
-[0010000000000100000100000010000010000000000000000000000000000000000001010000000000000000000100000000]
-582804476
-00:00:04.2928201
-GAA:
-[00000000000000000000000000100000000100000000100000000000000000010000
+[00000000000000000000000000

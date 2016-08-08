@@ -34,7 +34,7 @@ namespace CFLP_GA.Execution_Reports
             }
         }
 
-        public override void report(string message)
+        public override void report(string message,int level)
         {
             Broadcast(message);
         }

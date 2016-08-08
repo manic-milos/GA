@@ -20,7 +20,7 @@ namespace CFLP_GA
             if (genes.Count == 0)
             {
                 if (iteration > decidingFactor * size)
-                    return true;
+                    throw new UnfeasableProblemException("Not able to create population");
             }
             return false;
         }

@@ -36,8 +36,7 @@ namespace CFLP_GA.IteratedLocalSearch.InitialSolutionGenerators
                 }
 
                 iteration++;
-                if (decider.decideUnfeasable(this))
-                    return null;
+                decider.decideUnfeasable(this);
             } while (!s.check());
             return s;
         }

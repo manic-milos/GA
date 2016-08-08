@@ -24,8 +24,7 @@ namespace CFLP_GA
                 Genome a;
                 a = Genome.generateRandom(ga);
                 Genes.Include(a);
-                if (decider.DecideUnfeasable(i,Genes))
-                    throw new UnfeasableProblemException("Not able to create initial population");
+                decider.DecideUnfeasable(i, Genes);
             }
             return Genes;
         }

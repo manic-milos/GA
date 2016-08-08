@@ -12,11 +12,14 @@ namespace CFLP_GA
     {
         public bool testSelectOnFolder(string path, bool GAf = true, bool ILSf = true, bool GAAf = true)
         {
+            IteratedLocalSearch.Reports.IterationalReport.on = false;
+            IteratedLocalSearch.Reports.ShortReport.on = false;
+            IteratedLocalSearch.Reports.VerboseReport.on = false;
             StreamWriter writer = new StreamWriter("results4-1popravljenrandomseed.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             TestList testlist = new TestList(path);
             testlist.loadAllFilesFromBaseFolder();
-            //testlist.loadSelectFiles(new List<string>() { "pn71" });
+            //testlist.loadSelectFiles(new List<string>() { "cap101" });
             ReportController.HelperSetup();
             foreach (string file in testlist.files)
             {
@@ -106,11 +109,18 @@ namespace CFLP_GA
             GeneticAlgorithm ga = new GeneticAlgorithm(selector, criterion,
                 mutation, crossoverMatch, replacer, fitnessCalc,
                 adjuster, initialPopulation, problem);
-            Genome result;
-            double value= ga.execute(out result);
-            if (!double.IsNaN(value))
+            double value;
+            try
             {
+                Genome result;
+                value = ga.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
+            }
+            catch(UnfeasableProblemException e)
+            {
+                value=double.NaN;
+                ReportController.Broadcast(6, "UnfeasableProblemException:"+e.Message);
+                ReportController.Broadcast(2, "Problem unfeasable");
             }
             return value;
 
@@ -160,10 +170,17 @@ namespace CFLP_GA
                     new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
                         );
             IteratedLocalSearch.Solution result;
-            double value= ils.execute(out result);
-            if (!double.IsNaN(value))
+            double value;
+            try
             {
+                value = ils.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
+            }
+            catch(UnfeasableProblemException e)
+            {
+                value = double.NaN;
+                ReportController.Broadcast(6, "UnfeasableProblemException:" + e.Message);
+                ReportController.Broadcast(2, "Problem unfeasable");
             }
             return value;
 
@@ -176,11 +193,17 @@ namespace CFLP_GA
             gaa.setupGA();
             gaa.setupILS();
             CFLP_GA.IteratedLocalSearch.Solution result;
-
-            double value= gaa.execute(out result,new Reports.ShortTabularFunctionalReport());
-            if(!double.IsNaN(value))
+            double value;
+            try
             {
+                value = gaa.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
+            }
+            catch (UnfeasableProblemException e)
+            {
+                value = double.NaN;
+                ReportController.Broadcast(6, "UnfeasableProblemException:" + e.Message);
+                ReportController.Broadcast(2, "Problem unfeasable");
             }
             return value;
         }

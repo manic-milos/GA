@@ -17,7 +17,7 @@ namespace CFLP_GA.IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSoluti
         {
             if (generator.iteration < maxIterations)
                 return false;
-            return true;
+            throw new UnfeasableProblemException("Not able to create initial solution");
         }
     }
 }

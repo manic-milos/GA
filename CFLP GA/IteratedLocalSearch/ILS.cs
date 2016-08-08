@@ -75,7 +75,7 @@ namespace CFLP_GA.IteratedLocalSearch
                     s = accepted;
                 }
                 Reports.IterationalReport.IterationEnd("solution accepted: " + s);
-                Execution_Reports.ReportController.progressReport.addCount();
+                Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.IterationInfoAll());
             }
             Reports.IterationalReport.FinalIteration("best solution:");
             Reports.IterationalReport.Report(evaluator.Evaluate(globalBest) + " " + globalBest);

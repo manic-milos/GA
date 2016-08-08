@@ -41,13 +41,15 @@ namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
         private Solution restart()
         {
             Reports.IterationalReport.Report("restart...");
-            Solution s= randomGen.Generate(false);
-            if(s!=null)
+            Solution s = null;
+            try
             {
+
+                s = randomGen.Generate(false);
                 this.i = 0;
                 previous = null;
             }
-            else
+            catch(UnfeasableProblemException e)
             {
                 Reports.IterationalReport.Report("failed...");
             }

@@ -9,24 +9,25 @@ namespace CFLP_GA.Execution_Reports
 {
     class ProgressReport:ResultReport
     {
-        public int iteration;
+        string last_iteration = "";
         public void startCounting()
         {
-            iteration = 0;
-            Console.Write(iteration.ToString());
+            last_iteration = "";
         }
-        public int addCount()
+        public void addCount(string iterationInfo)
         {
-            iteration++;
-            Console.Write("\r"+"iteration: "+iteration.ToString());
-            return iteration;
+            clean();
+            Console.Write(iterationInfo);
+            last_iteration = iterationInfo;
         }
-        public int endCount()
+        public void endCount()
         {
-            Console.Write("\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r");
-            Console.Write("                                                                          ");
-            Console.Write("\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r\r");
-            return ++iteration;
+            clean();
+        }
+        private void clean()
+        {
+            Console.Write(new string('\r', last_iteration.Length) + new string(' ', last_iteration.Length)+
+                new string('\r', last_iteration.Length));
         }
         
     }

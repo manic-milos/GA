@@ -17,6 +17,7 @@ namespace CFLP_GA.Execution_Reports
         static Dictionary<int, List<ReportBase>> chain = new Dictionary<int, List<ReportBase>>();
         public static TimeReport timeReport = new TimeReport();
         public static ProgressReport progressReport = new ProgressReport();
+        public static ResultReport debugLog;
         public static void AddReport(int level, ReportBase newReport)
         {
             List<ReportBase> reportList;
@@ -37,7 +38,7 @@ namespace CFLP_GA.Execution_Reports
                 {
                     foreach (ReportBase report in chain[i])
                     {
-                        report.report(message);
+                        report.report(message,level);
                     }
                 }
             }
@@ -56,8 +57,16 @@ namespace CFLP_GA.Execution_Reports
             timeReport.AddWriter(new StreamWriter("time_results.txt"));
             AddReport(3, timeReport);
 
+            debugLog = new ResultReport();
+            debugLog.AddWriter(new StreamWriter("debug_log.txt"));
+            AddReport(6, debugLog);
+
 
             AddReport(10, new ConsoleReport());
+            ConsoleReport.colors[1] = ConsoleColor.Green;
+            ConsoleReport.colors[2] = ConsoleColor.Blue;
+            ConsoleReport.colors[3] = ConsoleColor.Yellow;
+            ConsoleReport.colors[6] = ConsoleColor.Red;
         }
         public static void RestartReports()
         {

@@ -8,7 +8,7 @@ namespace CFLP_GA.Execution_Reports
 {
     abstract class ReportBase
     {
-        public abstract void report(string message);
+        public abstract void report(string message,int level);
         public abstract void Dispose();
     }
 }
