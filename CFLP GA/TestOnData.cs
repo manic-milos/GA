@@ -12,15 +12,24 @@ namespace CFLP_GA
     {
         public bool testSelectOnFolder(string path, bool GAf = true, bool ILSf = true, bool GAAf = true)
         {
+            //ResultTests.ShortResultLoader resultLoader = new ResultTests.ShortResultLoader();
+            //resultLoader.load("short_results.txt");
+            //foreach(ResultTests.Result result in resultLoader.results)
+            //{
+            //    Console.WriteLine(result);
+            //}
+            //Console.Read();
             IteratedLocalSearch.Reports.IterationalReport.on = false;
             IteratedLocalSearch.Reports.ShortReport.on = false;
             IteratedLocalSearch.Reports.VerboseReport.on = false;
             StreamWriter writer = new StreamWriter("results4-1popravljenrandomseed.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             TestList testlist = new TestList(path);
-            testlist.loadAllFilesFromBaseFolder();
-            //testlist.loadSelectFiles(new List<string>() { "cap101" });
+            //testlist.loadAllFilesFromBaseFolder();
+
             ReportController.HelperSetup();
+            testlist.loadSelectFiles(new List<string>() { "pn58","pn59","pn60","pn61","pn62","pn63", "pn64","pn65",
+            "pn66","pn67","pn68","pn69","pn69_1","pn70","pn71"});
             foreach (string file in testlist.files)
             {
                 if (Console.KeyAvailable)
@@ -35,7 +44,7 @@ namespace CFLP_GA
                 }
                 Console.WriteLine(Path.GetFileName(file));
                 IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
-                
+                System.GC.Collect();
                 ReportController.Broadcast(1,Path.GetFileName(file));
                 if (GAf)
                 {
@@ -46,6 +55,7 @@ namespace CFLP_GA
                     Execution_Reports.ReportController.Broadcast(3, time.ToString());
                     ControlledRandom.reset();
                 }
+                System.GC.Collect();
                 if (ILSf)
                 {
                     ReportController.Broadcast(2, "ILS:");
@@ -55,6 +65,7 @@ namespace CFLP_GA
                     Execution_Reports.ReportController.Broadcast(3, time.ToString());
                     ControlledRandom.reset();
                 }
+                System.GC.Collect();
                 if (GAAf)
                 {
                     ReportController.Broadcast(2, "GAA:");
@@ -64,6 +75,7 @@ namespace CFLP_GA
                     Execution_Reports.ReportController.Broadcast(3, time.ToString());
                     ControlledRandom.reset();
                 }
+                System.GC.Collect();
             }
             writer.Dispose();
             ReportController.Dispose();
@@ -121,6 +133,12 @@ namespace CFLP_GA
                 value=double.NaN;
                 ReportController.Broadcast(6, "UnfeasableProblemException:"+e.Message);
                 ReportController.Broadcast(2, "Problem unfeasable");
+            }
+            catch(OutOfMemoryException e)
+            {
+                value = double.NaN;
+                ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
+                ReportController.Broadcast(2, "Out of memory");
             }
             return value;
 
@@ -182,6 +200,12 @@ namespace CFLP_GA
                 ReportController.Broadcast(6, "UnfeasableProblemException:" + e.Message);
                 ReportController.Broadcast(2, "Problem unfeasable");
             }
+            catch (OutOfMemoryException e)
+            {
+                value = double.NaN;
+                ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
+                ReportController.Broadcast(2, "Out of memory");
+            }
             return value;
 
         }
@@ -204,6 +228,12 @@ namespace CFLP_GA
                 value = double.NaN;
                 ReportController.Broadcast(6, "UnfeasableProblemException:" + e.Message);
                 ReportController.Broadcast(2, "Problem unfeasable");
+            }
+            catch (OutOfMemoryException e)
+            {
+                value = double.NaN;
+                ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
+                ReportController.Broadcast(2, "Out of memory");
             }
             return value;
         }

@@ -133,6 +133,8 @@
     <Compile Include="GeneticAlgorithm\Mutation\Mutations\SureRandomMutation.cs" />
     <Compile Include="GeneticAlgorithm\Crossover\GenomeCrossover\PairUniformCross.cs" />
     <Compile Include="Execution Reports\ResultReport.cs" />
+    <Compile Include="ResultTests\Result.cs" />
+    <Compile Include="ResultTests\ShortResultLoader.cs" />
     <Compile Include="TestList.cs" />
     <Compile Include="TestOnData.cs" />
   </ItemGroup>

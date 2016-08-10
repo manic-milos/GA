@@ -40,7 +40,7 @@ namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
         }
         private Solution restart()
         {
-            Reports.IterationalReport.Report("restart...");
+            Execution_Reports.ReportController.DebugLogReport(this,"trying to restart walk...");
             Solution s = null;
             try
             {
@@ -48,10 +48,12 @@ namespace CFLP_GA.IteratedLocalSearch.AcceptanceCriteria
                 s = randomGen.Generate(false);
                 this.i = 0;
                 previous = null;
+
+                Execution_Reports.ReportController.DebugLogReport(this,"restart succeded...");
             }
             catch(UnfeasableProblemException e)
             {
-                Reports.IterationalReport.Report("failed...");
+                Execution_Reports.ReportController.DebugLogReport(this,"restart failed...");
             }
             return s;
         }

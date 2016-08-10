@@ -10,12 +10,11 @@ namespace CFLP_GA
 {
     class Program
     {
-        public static GeneticAlgorithm ga;
         static void Main(string[] args)
         {
             TestOnData test = new TestOnData();
             test.testSelectOnFolder(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances",
-                true,true,true);
+                false,false,true);
             Console.Read();
         }
     }

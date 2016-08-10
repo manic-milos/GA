@@ -80,5 +80,15 @@ namespace CFLP_GA.Execution_Reports
                     report.Dispose();
             }
         }
+        public static void DebugLogReport(object obj,string message)
+        {
+            switch(obj.GetType().Name)
+            {
+                case "RestartWalk":
+                    return;
+
+            }
+            Broadcast(6, obj.GetType().Name+":"+ message);
+        }
     }
 }
