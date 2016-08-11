@@ -150,7 +150,6 @@ GAA:
 00:00:44.6041116
 capa1_6
 GAA:
-UnfeasableProblemException:Unfeasable problem:Not able to create population
 Problem unfeasable
 NaN
 00:00:00.6833962
@@ -311,7 +310,6 @@ GAA:
 00:00:21.9184835
 pn69_2
 GAA:
-UnfeasableProblemException:Unfeasable problem:Not able to create population
 Problem unfeasable
 NaN
 00:00:00.5632708
