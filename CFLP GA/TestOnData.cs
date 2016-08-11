@@ -25,11 +25,11 @@ namespace CFLP_GA
             StreamWriter writer = new StreamWriter("results4-1popravljenrandomseed.txt");
             IteratedLocalSearch.Reports.ShortReport.Init(writer);
             TestList testlist = new TestList(path);
-            testlist.loadAllFilesFromBaseFolder();
+            //testlist.loadAllFilesFromBaseFolder();
 
             ReportController.HelperSetup();
-            //testlist.loadSelectFiles(new List<string>() { "pn58","pn59","pn60","pn61","pn62","pn63", "pn64","pn65",
-            //"pn66","pn67","pn68","pn69","pn69_1","pn70","pn71"});
+            testlist.loadSelectFiles(new List<string>() { "pn58","pn59","pn60","pn61","pn62","pn63", "pn64","pn65",
+            "pn66","pn67","pn68","pn69","pn69_1","pn70","pn71"});
             foreach (string file in testlist.files)
             {
                 if (Console.KeyAvailable)

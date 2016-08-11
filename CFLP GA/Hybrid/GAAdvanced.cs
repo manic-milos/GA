@@ -18,7 +18,7 @@ namespace CFLP_GA.Hybrid
         public void setupGA()
         {
             var selector = new RankBasedSelector(20, 2.0);
-            var criterion = new GenerationLimitCriterion(20);
+            var criterion = new GenerationLimitCriterion(30);
             var mutator = new RandomWithPreferenceMutator();
             var mutation = new SureRandomMutation(mutator);
             var crossover = new PairUniformCross();

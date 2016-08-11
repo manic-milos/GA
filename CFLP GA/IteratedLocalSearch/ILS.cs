@@ -16,6 +16,7 @@ namespace CFLP_GA.IteratedLocalSearch
         public Perturbation.PerturbationBase perturber;
         public AcceptanceCriteria.AcceptanceCriterionBase acceptanceCriterion;
         public StoppingCriteria.StoppingCriterionBase stoppingCriterion;
+        public double lastResult = double.NaN;
         public ILS(Problem problem,
             EvaluatorBase evaluator,
             LocalSearch.LocalSearchBase localSearch,
@@ -50,6 +51,7 @@ namespace CFLP_GA.IteratedLocalSearch
                 return double.NaN;
             }
             Solution globalBest = s;
+            lastResult = evaluator.Evaluate(s);
             while (!stoppingCriterion.CheckIfEnd(s,globalBest))
             {
                 Reports.IterationalReport.Report("iteration:"+stoppingCriterion.IterationInfoAll());
@@ -75,6 +77,7 @@ namespace CFLP_GA.IteratedLocalSearch
                     s = accepted;
                 }
                 Reports.IterationalReport.IterationEnd("solution accepted: " + s);
+                lastResult = evaluator.Evaluate(s);
                 Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.IterationInfoAll());
             }
             Reports.IterationalReport.FinalIteration("best solution:");
