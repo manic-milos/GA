@@ -11,6 +11,7 @@ namespace CFLP_GA.Hybrid
         GeneticAlgorithm ga;
         IteratedLocalSearch.ILS ils;
         Problem problem;
+        public double lastResult=double.NaN;
         public GAAdvanced(Problem problem)
         {
             this.problem = problem;
@@ -23,7 +24,7 @@ namespace CFLP_GA.Hybrid
             var mutation = new SureRandomMutation(mutator);
             var crossover = new PairUniformCross();
             var crossoverMatch = new StochasticCrossMatching(crossover, 50);
-            var replacer = new GenerationReplacement(new TrimmingReplacement(150));
+            var replacer = new GenerationReplacement(new TrimmingReplacement(300));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
             var fitnessCalc = new MinDemandEvaluator();
             var adjuster = new RandomAdjuster();
@@ -50,7 +51,7 @@ namespace CFLP_GA.Hybrid
                     500, new IteratedLocalSearch.AcceptanceCriteria.BetterWalk(),
                     new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem,
                         decider, 0.3)),
-                new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(200)//.AppendStoppingCriteria(new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
+                new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(100)//.AppendStoppingCriteria(new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
                         );
         }
         public double execute(Reports.ExecutionReportBase report=null)
@@ -80,7 +81,16 @@ namespace CFLP_GA.Hybrid
             {
                 IteratedLocalSearch.Solution resultTemp;
                 setupILS();
-                double afterils=ils.execute(out resultTemp,g);
+                double afterils = 0;
+                try
+                {
+                    afterils = ils.execute(out resultTemp, g);
+                }
+                catch(OutOfMemoryException ex)
+                {
+                    lastResult = ils.lastResult;
+                    throw;
+                }
                 if (afterils < min)
                 {
                     result = resultTemp;

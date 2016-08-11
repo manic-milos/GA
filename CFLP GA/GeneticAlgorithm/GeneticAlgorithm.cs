@@ -16,6 +16,7 @@ namespace CFLP_GA
         public GenomeAdjusterBase adjuster;
         public InitialPopulationBase initialPopulation;
         public Problem problem;
+        public double lastResult = double.NaN;
         public GeneticAlgorithm(
             SelectorBase selector,
             StoppingCriterionBase stoppingCriterion,
@@ -142,7 +143,9 @@ namespace CFLP_GA
             while (!stoppingCriterion.CheckStoppingCriterion(Genes))
             {
                 Genes = iteration(Genes);
+                lastResult = Genes.Min.fitness();
                 Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.CurrentIteration());
+
             }
             Genes = end(Genes);
             Execution_Reports.ReportController.progressReport.endCount();
