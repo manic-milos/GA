@@ -18,12 +18,12 @@ namespace CFLP_GA.Hybrid
         public void setupGA()
         {
             var selector = new RankBasedSelector(20, 2.0);
-            var criterion = new GenerationLimitCriterion();
+            var criterion = new GenerationLimitCriterion(20);
             var mutator = new RandomWithPreferenceMutator();
             var mutation = new SureRandomMutation(mutator);
             var crossover = new PairUniformCross();
             var crossoverMatch = new StochasticCrossMatching(crossover, 50);
-            var replacer = new GenerationReplacement(new TrimmingReplacement(300));
+            var replacer = new GenerationReplacement(new TrimmingReplacement(150));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
             var fitnessCalc = new MinDemandEvaluator();
             var adjuster = new RandomAdjuster();
@@ -50,8 +50,7 @@ namespace CFLP_GA.Hybrid
                     500, new IteratedLocalSearch.AcceptanceCriteria.BetterWalk(),
                     new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem,
                         decider, 0.3)),
-                new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(1000).AppendStoppingCriteria(
-                    new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
+                new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(200)//.AppendStoppingCriteria(new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
                         );
         }
         public double execute(Reports.ExecutionReportBase report=null)
