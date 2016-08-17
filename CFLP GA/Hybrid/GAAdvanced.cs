@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CFLP_GA.IteratedLocalSearch;
 
 namespace CFLP_GA.Hybrid
 {
@@ -28,7 +29,12 @@ namespace CFLP_GA.Hybrid
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
             var fitnessCalc = new MinDemandEvaluator();
             var adjuster = new RandomAdjuster();
-            var initialPopulation = new RandomInitialPopulation(50);
+            var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(10000);
+            int size = 500;
+            var initialPopulation = new RandomInitialPopulation(size);
+            //var initialPopulation = new NInitialSolutionsGenerator(
+            //    new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem,decider),
+            //    size, new FactorUnfeasableDecider(size));
             ga = new GeneticAlgorithm(selector, criterion,
                 mutation, crossoverMatch, replacer, fitnessCalc,
                 adjuster, initialPopulation, problem);
@@ -63,6 +69,7 @@ namespace CFLP_GA.Hybrid
         {
             Execution_Reports.ReportController.progressReport.startCounting();
             GenePopulation Genes=ga.start();
+            Execution_Reports.ReportController.DebugLogReport(this, Genes.Count.ToString());
             if (Genes == null)
             {
                 result = null;

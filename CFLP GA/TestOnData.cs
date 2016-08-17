@@ -20,11 +20,13 @@ namespace CFLP_GA
             //}
             //Console.Read();
             TestList testlist = new TestList(path);
-            testlist.loadAllFilesFromBaseFolder();
-
-            ReportController.HelperSetup();
+            //testlist.loadAllFilesFromBaseFolder();
+            testlist.loadSelectFiles(new List<string> { "cap101" });
+            testlist.loadSelectFiles(new List<string> { "pn56", "pn57", "pn58", "pn59" });
             //testlist.loadSelectFiles(new List<string>() { "pn58","pn59","pn60","pn61","pn62","pn63", "pn64","pn65",
             //"pn66","pn67","pn68","pn69","pn69_1","pn70","pn71"});
+
+            ReportController.HelperSetup();
             foreach (string file in testlist.files)
             {
                 if (Console.KeyAvailable)
