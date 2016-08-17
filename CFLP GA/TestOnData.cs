@@ -19,11 +19,6 @@ namespace CFLP_GA
             //    Console.WriteLine(result);
             //}
             //Console.Read();
-            IteratedLocalSearch.Reports.IterationalReport.on = false;
-            IteratedLocalSearch.Reports.ShortReport.on = false;
-            IteratedLocalSearch.Reports.VerboseReport.on = false;
-            StreamWriter writer = new StreamWriter("results4-1popravljenrandomseed.txt");
-            IteratedLocalSearch.Reports.ShortReport.Init(writer);
             TestList testlist = new TestList(path);
             testlist.loadAllFilesFromBaseFolder();
 
@@ -37,13 +32,11 @@ namespace CFLP_GA
                     ConsoleKeyInfo key = Console.ReadKey(true);
                     if (key.Key == ConsoleKey.Escape)
                     {
-                        writer.Dispose();
                         ReportController.Dispose();
                         return true;
                     }
                 }
                 Console.WriteLine(Path.GetFileName(file));
-                IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
                 System.GC.Collect();
                 ReportController.Broadcast(1,Path.GetFileName(file));
                 if (GAf)
@@ -77,7 +70,6 @@ namespace CFLP_GA
                 }
                 System.GC.Collect();
             }
-            writer.Dispose();
             ReportController.Dispose();
             return true;
         }
@@ -145,8 +137,6 @@ namespace CFLP_GA
         }
         public bool testILSOnFolder(string path)
         {
-            StreamWriter writer = new StreamWriter("resultspopravljenbag.txt");
-            IteratedLocalSearch.Reports.ShortReport.Init(writer);
             string[] files;
             if (!Directory.Exists(path))
             {
@@ -159,7 +149,6 @@ namespace CFLP_GA
             foreach (string file in files)
             {
                 Console.WriteLine(Path.GetFileName(file));
-                IteratedLocalSearch.Reports.ShortReport.Report(Path.GetFileName(file));
                 testILSOnFile(file);
             }
             return true;

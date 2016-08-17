@@ -54,34 +54,23 @@ namespace CFLP_GA.IteratedLocalSearch
             lastResult = evaluator.Evaluate(s);
             while (!stoppingCriterion.CheckIfEnd(s,globalBest))
             {
-                Reports.IterationalReport.Report("iteration:"+stoppingCriterion.IterationInfoAll());
                 s = localSearch.GetBestLocal(s, evaluator);
                 if(evaluator.Evaluate(s)<evaluator.Evaluate(globalBest))
                 {
 
-                    Reports.VerboseReport.Report("global best changed from " + globalBest + " to " + s);
                     globalBest = s;
                 }
-                Reports.IterationalReport.Report("local best:\t"+s+","+evaluator.Evaluate(s));
                 Solution perturbed = perturber.Perturb(s);
-                if (perturbed == null)
+                if(perturbed!=null)
                 {
-                    Reports.IterationalReport.Report("perturbed null");
-                }
-                else
-                {
-                    Reports.IterationalReport.Report("perturbed:\t" + perturbed + "," + evaluator.Evaluate(perturbed));
                     Solution accepted = acceptanceCriterion.Accept(perturbed, s, evaluator);
                     if(accepted==null)
                         Console.WriteLine("wrong");
                     s = accepted;
                 }
-                Reports.IterationalReport.IterationEnd("solution accepted: " + s);
                 lastResult = evaluator.Evaluate(s);
                 Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.IterationInfoAll());
             }
-            Reports.IterationalReport.FinalIteration("best solution:");
-            Reports.IterationalReport.Report(evaluator.Evaluate(globalBest) + " " + globalBest);
             if(!s.check())
             {
                 throw new Exception("Solution is not correct");

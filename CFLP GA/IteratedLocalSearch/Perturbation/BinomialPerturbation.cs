@@ -33,7 +33,6 @@ namespace CFLP_GA.IteratedLocalSearch.Perturbation
                 }
                 s = defaultPerturbation.Perturb(s);
             }
-            Reports.VerboseReport.Report("stopped at:"+i);
             return s;
         }
     }
