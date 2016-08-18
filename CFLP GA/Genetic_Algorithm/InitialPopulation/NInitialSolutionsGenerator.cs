@@ -38,7 +38,7 @@ namespace CFLP_GA
                 }
                 catch(UnfeasableProblemException ex)
                 {
-                    Execution_Reports.ReportController.DebugLogReport(this, "unfeasable solution exception");
+                    //Execution_Reports.ReportController.DebugLogReport(this, "unfeasable solution exception");
                     decider.DecideUnfeasable(i, Genes);
                 }
             }

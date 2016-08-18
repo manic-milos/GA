@@ -31,10 +31,10 @@ namespace CFLP_GA.Hybrid
             var adjuster = new RandomAdjuster();
             var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(10000);
             int size = 500;
-            var initialPopulation = new RandomInitialPopulation(size);
-            //var initialPopulation = new NInitialSolutionsGenerator(
-            //    new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem,decider),
-            //    size, new FactorUnfeasableDecider(size));
+            //var initialPopulation = new RandomInitialPopulation(size);
+            var initialPopulation = new NInitialSolutionsGenerator(
+                new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem, decider,0.8),
+                size, new FactorUnfeasableDecider(size));
             ga = new GeneticAlgorithm(selector, criterion,
                 mutation, crossoverMatch, replacer, fitnessCalc,
                 adjuster, initialPopulation, problem);

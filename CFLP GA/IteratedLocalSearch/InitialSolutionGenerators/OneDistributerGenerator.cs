@@ -36,8 +36,10 @@ namespace CFLP_GA.IteratedLocalSearch.InitialSolutionGenerators
                 }
 
                 iteration++;
+                //Execution_Reports.ReportController.DebugLogReportAddCount(this, "passed");
                 decider.decideUnfeasable(this);
             } while (!s.check());
+            //Execution_Reports.ReportController.DebugLogReportCount(this, "passed");
             return s;
         }
     }

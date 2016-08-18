@@ -20,9 +20,9 @@ namespace CFLP_GA
             //}
             //Console.Read();
             TestList testlist = new TestList(path);
-            //testlist.loadAllFilesFromBaseFolder();
-            testlist.loadSelectFiles(new List<string> { "cap101" });
-            testlist.loadSelectFiles(new List<string> { "pn56", "pn57", "pn58", "pn59" });
+            testlist.loadAllFilesFromBaseFolder();
+            //testlist.loadSelectFiles(new List<string> { "cap101" });
+            //testlist.loadSelectFiles(new List<string> { "pn56", "pn57", "pn58", "pn59" });
             //testlist.loadSelectFiles(new List<string>() { "pn58","pn59","pn60","pn61","pn62","pn63", "pn64","pn65",
             //"pn66","pn67","pn68","pn69","pn69_1","pn70","pn71"});
 
@@ -43,6 +43,7 @@ namespace CFLP_GA
                 ReportController.Broadcast(1,Path.GetFileName(file));
                 if (GAf)
                 {
+                    ControlledRandom.reset();
                     ReportController.Broadcast(2, "GA:");
                     Execution_Reports.ReportController.timeReport.startMeasuring("GA");
                     ReportController.Broadcast(1, testGAOnFile(file).ToString());
@@ -53,6 +54,7 @@ namespace CFLP_GA
                 System.GC.Collect();
                 if (ILSf)
                 {
+                    ControlledRandom.reset();
                     ReportController.Broadcast(2, "ILS:");
                     Execution_Reports.ReportController.timeReport.startMeasuring("ILS");
                     ReportController.Broadcast(1, testILSOnFile(file).ToString());
@@ -63,6 +65,7 @@ namespace CFLP_GA
                 System.GC.Collect();
                 if (GAAf)
                 {
+                    ControlledRandom.reset();
                     ReportController.Broadcast(2, "GAA:");
                     Execution_Reports.ReportController.timeReport.startMeasuring("GAA");
                     ReportController.Broadcast(1, testHybridOnFile(file).ToString());

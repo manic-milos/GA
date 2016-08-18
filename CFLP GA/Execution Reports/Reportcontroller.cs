@@ -18,6 +18,7 @@ namespace CFLP_GA.Execution_Reports
         public static TimeReport timeReport = new TimeReport();
         public static ProgressReport progressReport = new ProgressReport();
         public static ResultReport debugLog;
+        public static int count = 0;
         public static void AddReport(int level, ReportBase newReport)
         {
             List<ReportBase> reportList;
@@ -89,6 +90,19 @@ namespace CFLP_GA.Execution_Reports
 
             }
             Broadcast(6, obj.GetType().Name+":"+ message);
+        }
+        public static int DebugLogReportAddCount(object obj,string name)
+        {
+            count++;
+            return count;
+        }
+        public static void DebugLogReportCount(object obj,string name)
+        {
+            Broadcast(6, obj.GetType().Name + ":" + count.ToString());
+        }
+        public static void DebugLogReportInitiateCount(object obj, string name)
+        {
+            count = 0;
         }
     }
 }
