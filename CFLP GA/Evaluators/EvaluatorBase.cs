@@ -53,13 +53,13 @@ namespace CFLP_GA
         {
             if (cache == null)
                 return -1;
-            return cache.checkCache(vars);
+            return cache.CheckCache(vars);
         }
         public void cacheValue(int[] vars, double value)
         {
             if (cache == null)
                 return;
-            cache.cacheValue(vars, value);
+            cache.AddToCache(vars, value);
         }
 
     }
