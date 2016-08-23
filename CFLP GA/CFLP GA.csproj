@@ -67,8 +67,10 @@
     <Compile Include="Genetic_Algorithm\InitialPopulation\UnfeasableDeciders\FactorUnfeasableDecider.cs" />
     <Compile Include="Genetic_Algorithm\InitialPopulation\UnfeasableDeciders\UnfeasableDecider.cs" />
     <Compile Include="Genetic_Algorithm\InitialPopulation\UnfeasableProblemException.cs" />
+    <Compile Include="Genetic_Algorithm\Selection\FineGrainedTournamentSelector.cs" />
     <Compile Include="HashedVars.cs" />
     <Compile Include="Hybrid\GAAdvanced.cs" />
+    <Compile Include="Hybrid\Memetic.cs" />
     <Compile Include="IteratedLocalSearch\AcceptanceCriteria\AcceptanceCriterionBase.cs" />
     <Compile Include="IteratedLocalSearch\AcceptanceCriteria\BetterWalk.cs" />
     <Compile Include="IteratedLocalSearch\AcceptanceCriteria\RandomWalk.cs" />

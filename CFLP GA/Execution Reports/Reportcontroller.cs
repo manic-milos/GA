@@ -18,6 +18,7 @@ namespace CFLP_GA.Execution_Reports
         public static TimeReport timeReport = new TimeReport();
         public static ProgressReport progressReport = new ProgressReport();
         public static ResultReport debugLog;
+        public static ResultReport populationLog;//TODO promeni u event subscription dict
         public static int count = 0;
         public static void AddReport(int level, ReportBase newReport)
         {
@@ -68,6 +69,9 @@ namespace CFLP_GA.Execution_Reports
             ConsoleReport.colors[2] = ConsoleColor.Blue;
             ConsoleReport.colors[3] = ConsoleColor.Yellow;
             ConsoleReport.colors[6] = ConsoleColor.Red;
+
+            populationLog = new ResultReport();
+            populationLog.AddWriter(new StreamWriter("pop_count.txt"));
         }
         public static void RestartReports()
         {

@@ -10,7 +10,7 @@ namespace CFLP_GA
 {
     class TestOnData
     {
-        public bool testSelectOnFolder(string path, bool GAf = true, bool ILSf = true, bool GAAf = true)
+        public bool testSelectOnFolder(string path, bool GAf = true, bool ILSf = true, bool GAAf = true,bool Memf=true)
         {
             //ResultTests.ShortResultLoader resultLoader = new ResultTests.ShortResultLoader();
             //resultLoader.load("short_results.txt");
@@ -40,14 +40,17 @@ namespace CFLP_GA
                 }
                 Console.WriteLine(Path.GetFileName(file));
                 System.GC.Collect();
-                ReportController.Broadcast(1,Path.GetFileName(file));
+                ReportController.Broadcast(1, Path.GetFileName(file));
+                Problem problem = new Problem();
+                problem.load(new StreamReader(file));
+                ReportController.Broadcast(2, "n=" + problem.n + ", m=" + problem.m + ", k=" + problem.k);
                 if (GAf)
                 {
                     ControlledRandom.reset();
                     ReportController.Broadcast(2, "GA:");
                     Execution_Reports.ReportController.timeReport.startMeasuring("GA");
                     ReportController.Broadcast(1, testGAOnFile(file).ToString());
-                    TimeSpan time=Execution_Reports.ReportController.timeReport.stopMeasuring("GA");
+                    TimeSpan time = Execution_Reports.ReportController.timeReport.stopMeasuring("GA");
                     Execution_Reports.ReportController.Broadcast(3, time.ToString());
                     ControlledRandom.reset();
                 }
@@ -74,6 +77,17 @@ namespace CFLP_GA
                     ControlledRandom.reset();
                 }
                 System.GC.Collect();
+                if (Memf)
+                {
+                    ControlledRandom.reset();
+                    ReportController.Broadcast(2, "Mem:");
+                    Execution_Reports.ReportController.timeReport.startMeasuring("Mem");
+                    ReportController.Broadcast(1, testMemOnFile(file).ToString());
+                    TimeSpan time = Execution_Reports.ReportController.timeReport.stopMeasuring("Mem");
+                    Execution_Reports.ReportController.Broadcast(3, time.ToString());
+                    ControlledRandom.reset();
+                }
+                System.GC.Collect();
             }
             ReportController.Dispose();
             return true;
@@ -96,25 +110,30 @@ namespace CFLP_GA
             }
             return true;
         }
-        public double testGAOnFile(string file)
+        public double testGAOnFile(string file, Problem problem = null)
         {
             //Console.Read();
-            Problem problem = new Problem();
-            problem.load(new StreamReader(file));
+            if (problem == null)
+            {
+                problem = new Problem();
+                problem.load(new StreamReader(file));
+            }
             //Console.WriteLine(problem.print());
             //Problem.load(new StreamReader(@"F:\Projects\ConsoleApplication8\ConsoleApplication8\test1.txt"));
             //Console.WriteLine(Problem.print());
-            var selector = new RankBasedSelector(20, 2.0);
-            var criterion = new GenerationLimitCriterion();
+            var selector = new RankBasedSelector(50, 2.0);
+            //var selector = new FineGrainedTournamentSelector(15.5, 100);
+            var criterion = new GenerationLimitCriterion(50);
             var mutator = new RandomWithPreferenceMutator();
             var mutation = new SureRandomMutation(mutator);
             var crossover = new PairUniformCross();
-            var crossoverMatch = new StochasticCrossMatching(crossover, 50);
-            var replacer = new GenerationReplacement(new TrimmingReplacement(300));
+            var crossoverMatch = new StochasticCrossMatching(crossover, 100);
+            //var replacer = new GenerationReplacement(new TrimmingReplacement((int)2*problem.m+(int)2*problem.n));
+            var replacer = new GenerationReplacement(new TrimmingReplacement(100));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
             var fitnessCalc = new MinDemandEvaluator();
             var adjuster = new RandomAdjuster();
-            var initialPopulation = new RandomInitialPopulation(50);
+            var initialPopulation = new RandomInitialPopulation(150);
             GeneticAlgorithm ga = new GeneticAlgorithm(selector, criterion,
                 mutation, crossoverMatch, replacer, fitnessCalc,
                 adjuster, initialPopulation, problem);
@@ -125,13 +144,13 @@ namespace CFLP_GA
                 value = ga.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
             }
-            catch(UnfeasableProblemException e)
+            catch (UnfeasableProblemException e)
             {
-                value=double.NaN;
-                ReportController.Broadcast(6, "UnfeasableProblemException:"+e.Message);
+                value = double.NaN;
+                ReportController.Broadcast(6, "UnfeasableProblemException:" + e.Message);
                 ReportController.Broadcast(2, "Problem unfeasable");
             }
-            catch(OutOfMemoryException e)
+            catch (OutOfMemoryException e)
             {
                 value = ga.lastResult;
                 ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
@@ -158,11 +177,14 @@ namespace CFLP_GA
             }
             return true;
         }
-        public double testILSOnFile(string file)
+        public double testILSOnFile(string file, Problem problem = null)
         {
             //Console.Read();
-            Problem problem = new Problem();
-            problem.load(new StreamReader(file));
+            if (problem == null)
+            {
+                problem = new Problem();
+                problem.load(new StreamReader(file));
+            }
             var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(10000);
             IteratedLocalSearch.ILS ils = new IteratedLocalSearch.ILS(problem,
                 new MinDemandEvaluator(),
@@ -188,7 +210,7 @@ namespace CFLP_GA
                 value = ils.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
             }
-            catch(UnfeasableProblemException e)
+            catch (UnfeasableProblemException e)
             {
                 value = double.NaN;
                 ReportController.Broadcast(6, "UnfeasableProblemException:" + e.Message);
@@ -208,6 +230,34 @@ namespace CFLP_GA
             Problem problem = new Problem();
             problem.load(new StreamReader(file));
             Hybrid.GAAdvanced gaa = new Hybrid.GAAdvanced(problem);
+            gaa.setupGA();
+            gaa.setupILS();
+            CFLP_GA.IteratedLocalSearch.Solution result;
+            double value;
+            try
+            {
+                value = gaa.execute(out result);
+                ReportController.Broadcast(2, result.ToString());
+            }
+            catch (UnfeasableProblemException e)
+            {
+                value = double.NaN;
+                ReportController.Broadcast(6, "UnfeasableProblemException:" + e.Message);
+                ReportController.Broadcast(2, "Problem unfeasable");
+            }
+            catch (OutOfMemoryException e)
+            {
+                value = gaa.lastResult;
+                ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
+                ReportController.Broadcast(2, "Out of memory");
+            }
+            return value;
+        }
+        public double testMemOnFile(string file)
+        {
+            Problem problem = new Problem();
+            problem.load(new StreamReader(file));
+            Hybrid.Memetic gaa = new Hybrid.Memetic(problem);
             gaa.setupGA();
             gaa.setupILS();
             CFLP_GA.IteratedLocalSearch.Solution result;

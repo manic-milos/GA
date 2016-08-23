@@ -14,7 +14,7 @@ namespace CFLP_GA
         {
             TestOnData test = new TestOnData();
             test.testSelectOnFolder(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances",
-                false,false,true);
+                false,false,true,false);
             Console.Read();
         }
     }

@@ -145,6 +145,7 @@ namespace CFLP_GA
             {
                 Genes = iteration(Genes);
                 lastResult = Genes.Min.fitness();
+                Execution_Reports.ReportController.populationLog.Broadcast(Genes.Count.ToString());
                 Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.CurrentIteration());
 
             }

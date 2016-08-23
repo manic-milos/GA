@@ -78,15 +78,31 @@ namespace CFLP_GA
         // override object.Equals
         public override bool Equals(object obj)
         {
-            if (obj == null || GetType() != obj.GetType())
+            if (obj == null)
             {
                 return false;
             }
-
-            Genome other = (Genome)obj;
+            int[] vars;
+            if (GetType() != obj.GetType())
+            {
+                try
+                {
+                    IteratedLocalSearch.Solution sol = (IteratedLocalSearch.Solution)obj;
+                    vars = sol.vars;
+                }
+                catch (InvalidCastException)
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                Genome other = (Genome)obj;
+                vars = other.genes;
+            }
             for (int i = 0; i < problem.m; i++)
             {
-                if (this[i] != other[i])
+                if (this[i] != vars[i])
                     return false;
             }
             //TODO: provera da li pripadaju istom genetskom algoritmu

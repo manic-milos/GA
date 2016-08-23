@@ -134,5 +134,11 @@ namespace CFLP_GA.IteratedLocalSearch
         {
             return new Solution(g);
         }
+        public Genome ToGenome(GeneticAlgorithm ga)
+        {
+            Genome g = new Genome(ga);
+            g.genes = this.vars;
+            return g;
+        }
     }
 }
