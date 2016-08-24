@@ -30,7 +30,7 @@ namespace CFLP_GA
         {
             time.Restart();
             double fitnessValue = checkCache(solution);
-            if (fitnessValue < 0)
+            if (double.IsNaN(fitnessValue))
             {
                 fitnessValue = evaluate(solution, p, leftCapacities);
                 cacheValue(solution, fitnessValue);

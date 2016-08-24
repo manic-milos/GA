@@ -13,10 +13,12 @@ namespace CFLP_GA.Hybrid
         Problem problem;
         public double lastResult=double.NaN;
         public int ilslimit;
+        EvaluatorBase evaluator;
         public Memetic(Problem problem,int ilsLimit=10)
         {
             this.problem = problem;
             this.ilslimit = ilsLimit;
+            evaluator = new MinDemandEvaluator(new EvaluationCache(problem.m));
         }
         public void setupGA()
         {
@@ -28,7 +30,7 @@ namespace CFLP_GA.Hybrid
             var crossoverMatch = new StochasticCrossMatching(crossover, 50);
             var replacer = new GenerationReplacement(new TrimmingReplacement(300));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
-            var fitnessCalc = new MinDemandEvaluator();
+            var fitnessCalc = evaluator;
             var adjuster = new RandomAdjuster();
             var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(10000);
             int size = 500;
@@ -45,7 +47,7 @@ namespace CFLP_GA.Hybrid
         {
             var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(10000);
             ils = new IteratedLocalSearch.ILS(problem,
-                new MinDemandEvaluator(),
+                evaluator,
                 new IteratedLocalSearch.LocalSearch.OneFlipLS(),
                 new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(
                     problem,

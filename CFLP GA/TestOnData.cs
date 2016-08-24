@@ -21,10 +21,12 @@ namespace CFLP_GA
             //Console.Read();
             TestList testlist = new TestList(path);
             testlist.loadAllFilesFromBaseFolder();
-            //testlist.loadSelectFiles(new List<string> { "cap101" });
-            //testlist.loadSelectFiles(new List<string> { "pn56", "pn57", "pn58", "pn59" });
-            //testlist.loadSelectFiles(new List<string>() { "pn58","pn59","pn60","pn61","pn62","pn63", "pn64","pn65",
-            //"pn66","pn67","pn68","pn69","pn69_1","pn70","pn71"});
+            testlist.loadSelectFiles(new List<string> { "cap101" });
+            //testlist.loadSelectFiles(new List<string> { "capb1", "capb2", "capb3", "capb4" });
+            //testlist.loadSelectFiles(new List<string> { "capb1_1", "capb2_1", "capb3_1", "capb4_1" });
+            //testlist.loadSelectFiles(new List<string>() { "pn56", "pn57","pn58","pn59","pn60"});
+            //testlist.loadSelectFiles(new List<string> { "pn61", "pn62", "pn63", "pn64", "pn65" });
+            //testlist.loadSelectFiles(new List<string> { "pn66", "pn67", "pn68", "pn69", "pn69_1", "pn70", "pn71" });
 
             ReportController.HelperSetup();
             foreach (string file in testlist.files)
@@ -88,6 +90,7 @@ namespace CFLP_GA
                     ControlledRandom.reset();
                 }
                 System.GC.Collect();
+                ReportController.DebugLogReport(this, "hits=" + EvaluationCache.hits + ",misses=" + EvaluationCache.misses);
             }
             ReportController.Dispose();
             return true;
@@ -131,7 +134,7 @@ namespace CFLP_GA
             //var replacer = new GenerationReplacement(new TrimmingReplacement((int)2*problem.m+(int)2*problem.n));
             var replacer = new GenerationReplacement(new TrimmingReplacement(100));
             replacer.AddInheritanceSelector(new TrimmingReplacement(10));
-            var fitnessCalc = new MinDemandEvaluator();
+            var fitnessCalc = new MinDemandEvaluator(new EvaluationCache(problem.m));
             var adjuster = new RandomAdjuster();
             var initialPopulation = new RandomInitialPopulation(150);
             GeneticAlgorithm ga = new GeneticAlgorithm(selector, criterion,
@@ -155,6 +158,11 @@ namespace CFLP_GA
                 value = ga.lastResult;
                 ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
                 ReportController.Broadcast(2, "Out of memory");
+            }
+            catch(Exception e)
+            {
+                ReportController.Broadcast(6, "Exception:" + e.Message);
+                value = double.NaN;
             }
             return value;
 
@@ -187,7 +195,7 @@ namespace CFLP_GA
             }
             var decider = new IteratedLocalSearch.InitialSolutionGenerators.UnfeasableSolutionDecider.IterationUnfeasableDecider(10000);
             IteratedLocalSearch.ILS ils = new IteratedLocalSearch.ILS(problem,
-                new MinDemandEvaluator(),
+                new MinDemandEvaluator(new EvaluationCache(problem.m)),
                 new IteratedLocalSearch.LocalSearch.OneFlipLS(),
                 new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(
                     problem,
@@ -222,6 +230,11 @@ namespace CFLP_GA
                 ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
                 ReportController.Broadcast(2, "Out of memory");
             }
+            catch (Exception e)
+            {
+                ReportController.Broadcast(6, "Exception:" + e.Message);
+                value = double.NaN;
+            }
             return value;
 
         }
@@ -251,6 +264,11 @@ namespace CFLP_GA
                 ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
                 ReportController.Broadcast(2, "Out of memory");
             }
+            catch (Exception e)
+            {
+                ReportController.Broadcast(6, "Exception:" + e.Message);
+                value = double.NaN;
+            }
             return value;
         }
         public double testMemOnFile(string file)
@@ -278,6 +296,11 @@ namespace CFLP_GA
                 value = gaa.lastResult;
                 ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
                 ReportController.Broadcast(2, "Out of memory");
+            }
+            catch (Exception e)
+            {
+                ReportController.Broadcast(6, "Exception:" + e.Message);
+                value = double.NaN;
             }
             return value;
         }

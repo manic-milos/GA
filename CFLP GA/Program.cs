@@ -13,10 +13,12 @@ namespace CFLP_GA
         static void Main(string[] args)
         {
 
-
-            TestOnData test = new TestOnData();
-            test.testSelectOnFolder(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances",
-                true, true, true, true);
+            for (int i = 0; i < 10; i++)
+            {
+                TestOnData test = new TestOnData();
+                test.testSelectOnFolder(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances",
+                    false, false, false, true);
+            }
             Console.Read();
         }
     }

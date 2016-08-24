@@ -11,6 +11,8 @@ namespace CFLP_GA
         CacheDict dict;
         int levels = 0;
         int bitRep = 60;
+        public static long hits = 0;
+        public static long misses = 0;
         public EvaluationCache(int m)
         {
             this.levels = (int)Math.Floor(m / (bitRep + 0.0));
@@ -61,13 +63,15 @@ namespace CFLP_GA
             }
             key = getKey(numberString, levels);
 
-            Console.WriteLine(Convert.ToString(key, 2));
+            //Console.WriteLine(Convert.ToString(key, 2));
             if (Currentdictionary.valDict.TryGetValue(key, out value))
             {
+                hits++;
                 return value;
             }
             else
             {
+                misses++;
                 return double.NaN;
             }
         }
