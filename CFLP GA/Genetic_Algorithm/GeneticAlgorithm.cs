@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,9 @@ namespace CFLP_GA
         public InitialPopulationBase initialPopulation;
         public Problem problem;
         public double lastResult = double.NaN;
+        public string iterationsToBestResult = "";
+        public Stopwatch timer = new Stopwatch();
+        public TimeSpan timeToBestResult = new TimeSpan(0);
         public GeneticAlgorithm(
             SelectorBase selector,
             StoppingCriterionBase stoppingCriterion,
@@ -133,6 +137,7 @@ namespace CFLP_GA
         public double execute(out Genome result)
         {
             Execution_Reports.ReportController.progressReport.startCounting();
+            timer.Restart();
             GenePopulation Genes = start();
             if (Genes == null)
             {
@@ -144,7 +149,13 @@ namespace CFLP_GA
             while (!stoppingCriterion.CheckStoppingCriterion(Genes))
             {
                 Genes = iteration(Genes);
-                lastResult = Genes.Min.fitness();
+                double newResult = Genes.Min.fitness();
+                if (double.IsNaN(lastResult) || newResult < lastResult)
+                {
+                    lastResult = newResult;
+                    iterationsToBestResult = stoppingCriterion.CurrentIteration();
+                    timeToBestResult = timer.Elapsed;
+                }
                 Execution_Reports.ReportController.populationLog.Broadcast(Genes.Count.ToString());
                 Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.CurrentIteration());
 

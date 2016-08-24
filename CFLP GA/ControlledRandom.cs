@@ -18,8 +18,10 @@ namespace CFLP_GA
         {
             return rand.NextDouble();
         }
-        public static void reset()
+        public static void reset(int? newRandomSeed=null)
         {
+            if (newRandomSeed.HasValue)
+                randomSeed = newRandomSeed.Value;
             rand = new Random(randomSeed);
         }
     }

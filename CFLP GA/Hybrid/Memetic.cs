@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,15 @@ namespace CFLP_GA.Hybrid
 {
     class Memetic
     {
-        GeneticAlgorithm ga;
-        IteratedLocalSearch.ILS ils;
+        public GeneticAlgorithm ga;
+        public IteratedLocalSearch.ILS ils;
         Problem problem;
         public double lastResult=double.NaN;
         public int ilslimit;
-        EvaluatorBase evaluator;
+        public EvaluatorBase evaluator;
+        public string iterationsToBestResult = "";
+        public Stopwatch timer = new Stopwatch();
+        public TimeSpan timeToBestResult = new TimeSpan(0);
         public Memetic(Problem problem,int ilsLimit=10)
         {
             this.problem = problem;
@@ -71,17 +75,29 @@ namespace CFLP_GA.Hybrid
         public double execute(out IteratedLocalSearch.Solution result,Reports.ExecutionReportBase report=null)
         {
             Execution_Reports.ReportController.progressReport.startCounting();
+            timer.Restart();
             GenePopulation Genes=ga.start();
             Execution_Reports.ReportController.DebugLogReport(this, Genes.Count.ToString());
+            double lastmin = double.MaxValue;
             if (Genes == null)
             {
                 result = null;
                 return double.NaN;
             }
+            lastmin = Genes.Min.fitness();
+            ga.stoppingCriterion.Init(ga);
+            iterationsToBestResult = ga.stoppingCriterion.CurrentIteration();
+            timeToBestResult = timer.Elapsed;
             while (!ga.stoppingCriterion.CheckStoppingCriterion(Genes))
             {
                 Genes = ga.iteration(Genes);
                 double min = Genes.Min.fitness();
+                if(min<lastmin)
+                {
+                    lastmin = min;
+                    iterationsToBestResult = ga.stoppingCriterion.CurrentIteration();
+                    timeToBestResult = timer.Elapsed;
+                }
                 int i=0;
                 GenePopulation ilspop = new GenePopulation(ga);
                 foreach (Genome g in Genes)

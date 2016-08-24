@@ -13,6 +13,7 @@ namespace CFLP_GA
         public Stopwatch time = new Stopwatch();
         public TimeSpan overallTime = new TimeSpan(0);
         public EvaluationCache cache = null;
+        public long evaluationCalls = 0;
         public EvaluatorBase(EvaluationCache cache = null)
         {
             this.cache = cache;
@@ -28,6 +29,7 @@ namespace CFLP_GA
         }
         public double Evaluate(int[] solution, Problem p, int[] leftCapacities = null)
         {
+            evaluationCalls++;
             time.Restart();
             double fitnessValue = checkCache(solution);
             if (double.IsNaN(fitnessValue))

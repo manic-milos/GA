@@ -10,7 +10,7 @@ namespace CFLP_GA
 {
     class TestOnData
     {
-        public bool testSelectOnFolder(string path, bool GAf = true, bool ILSf = true, bool GAAf = true,bool Memf=true)
+        public bool testSelectOnFolder(string path, bool GAf = true, bool ILSf = true, bool GAAf = true, bool Memf = true)
         {
             //ResultTests.ShortResultLoader resultLoader = new ResultTests.ShortResultLoader();
             //resultLoader.load("short_results.txt");
@@ -21,10 +21,10 @@ namespace CFLP_GA
             //Console.Read();
             TestList testlist = new TestList(path);
             testlist.loadAllFilesFromBaseFolder();
-            testlist.loadSelectFiles(new List<string> { "cap101" });
+            //testlist.loadSelectFiles(new List<string> { "cap101" });
             //testlist.loadSelectFiles(new List<string> { "capb1", "capb2", "capb3", "capb4" });
             //testlist.loadSelectFiles(new List<string> { "capb1_1", "capb2_1", "capb3_1", "capb4_1" });
-            //testlist.loadSelectFiles(new List<string>() { "pn56", "pn57","pn58","pn59","pn60"});
+            //testlist.loadSelectFiles(new List<string>() { "pn56", "pn57", "pn58", "pn59", "pn60" });
             //testlist.loadSelectFiles(new List<string> { "pn61", "pn62", "pn63", "pn64", "pn65" });
             //testlist.loadSelectFiles(new List<string> { "pn66", "pn67", "pn68", "pn69", "pn69_1", "pn70", "pn71" });
 
@@ -90,27 +90,8 @@ namespace CFLP_GA
                     ControlledRandom.reset();
                 }
                 System.GC.Collect();
-                ReportController.DebugLogReport(this, "hits=" + EvaluationCache.hits + ",misses=" + EvaluationCache.misses);
             }
             ReportController.Dispose();
-            return true;
-        }
-        public bool testGAOnFolder(string path)
-        {
-            string[] files;
-            if (!Directory.Exists(path))
-            {
-                files = new string[] { path };
-            }
-            else
-            {
-                files = Directory.GetFiles(path);
-            }
-            foreach (string file in files)
-            {
-                Console.WriteLine(Path.GetFileName(file));
-                testGAOnFile(file);
-            }
             return true;
         }
         public double testGAOnFile(string file, Problem problem = null)
@@ -146,6 +127,11 @@ namespace CFLP_GA
                 Genome result;
                 value = ga.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
+                ReportController.DebugLogReport(this, "iterations to result=" + Environment.NewLine + ga.iterationsToBestResult);
+                ReportController.DebugLogReport(this, ",time to best result=" + Environment.NewLine + ga.timeToBestResult);
+                ReportController.DebugLogReport(this, ",number of generations=" + Environment.NewLine +ga.stoppingCriterion.CurrentIteration());
+                ReportController.DebugLogReport(this, ",calls to eval=" + Environment.NewLine + ga.fitnessCalc.evaluationCalls);
+                ReportController.DebugLogReport(this, ",cache hits=" + Environment.NewLine + ga.fitnessCalc.cache.hits);
             }
             catch (UnfeasableProblemException e)
             {
@@ -159,31 +145,13 @@ namespace CFLP_GA
                 ReportController.Broadcast(6, "OutOfMemoryException:" + e.Message);
                 ReportController.Broadcast(2, "Out of memory");
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 ReportController.Broadcast(6, "Exception:" + e.Message);
                 value = double.NaN;
             }
             return value;
 
-        }
-        public bool testILSOnFolder(string path)
-        {
-            string[] files;
-            if (!Directory.Exists(path))
-            {
-                files = new string[] { path };
-            }
-            else
-            {
-                files = Directory.GetFiles(path);
-            }
-            foreach (string file in files)
-            {
-                Console.WriteLine(Path.GetFileName(file));
-                testILSOnFile(file);
-            }
-            return true;
         }
         public double testILSOnFile(string file, Problem problem = null)
         {
@@ -208,8 +176,7 @@ namespace CFLP_GA
                     500, new IteratedLocalSearch.AcceptanceCriteria.BetterWalk(),
                     new IteratedLocalSearch.InitialSolutionGenerators.OneDistributerGenerator(problem,
                         decider, 0.3)),
-                new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(1000).AppendStoppingCriteria(
-                    new IteratedLocalSearch.StoppingCriteria.TimeStoppingCriterion(10000))
+                new IteratedLocalSearch.StoppingCriteria.IterationalStoppingCriterion(1000)
                         );
             IteratedLocalSearch.Solution result;
             double value;
@@ -217,6 +184,11 @@ namespace CFLP_GA
             {
                 value = ils.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
+                ReportController.DebugLogReport(this, "iterations to result=" + Environment.NewLine + ils.iterationsToBestResult);
+                ReportController.DebugLogReport(this, ",time to best result=" + Environment.NewLine +ils.timeToBestResult);
+                //ReportController.DebugLogReport(this, Environment.NewLine+",number of generations=" + ils.stoppingCriterion.IterationInfoAll());
+                ReportController.DebugLogReport(this, ",calls to eval=" + Environment.NewLine + ils.evaluator.evaluationCalls);
+                ReportController.DebugLogReport(this, ",cache hits=" + Environment.NewLine + ils.evaluator.cache.hits);
             }
             catch (UnfeasableProblemException e)
             {
@@ -251,6 +223,12 @@ namespace CFLP_GA
             {
                 value = gaa.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
+                ReportController.DebugLogReport(this, "iterations to result=" + Environment.NewLine + gaa.iterationsToBestResult);
+                ReportController.DebugLogReport(this, ",time to best result=" + Environment.NewLine + gaa.timeToBestResult);
+                ReportController.DebugLogReport(this, ",number of generations=" + Environment.NewLine + gaa.ga.stoppingCriterion.CurrentIteration());
+                ReportController.DebugLogReport(this, ",calls to eval=" + Environment.NewLine + gaa.evaluator.evaluationCalls);
+                ReportController.DebugLogReport(this, ",cache hits=" + Environment.NewLine + gaa.evaluator.cache.hits);
+
             }
             catch (UnfeasableProblemException e)
             {
@@ -284,6 +262,11 @@ namespace CFLP_GA
             {
                 value = gaa.execute(out result);
                 ReportController.Broadcast(2, result.ToString());
+                ReportController.DebugLogReport(this, "iterations to result=" + Environment.NewLine + gaa.iterationsToBestResult);
+                ReportController.DebugLogReport(this, ",time to best result=" + Environment.NewLine + gaa.timeToBestResult);
+                ReportController.DebugLogReport(this, ",number of generations=" + Environment.NewLine + gaa.ga.stoppingCriterion.CurrentIteration());
+                ReportController.DebugLogReport(this, ",calls to eval=" + Environment.NewLine + gaa.evaluator.evaluationCalls);
+                ReportController.DebugLogReport(this, ",cache hits=" + Environment.NewLine + gaa.evaluator.cache.hits);
             }
             catch (UnfeasableProblemException e)
             {

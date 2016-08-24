@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CFLP_GA.IteratedLocalSearch;
+using System.Diagnostics;
 
 namespace CFLP_GA.Hybrid
 {
     class GAAdvanced
     {
-        GeneticAlgorithm ga;
+        public GeneticAlgorithm ga;
         IteratedLocalSearch.ILS ils;
-        Problem problem;
+        public Problem problem;
         public double lastResult=double.NaN;
-        EvaluatorBase evaluator;
+        public EvaluatorBase evaluator;
+        public string iterationsToBestResult = "";
+        public Stopwatch timer = new Stopwatch();
+        public TimeSpan timeToBestResult = new TimeSpan(0);
         public GAAdvanced(Problem problem)
         {
             this.problem = problem;
@@ -70,20 +74,30 @@ namespace CFLP_GA.Hybrid
         public double execute(out IteratedLocalSearch.Solution result,Reports.ExecutionReportBase report=null)
         {
             Execution_Reports.ReportController.progressReport.startCounting();
+            timer.Restart();
             GenePopulation Genes=ga.start();
+            double min = double.MaxValue;
             Execution_Reports.ReportController.DebugLogReport(this, Genes.Count.ToString());
             if (Genes == null)
             {
                 result = null;
                 return double.NaN;
             }
+            ga.stoppingCriterion.Init(ga);
             while (!ga.stoppingCriterion.CheckStoppingCriterion(Genes))
             {
+                double newmin = Genes.Min.fitness();
+                if(newmin<min)
+                {
+                    iterationsToBestResult = ga.stoppingCriterion.CurrentIteration();
+                    timeToBestResult = timer.Elapsed;
+                }
+                min = newmin;
                 Genes = ga.iteration(Genes);
                 Execution_Reports.ReportController.progressReport.addCount(ga.stoppingCriterion.CurrentIteration());
             }
             Genes = ga.end(Genes);
-            double min = Genes.Min.fitness();
+            min = Genes.Min.fitness();
             result = Genes.Min;
             Execution_Reports.ReportController.progressReport.endCount();
             foreach(Genome g in Genes)
@@ -104,6 +118,8 @@ namespace CFLP_GA.Hybrid
                 {
                     result = resultTemp;
                     min = afterils;
+                    iterationsToBestResult = "ils";
+                    timeToBestResult = timer.Elapsed;
                 }
 
             }

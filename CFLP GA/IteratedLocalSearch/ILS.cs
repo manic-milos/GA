@@ -17,6 +17,9 @@ namespace CFLP_GA.IteratedLocalSearch
         public AcceptanceCriteria.AcceptanceCriterionBase acceptanceCriterion;
         public StoppingCriteria.StoppingCriterionBase stoppingCriterion;
         public double lastResult = double.NaN;
+        public string iterationsToBestResult = "";
+        public Stopwatch timer = new Stopwatch();
+        public TimeSpan timeToBestResult = new TimeSpan(0);
         public ILS(Problem problem,
             EvaluatorBase evaluator,
             LocalSearch.LocalSearchBase localSearch,
@@ -42,6 +45,7 @@ namespace CFLP_GA.IteratedLocalSearch
         public double execute(out Solution result,Solution initialSolution = null)
         {
             Execution_Reports.ReportController.progressReport.startCounting();
+            timer.Restart();
             Solution s=initialSolution;
             if(initialSolution==null)
                 s = generator.Generate();
@@ -52,6 +56,8 @@ namespace CFLP_GA.IteratedLocalSearch
             }
             Solution globalBest = s;
             lastResult = evaluator.Evaluate(s);
+            timeToBestResult = timer.Elapsed;
+            iterationsToBestResult = stoppingCriterion.IterationInfoAll();
             while (!stoppingCriterion.CheckIfEnd(s,globalBest))
             {
                 s = localSearch.GetBestLocal(s, evaluator);
@@ -68,7 +74,13 @@ namespace CFLP_GA.IteratedLocalSearch
                         Console.WriteLine("wrong");
                     s = accepted;
                 }
-                lastResult = evaluator.Evaluate(s);
+                double newResult = evaluator.Evaluate(s);
+                if (newResult < lastResult)
+                {
+                    timeToBestResult = timer.Elapsed;
+                    iterationsToBestResult = stoppingCriterion.IterationInfoAll();
+                }
+                lastResult = newResult;
                 Execution_Reports.ReportController.progressReport.addCount(stoppingCriterion.IterationInfoAll());
             }
             if(!s.check())

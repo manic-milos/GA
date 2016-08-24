@@ -11,8 +11,8 @@ namespace CFLP_GA
         CacheDict dict;
         int levels = 0;
         int bitRep = 60;
-        public static long hits = 0;
-        public static long misses = 0;
+        public long hits = 0;
+        public long misses = 0;
         public EvaluationCache(int m)
         {
             this.levels = (int)Math.Floor(m / (bitRep + 0.0));

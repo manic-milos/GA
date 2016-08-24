@@ -20,6 +20,7 @@ namespace CFLP_GA.Execution_Reports
         public static ResultReport debugLog;
         public static ResultReport populationLog;//TODO promeni u event subscription dict
         public static int count = 0;
+        public static string reportPrefix = "";
         public static void AddReport(int level, ReportBase newReport)
         {
             List<ReportBase> reportList;
@@ -47,20 +48,21 @@ namespace CFLP_GA.Execution_Reports
         }
         public static void HelperSetup()
         {
+
             ResultReport shortResultReport = new ResultReport();
-            shortResultReport.AddWriter(new StreamWriter("short_results.txt"));
+            shortResultReport.AddWriter(new StreamWriter(reportPrefix+"short_results.txt"));
             AddReport(1, shortResultReport);
 
             ResultReport verboseResultReport = new ResultReport();
-            verboseResultReport.AddWriter(new StreamWriter("verb_results.txt"));
+            verboseResultReport.AddWriter(new StreamWriter(reportPrefix + "verb_results.txt"));
             AddReport(2, verboseResultReport);
 
             ResultReport timeReport = new ResultReport();
-            timeReport.AddWriter(new StreamWriter("time_results.txt"));
+            timeReport.AddWriter(new StreamWriter(reportPrefix + "time_results.txt"));
             AddReport(3, timeReport);
 
             debugLog = new ResultReport();
-            debugLog.AddWriter(new StreamWriter("debug_log.txt"));
+            debugLog.AddWriter(new StreamWriter(reportPrefix + "debug_log.txt"));
             AddReport(6, debugLog);
 
 
@@ -71,7 +73,7 @@ namespace CFLP_GA.Execution_Reports
             ConsoleReport.colors[6] = ConsoleColor.Red;
 
             populationLog = new ResultReport();
-            populationLog.AddWriter(new StreamWriter("pop_count.txt"));
+            populationLog.AddWriter(new StreamWriter(reportPrefix + "pop_count.txt"));
         }
         public static void RestartReports()
         {
