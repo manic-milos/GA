@@ -1,0 +1,3698 @@
+cap101
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.2190365
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9456
+TestOnData:,cache hits=
+9183
+3883226133
+00:00:10.9251726
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+655/1000;
+TestOnData:,time to best result=
+00:00:00.2075509
+TestOnData:,calls to eval=
+5023
+TestOnData:,cache hits=
+4726
+3883226133
+00:00:00.2687603
+GAA:
+GAAdvanced:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+6
+TestOnData:,time to best result=
+00:00:00.6984785
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23981
+TestOnData:,cache hits=
+23656
+3883226133
+00:00:07.5186337
+Mem:
+Memetic:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:00.9908669
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+279673
+TestOnData:,cache hits=
+279348
+3883226133
+00:00:38.7529867
+cap102
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.1758357
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9456
+TestOnData:,cache hits=
+9183
+3883231133
+00:00:11.3350969
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+655/1000;
+TestOnData:,time to best result=
+00:00:00.2178465
+TestOnData:,calls to eval=
+5023
+TestOnData:,cache hits=
+4726
+3883231133
+00:00:00.2870950
+GAA:
+GAAdvanced:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+6
+TestOnData:,time to best result=
+00:00:00.8021218
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23981
+TestOnData:,cache hits=
+23656
+3883231133
+00:00:08.3265018
+Mem:
+Memetic:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:01.0672551
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+279673
+TestOnData:,cache hits=
+279348
+3883231133
+00:00:43.0124731
+cap103
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.1899402
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9456
+TestOnData:,cache hits=
+9183
+3883236133
+00:00:11.6449164
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+655/1000;
+TestOnData:,time to best result=
+00:00:00.2158662
+TestOnData:,calls to eval=
+5023
+TestOnData:,cache hits=
+4726
+3883236133
+00:00:00.2834540
+GAA:
+GAAdvanced:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+6
+TestOnData:,time to best result=
+00:00:00.7493685
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23981
+TestOnData:,cache hits=
+23656
+3883236133
+00:00:08.2343875
+Mem:
+Memetic:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:01.0371246
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+279673
+TestOnData:,cache hits=
+279348
+3883236133
+00:00:42.6658219
+cap104
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.1946840
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9456
+TestOnData:,cache hits=
+9183
+3883243633
+00:00:11.6211261
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+655/1000;
+TestOnData:,time to best result=
+00:00:00.2283151
+TestOnData:,calls to eval=
+5023
+TestOnData:,cache hits=
+4726
+3883243633
+00:00:00.2953991
+GAA:
+GAAdvanced:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+6
+TestOnData:,time to best result=
+00:00:00.7616598
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23981
+TestOnData:,cache hits=
+23656
+3883243633
+00:00:08.3463078
+Mem:
+Memetic:220
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:01.1194742
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+279673
+TestOnData:,cache hits=
+279348
+3883243633
+00:00:41.9628450
+cap121
+n=50, m=50, k=4
+GA:
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+11
+TestOnData:,time to best result=
+00:00:18.6185123
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6849
+TestOnData:,cache hits=
+5553
+4148374586
+00:01:23.3844377
+ILS:
+[00000000000000000100000000000000000111000000000000]
+TestOnData:iterations to result=
+832/1000;
+TestOnData:,time to best result=
+00:00:00.3072593
+TestOnData:,calls to eval=
+5007
+TestOnData:,cache hits=
+4055
+4485606773
+00:00:00.3485306
+GAA:
+GAAdvanced:499
+[00000000001010000000000010000000010000000000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:42.3490107
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23491
+TestOnData:,cache hits=
+18970
+4188078978
+00:00:42.4900878
+Mem:
+Memetic:499
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:30.6216163
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275520
+TestOnData:,cache hits=
+233440
+4148374586
+00:01:21.4701661
+cap122
+n=50, m=50, k=4
+GA:
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+11
+TestOnData:,time to best result=
+00:00:18.5408267
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6849
+TestOnData:,cache hits=
+5553
+4148394586
+00:01:23.0002547
+ILS:
+[00000000000000000100000000000000000111000000000000]
+TestOnData:iterations to result=
+832/1000;
+TestOnData:,time to best result=
+00:00:00.3184542
+TestOnData:,calls to eval=
+5007
+TestOnData:,cache hits=
+4055
+4485626773
+00:00:00.3553741
+GAA:
+GAAdvanced:499
+[00000000001010000000000010000000010000000000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:41.8778811
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23491
+TestOnData:,cache hits=
+18970
+4188098978
+00:00:42.0092296
+Mem:
+Memetic:499
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:29.5027038
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275520
+TestOnData:,cache hits=
+233440
+4148394586
+00:01:19.9489411
+cap123
+n=50, m=50, k=4
+GA:
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+11
+TestOnData:,time to best result=
+00:00:18.0479525
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6849
+TestOnData:,cache hits=
+5553
+4148414586
+00:01:22.8637015
+ILS:
+[00000000000000000100000000000000000111000000000000]
+TestOnData:iterations to result=
+832/1000;
+TestOnData:,time to best result=
+00:00:00.3390174
+TestOnData:,calls to eval=
+5007
+TestOnData:,cache hits=
+4055
+4485646773
+00:00:00.3860318
+GAA:
+GAAdvanced:499
+[00000000001010000000000010000000010000000000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:42.5641898
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23491
+TestOnData:,cache hits=
+18970
+4188118978
+00:00:42.6907865
+Mem:
+Memetic:499
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:30.1571605
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275520
+TestOnData:,cache hits=
+233440
+4148414586
+00:01:19.7345685
+cap124
+n=50, m=50, k=4
+GA:
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+11
+TestOnData:,time to best result=
+00:00:18.2756724
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6849
+TestOnData:,cache hits=
+5553
+4148444586
+00:01:21.7949792
+ILS:
+[00000000000000000100000000000000000111000000000000]
+TestOnData:iterations to result=
+832/1000;
+TestOnData:,time to best result=
+00:00:00.3161456
+TestOnData:,calls to eval=
+5007
+TestOnData:,cache hits=
+4055
+4485676773
+00:00:00.3545428
+GAA:
+GAAdvanced:499
+[00000000001010000000000010000000010000000000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:41.3576516
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+23491
+TestOnData:,cache hits=
+18970
+4188148978
+00:00:41.4904895
+Mem:
+Memetic:499
+[00000000001000000000000000000000010001001000000000]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:29.4663796
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275520
+TestOnData:,cache hits=
+233440
+4148444586
+00:01:22.4044056
+cap131
+n=50, m=50, k=2
+GA:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:00.9841466
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9409
+TestOnData:,cache hits=
+9001
+3883226133
+00:00:13.6638841
+ILS:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+738/1000;
+TestOnData:,time to best result=
+00:00:00.2894988
+TestOnData:,calls to eval=
+5111
+TestOnData:,cache hits=
+4426
+3883226133
+00:00:00.3522929
+GAA:
+GAAdvanced:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+12
+TestOnData:,time to best result=
+00:00:01.5300955
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20725
+TestOnData:,cache hits=
+19530
+3883226133
+00:00:07.8084638
+Mem:
+Memetic:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:02.3318193
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+278620
+TestOnData:,cache hits=
+277347
+3883226133
+00:00:44.4628753
+cap132
+n=50, m=50, k=2
+GA:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:01.0155399
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9409
+TestOnData:,cache hits=
+9001
+3883231133
+00:00:13.6194406
+ILS:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+738/1000;
+TestOnData:,time to best result=
+00:00:00.2984248
+TestOnData:,calls to eval=
+5111
+TestOnData:,cache hits=
+4426
+3883231133
+00:00:00.3649522
+GAA:
+GAAdvanced:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+12
+TestOnData:,time to best result=
+00:00:01.5288653
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20725
+TestOnData:,cache hits=
+19530
+3883231133
+00:00:07.7370475
+Mem:
+Memetic:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:02.1961563
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+278620
+TestOnData:,cache hits=
+277347
+3883231133
+00:00:45.4110961
+cap133
+n=50, m=50, k=2
+GA:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:00.9687051
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9409
+TestOnData:,cache hits=
+9001
+3883236133
+00:00:13.4595007
+ILS:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+738/1000;
+TestOnData:,time to best result=
+00:00:00.2843212
+TestOnData:,calls to eval=
+5111
+TestOnData:,cache hits=
+4426
+3883236133
+00:00:00.3467430
+GAA:
+GAAdvanced:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+12
+TestOnData:,time to best result=
+00:00:01.4884229
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20725
+TestOnData:,cache hits=
+19530
+3883236133
+00:00:07.8356628
+Mem:
+Memetic:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:02.2105701
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+278620
+TestOnData:,cache hits=
+277347
+3883236133
+00:00:44.3283696
+cap134
+n=50, m=50, k=2
+GA:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:00.9922202
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9409
+TestOnData:,cache hits=
+9001
+3883243633
+00:00:13.3845049
+ILS:
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+738/1000;
+TestOnData:,time to best result=
+00:00:00.2884576
+TestOnData:,calls to eval=
+5111
+TestOnData:,cache hits=
+4426
+3883243633
+00:00:00.3550242
+GAA:
+GAAdvanced:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+12
+TestOnData:,time to best result=
+00:00:01.6047469
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20725
+TestOnData:,cache hits=
+19530
+3883243633
+00:00:07.8624882
+Mem:
+Memetic:328
+[00000000000000000000001000000000010000000000000000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:02.1955503
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+278620
+TestOnData:,cache hits=
+277347
+3883243633
+00:00:43.5311754
+cap61
+n=50, m=16, k=4
+GA:
+[0011010000010000]
+TestOnData:iterations to result=
+4
+TestOnData:,time to best result=
+00:00:07.0001418
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6824
+TestOnData:,cache hits=
+6362
+4688622204
+00:01:22.3333103
+ILS:
+[0010010000110000]
+TestOnData:iterations to result=
+569/1000;
+TestOnData:,time to best result=
+00:00:00.1582181
+TestOnData:,calls to eval=
+4999
+TestOnData:,cache hits=
+4261
+4843215576
+00:00:00.2421262
+GAA:
+GAAdvanced:440
+[0011010000010000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0103123
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+17101
+TestOnData:,cache hits=
+15685
+4688622204
+00:00:37.8637902
+Mem:
+Memetic:440
+[0011010000010000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0139183
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275821
+TestOnData:,cache hits=
+274001
+4688622204
+00:01:14.1247204
+cap62
+n=50, m=16, k=4
+GA:
+[0011010000010000]
+TestOnData:iterations to result=
+4
+TestOnData:,time to best result=
+00:00:07.0909368
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6824
+TestOnData:,cache hits=
+6362
+4688642204
+00:01:21.4252160
+ILS:
+[0010010000110000]
+TestOnData:iterations to result=
+569/1000;
+TestOnData:,time to best result=
+00:00:00.1550711
+TestOnData:,calls to eval=
+4999
+TestOnData:,cache hits=
+4261
+4843230576
+00:00:00.2328411
+GAA:
+GAAdvanced:440
+[0011010000010000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0100203
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+17101
+TestOnData:,cache hits=
+15685
+4688642204
+00:00:38.1203004
+Mem:
+Memetic:440
+[0011010000010000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0102288
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275821
+TestOnData:,cache hits=
+274001
+4688642204
+00:01:07.9543575
+cap63
+n=50, m=16, k=4
+GA:
+[0011010000010000]
+TestOnData:iterations to result=
+4
+TestOnData:,time to best result=
+00:00:05.6625527
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6824
+TestOnData:,cache hits=
+6362
+4688662204
+00:01:04.5972545
+ILS:
+[0010010000110000]
+TestOnData:iterations to result=
+569/1000;
+TestOnData:,time to best result=
+00:00:00.1256520
+TestOnData:,calls to eval=
+4999
+TestOnData:,cache hits=
+4261
+4843245576
+00:00:00.1910188
+GAA:
+GAAdvanced:440
+[0011010000010000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0092935
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+17101
+TestOnData:,cache hits=
+15685
+4688662204
+00:00:30.4164613
+Mem:
+Memetic:440
+[0011010000010000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0092058
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275821
+TestOnData:,cache hits=
+274001
+4688662204
+00:00:59.0246146
+cap64
+n=50, m=16, k=4
+GA:
+[0011010000010000]
+TestOnData:iterations to result=
+4
+TestOnData:,time to best result=
+00:00:05.6056557
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6824
+TestOnData:,cache hits=
+6362
+4688692204
+00:01:04.5611352
+ILS:
+[0010010000110000]
+TestOnData:iterations to result=
+569/1000;
+TestOnData:,time to best result=
+00:00:00.1213047
+TestOnData:,calls to eval=
+4999
+TestOnData:,cache hits=
+4261
+4843268076
+00:00:00.1882963
+GAA:
+GAAdvanced:440
+[0011010000010000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0091106
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+17101
+TestOnData:,cache hits=
+15685
+4688692204
+00:00:30.4281260
+Mem:
+Memetic:440
+[0011010000010000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0118051
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275821
+TestOnData:,cache hits=
+274001
+4688692204
+00:00:56.9800185
+cap71
+n=50, m=16, k=2
+GA:
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.2483269
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9371
+TestOnData:,cache hits=
+9238
+4879355523
+00:00:09.7531710
+ILS:
+[0010000000100000]
+TestOnData:iterations to result=
+559/1000;
+TestOnData:,time to best result=
+00:00:00.1496205
+TestOnData:,calls to eval=
+5037
+TestOnData:,cache hits=
+4911
+4879355523
+00:00:00.2153498
+GAA:
+GAAdvanced:126
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0038835
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+18696
+TestOnData:,cache hits=
+18560
+4879355523
+00:00:05.6968640
+Mem:
+Memetic:126
+[0010000000100000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0046584
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+280232
+TestOnData:,cache hits=
+280096
+4879355523
+00:00:32.1744997
+cap72
+n=50, m=16, k=2
+GA:
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.2487710
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9371
+TestOnData:,cache hits=
+9238
+4879360523
+00:00:09.7715154
+ILS:
+[0010000000100000]
+TestOnData:iterations to result=
+559/1000;
+TestOnData:,time to best result=
+00:00:00.1517636
+TestOnData:,calls to eval=
+5037
+TestOnData:,cache hits=
+4911
+4879360523
+00:00:00.2198188
+GAA:
+GAAdvanced:126
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0043365
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+18696
+TestOnData:,cache hits=
+18560
+4879360523
+00:00:05.7627593
+Mem:
+Memetic:126
+[0010000000100000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0044541
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+280232
+TestOnData:,cache hits=
+280096
+4879360523
+00:00:32.9130484
+cap73
+n=50, m=16, k=2
+GA:
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.2467832
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9371
+TestOnData:,cache hits=
+9238
+4879365523
+00:00:09.7521349
+ILS:
+[0010000000100000]
+TestOnData:iterations to result=
+559/1000;
+TestOnData:,time to best result=
+00:00:00.1503641
+TestOnData:,calls to eval=
+5037
+TestOnData:,cache hits=
+4911
+4879365523
+00:00:00.2190361
+GAA:
+GAAdvanced:126
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0042087
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+18696
+TestOnData:,cache hits=
+18560
+4879365523
+00:00:05.7892507
+Mem:
+Memetic:126
+[0010000000100000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0045562
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+280232
+TestOnData:,cache hits=
+280096
+4879365523
+00:00:32.8630610
+cap74
+n=50, m=16, k=2
+GA:
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.2458675
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9371
+TestOnData:,cache hits=
+9238
+4879373023
+00:00:09.7890944
+ILS:
+[0010000000100000]
+TestOnData:iterations to result=
+559/1000;
+TestOnData:,time to best result=
+00:00:00.1535335
+TestOnData:,calls to eval=
+5037
+TestOnData:,cache hits=
+4911
+4879373023
+00:00:00.2216405
+GAA:
+GAAdvanced:126
+[0010000000100000]
+TestOnData:iterations to result=
+1
+TestOnData:,time to best result=
+00:00:00.0044429
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+18696
+TestOnData:,cache hits=
+18560
+4879373023
+00:00:05.7450670
+Mem:
+Memetic:126
+[0010000000100000]
+TestOnData:iterations to result=
+0
+TestOnData:,time to best result=
+00:00:00.0044345
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+280232
+TestOnData:,cache hits=
+280096
+4879373023
+00:00:32.9508220
+cap91
+n=50, m=25, k=4
+GA:
+[0001000000000000101100000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:06.7735246
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6799
+TestOnData:,cache hits=
+5927
+4148374586
+00:01:05.6641985
+ILS:
+[0000110000010000100000000]
+TestOnData:iterations to result=
+765/1000;
+TestOnData:,time to best result=
+00:00:00.1951081
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4083
+4360589531
+00:00:00.2319029
+GAA:
+GAAdvanced:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:30.2160290
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20598
+TestOnData:,cache hits=
+17389
+4148374586
+00:00:31.5079444
+Mem:
+Memetic:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:03.2404347
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275574
+TestOnData:,cache hits=
+263460
+4148374586
+00:01:00.9956340
+cap92
+n=50, m=25, k=4
+GA:
+[0001000000000000101100000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:06.8182732
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6799
+TestOnData:,cache hits=
+5927
+4148394586
+00:01:06.2664689
+ILS:
+[0000110000010000100000000]
+TestOnData:iterations to result=
+765/1000;
+TestOnData:,time to best result=
+00:00:00.2148269
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4083
+4360609531
+00:00:00.2531024
+GAA:
+GAAdvanced:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:30.4846630
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20598
+TestOnData:,cache hits=
+17389
+4148394586
+00:00:31.7130537
+Mem:
+Memetic:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:03.2017776
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275574
+TestOnData:,cache hits=
+263460
+4148394586
+00:01:00.5600095
+cap93
+n=50, m=25, k=4
+GA:
+[0001000000000000101100000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:06.8256719
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6799
+TestOnData:,cache hits=
+5927
+4148414586
+00:01:06.1835805
+ILS:
+[0000110000010000100000000]
+TestOnData:iterations to result=
+765/1000;
+TestOnData:,time to best result=
+00:00:00.2029065
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4083
+4360629531
+00:00:00.2401161
+GAA:
+GAAdvanced:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:31.3221139
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20598
+TestOnData:,cache hits=
+17389
+4148414586
+00:00:32.5487618
+Mem:
+Memetic:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:03.1850010
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275574
+TestOnData:,cache hits=
+263460
+4148414586
+00:01:00.0057966
+cap94
+n=50, m=25, k=4
+GA:
+[0001000000000000101100000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:06.8379164
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6799
+TestOnData:,cache hits=
+5927
+4148444586
+00:01:06.1574511
+ILS:
+[0000110000010000100000000]
+TestOnData:iterations to result=
+765/1000;
+TestOnData:,time to best result=
+00:00:00.1906573
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4083
+4360659531
+00:00:00.2272926
+GAA:
+GAAdvanced:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:30.2974167
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+20598
+TestOnData:,cache hits=
+17389
+4148444586
+00:00:31.5302457
+Mem:
+Memetic:493
+[0001000000000000101100000]
+TestOnData:iterations to result=
+3
+TestOnData:,time to best result=
+00:00:03.2157487
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275574
+TestOnData:,cache hits=
+263460
+4148444586
+00:00:59.6789379
+capa1
+n=1000, m=100, k=7
+GA:
+[1000000000000001000000000010000000001000000000000000000000010000000000000000001000000000000000001000]
+TestOnData:iterations to result=
+29
+TestOnData:,time to best result=
+00:00:47.1828276
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6491
+TestOnData:,cache hits=
+2349
+597792773
+00:01:15.3113579
+ILS:
+[0010000000000100010000000000000000000000000000000000000000000000000110000000001000001000000000000000]
+TestOnData:iterations to result=
+694/1000;
+TestOnData:,time to best result=
+00:00:00.6824320
+TestOnData:,calls to eval=
+5004
+TestOnData:,cache hits=
+4041
+671454491
+00:00:00.9775872
+GAA:
+GAAdvanced:500
+[0000000000000000000000000000000000000000000001000100000100100110000000000000001000000000000000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:39.1784537
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+31330
+TestOnData:,cache hits=
+23476
+620197078
+00:00:43.7220925
+Mem:
+Memetic:500
+[0000000000000001000000000010000000010000001000000000000000000010000000000000001000000000000000001000]
+TestOnData:iterations to result=
+50
+TestOnData:,time to best result=
+00:01:41.6393716
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275326
+TestOnData:,cache hits=
+222834
+589318621
+00:01:42.9336806
+capa1_1
+n=1000, m=100, k=8
+GA:
+[0000000000000000000001000010000000000000000000000000000000000000010000000000000000100000100110001000]
+TestOnData:iterations to result=
+33
+TestOnData:,time to best result=
+00:00:26.6734683
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+8467
+TestOnData:,cache hits=
+2349
+564243652
+00:00:35.0926899
+ILS:
+[0000000000010000000001010000000000000000000000100000000100100000000000000000000000000000110000000000]
+TestOnData:iterations to result=
+813/1000;
+TestOnData:,time to best result=
+00:00:00.9484797
+TestOnData:,calls to eval=
+5501
+TestOnData:,cache hits=
+4238
+632972705
+00:00:01.1314449
+GAA:
+GAAdvanced:500
+[0000000000000000000001000010000000000000001000000000000000000100000000000000001000100000100000100000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:25.1085209
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+49375
+TestOnData:,cache hits=
+35781
+561010539
+00:00:28.4203789
+Mem:
+Memetic:500
+[0000001000000001000001000000010000000000001000000000000000000010000000000000001000000000000000001000]
+TestOnData:iterations to result=
+30
+TestOnData:,time to best result=
+00:00:50.3868589
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+281807
+TestOnData:,cache hits=
+227910
+548745597
+00:01:23.0635152
+capa1_2
+n=1000, m=100, k=9
+GA:
+[0010000000000000000001000100010000000100001000000010000000000000000000000000001000000000000000001000]
+TestOnData:iterations to result=
+33
+TestOnData:,time to best result=
+00:00:09.1606840
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9599
+TestOnData:,cache hits=
+4429
+525229416
+00:00:10.6623937
+ILS:
+[0000000000100001000000000000000000000000000000100000000000000000010100000000000100010000000100100000]
+TestOnData:iterations to result=
+940/1000;
+TestOnData:,time to best result=
+00:00:01.1357591
+TestOnData:,calls to eval=
+5692
+TestOnData:,cache hits=
+4351
+579298622
+00:00:01.2088828
+GAA:
+GAAdvanced:500
+[0000000000000000000000000010000000000000000000100000000100001000100000000000001000011000100000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:11.3070461
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+50302
+TestOnData:,cache hits=
+36242
+526125782
+00:00:19.0469863
+Mem:
+Memetic:500
+[1000001000000001000000000010000010000000001000100000000000000000000000000000000000010000000100000000]
+TestOnData:iterations to result=
+43
+TestOnData:,time to best result=
+00:01:02.7509929
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+283336
+TestOnData:,cache hits=
+228778
+521481187
+00:01:13.7092159
+capa1_3
+n=1000, m=100, k=10
+GA:
+[0000000000000001100000000010000000110000000000000000000000000100000000000000010000001000000000010001]
+TestOnData:iterations to result=
+45
+TestOnData:,time to best result=
+00:00:07.1145639
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9839
+TestOnData:,cache hits=
+3459
+516385140
+00:00:07.4054930
+ILS:
+[1000000000000000000000000000100000000100000000000000000000100000000000000010010000110000100100000000]
+TestOnData:iterations to result=
+939/1000;
+TestOnData:,time to best result=
+00:00:01.1390339
+TestOnData:,calls to eval=
+5640
+TestOnData:,cache hits=
+4335
+538718275
+00:00:01.2177471
+GAA:
+GAAdvanced:500
+[0000100000000001000000000000000000000000000000100000100000001010000000000000001000010000101000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:07.7950189
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+38967
+TestOnData:,cache hits=
+27350
+504007496
+00:00:13.0878043
+Mem:
+Memetic:500
+[1000000000000001000000000000010000000000100000000010000000000000000000000000001000010000101000001000]
+TestOnData:iterations to result=
+47
+TestOnData:,time to best result=
+00:01:07.2906968
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+284954
+TestOnData:,cache hits=
+228614
+492051928
+00:01:12.7080482
+capa1_4
+n=1000, m=100, k=11
+GA:
+[0000101000000010000001000000010000000000100010100000000000010000000000000000000000000000000110000000]
+TestOnData:iterations to result=
+47
+TestOnData:,time to best result=
+00:00:05.3749012
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9914
+TestOnData:,cache hits=
+3223
+490957059
+00:00:05.5250680
+ILS:
+[0000000000000000000000000010000000010101000000000000000000001000000000000100000000110000000110000000]
+TestOnData:iterations to result=
+538/1000;
+TestOnData:,time to best result=
+00:00:00.8940387
+TestOnData:,calls to eval=
+5986
+TestOnData:,cache hits=
+4519
+549059239
+00:00:01.3589130
+GAA:
+GAAdvanced:500
+[1001000000000000000000000000100010100100000000000000000100000000000100000000001000000000100000010000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:07.1470544
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+53894
+TestOnData:,cache hits=
+38439
+487507367
+00:00:15.6890632
+Mem:
+Memetic:500
+[1000000000000001000000000000010000000000000000000011000000001000000000010000001000010000100000001000]
+TestOnData:iterations to result=
+42
+TestOnData:,time to best result=
+00:01:00.0361562
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+285635
+TestOnData:,cache hits=
+228954
+474996393
+00:01:12.5996346
+capa1_5
+n=1000, m=100, k=100
+GA:
+[0101011001001101000110011001110111111000100000100011110010100001001010100100101011110000010101101101]
+TestOnData:iterations to result=
+31
+TestOnData:,time to best result=
+00:00:04.9736425
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9926
+TestOnData:,cache hits=
+5035
+316475579
+00:00:05.2881609
+ILS:
+[0001001100100001000000000110110010100010000000010011110010010001001010001010010010000100010101101100]
+TestOnData:iterations to result=
+962/1000;
+TestOnData:,time to best result=
+00:00:03.2816253
+TestOnData:,calls to eval=
+9232
+TestOnData:,cache hits=
+6225
+343165644
+00:00:03.3365277
+GAA:
+GAAdvanced:500
+[1001011001111101000111011001111011111001100000011011110010100000101011000000101011000000010101101000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:08.7497203
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32038
+TestOnData:,cache hits=
+21507
+318679738
+00:00:13.2592601
+Mem:
+Memetic:500
+[0001011011001101000111011001110011111001100000000011111010100001101011100000101011000000010101101001]
+TestOnData:iterations to result=
+50
+TestOnData:,time to best result=
+00:01:49.1091917
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403566
+TestOnData:,cache hits=
+331611
+314792952
+00:01:51.0695186
+capa1_6
+n=1000, m=100, k=6
+GA:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
+Problem unfeasable
+NaN
+00:00:01.7799329
+ILS:
+UnfeasableProblemException:Unfeasable problem:Not able to create initial solution
+Problem unfeasable
+NaN
+00:00:00.0732589
+GAA:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
+Problem unfeasable
+NaN
+00:00:11.8183931
+Mem:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
+Problem unfeasable
+NaN
+00:00:11.1987845
+capa2
+n=1000, m=100, k=8
+GA:
+[0000001000000000000011000000010000000000000010000000000000000000000000000000000000001000000100001000]
+TestOnData:iterations to result=
+34
+TestOnData:,time to best result=
+00:00:09.0189373
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9623
+TestOnData:,cache hits=
+4505
+557707915
+00:00:10.5145817
+ILS:
+[0000000000010000000000010000000010000000000000000000000000001000001000000000000100011000000000000000]
+TestOnData:iterations to result=
+880/1000;
+TestOnData:,time to best result=
+00:00:01.0492974
+TestOnData:,calls to eval=
+5656
+TestOnData:,cache hits=
+4347
+594714674
+00:00:01.1718696
+GAA:
+GAAdvanced:500
+[0000000000000001000100000000010000010000000000000011000000000000000010000000001000000000000000000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:13.5420816
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+59418
+TestOnData:,cache hits=
+42968
+569801413
+00:00:20.8570017
+Mem:
+Memetic:500
+[0000001000000001000001000000010000000000001000000000000000000010000000000000001000000000000000001000]
+TestOnData:iterations to result=
+41
+TestOnData:,time to best result=
+00:01:00.3728024
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+282587
+TestOnData:,cache hits=
+227579
+548745597
+00:01:14.2395176
+capa2_1
+n=1000, m=100, k=100
+GA:
+[0101011001001101000110011001110111111000100000100011110010100001001010100100101011110000010101101101]
+TestOnData:iterations to result=
+31
+TestOnData:,time to best result=
+00:00:05.0059916
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9926
+TestOnData:,cache hits=
+5035
+316475579
+00:00:05.3185280
+ILS:
+[0001001100100001000000000110110010100010000000010011110010010001001010001010010010000100010101101100]
+TestOnData:iterations to result=
+962/1000;
+TestOnData:,time to best result=
+00:00:03.2691596
+TestOnData:,calls to eval=
+9232
+TestOnData:,cache hits=
+6225
+343165644
+00:00:03.3284634
+GAA:
+GAAdvanced:500
+[1001011001111101000111011001111011111001100000011011110010100000101011000000101011000000010101101000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:08.7631848
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32038
+TestOnData:,cache hits=
+21507
+318679738
+00:00:13.2637777
+Mem:
+Memetic:500
+[0001011011001101000111011001110011111001100000000011111010100001101011100000101011000000010101101001]
+TestOnData:iterations to result=
+50
+TestOnData:,time to best result=
+00:01:49.0600799
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403566
+TestOnData:,cache hits=
+331611
+314792952
+00:01:51.0220158
+capa3
+n=1000, m=100, k=8
+GA:
+[0000000000000001000000000000010000000000100000000000000000000100000000000000000000011000000100000001]
+TestOnData:iterations to result=
+31
+TestOnData:,time to best result=
+00:00:04.3298185
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9866
+TestOnData:,cache hits=
+4162
+561058278
+00:00:05.2169779
+ILS:
+[0000100000010000000001000000000000000000001000000000010000000010000000000000000000100000000000001000]
+TestOnData:iterations to result=
+792/1000;
+TestOnData:,time to best result=
+00:00:01.0172734
+TestOnData:,calls to eval=
+5833
+TestOnData:,cache hits=
+4443
+580806563
+00:00:01.2180667
+GAA:
+GAAdvanced:500
+[0000000000000000000000000010000000010100000000000010000100000000000000000000000000000000000100011000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:11.7394620
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+58533
+TestOnData:,cache hits=
+41975
+569032222
+00:00:17.0726511
+Mem:
+Memetic:500
+[0000001000000001000001000000010000000000001000000000000000000000000000000000001000000000000010001000]
+TestOnData:iterations to result=
+47
+TestOnData:,time to best result=
+00:01:04.8912658
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+282242
+TestOnData:,cache hits=
+227225
+548023803
+00:01:10.2209939
+capa3_1
+n=1000, m=100, k=100
+GA:
+[0101011001001101000110011001110111111000100000100011110010100001001010100100101011110000010101101101]
+TestOnData:iterations to result=
+31
+TestOnData:,time to best result=
+00:00:05.0519265
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9926
+TestOnData:,cache hits=
+5035
+316475579
+00:00:05.3870268
+ILS:
+[0001001100100001000000000110110010100010000000010011110010010001001010001010010010000100010101101100]
+TestOnData:iterations to result=
+962/1000;
+TestOnData:,time to best result=
+00:00:03.4920457
+TestOnData:,calls to eval=
+9232
+TestOnData:,cache hits=
+6225
+343165644
+00:00:03.5547512
+GAA:
+GAAdvanced:500
+[1001011001111101000111011001111011111001100000011011110010100000101011000000101011000000010101101000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:09.0443516
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32038
+TestOnData:,cache hits=
+21507
+318679738
+00:00:13.7847467
+Mem:
+Memetic:500
+[0001011011001101000111011001110011111001100000000011111010100001101011100000101011000000010101101001]
+TestOnData:iterations to result=
+50
+TestOnData:,time to best result=
+00:02:00.8834380
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403566
+TestOnData:,cache hits=
+331611
+314792952
+00:02:03.0947947
+capa4
+n=1000, m=100, k=8
+GA:
+[0000001000000000000001000010000000000000000010000000000000000000000000000000000000001000010100001000]
+TestOnData:iterations to result=
+33
+TestOnData:,time to best result=
+00:00:03.7417530
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9923
+TestOnData:,cache hits=
+4106
+562534634
+00:00:04.6451441
+ILS:
+[0000100000000001000000000000000000100000100000000001000000000000000000000000001000000000100000000000]
+TestOnData:iterations to result=
+955/1000;
+TestOnData:,time to best result=
+00:00:01.2937594
+TestOnData:,calls to eval=
+5835
+TestOnData:,cache hits=
+4444
+615142163
+00:00:01.3579077
+GAA:
+GAAdvanced:500
+[0000000000000000000000000000000000010000000000100001000100100001010000000000000000000000000100000000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:14.3154729
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+66009
+TestOnData:,cache hits=
+47058
+563739530
+00:00:20.6191019
+Mem:
+Memetic:500
+[0000000000000001000000000000010000010000000000000000000000000000000010000000001000000000000010001001]
+TestOnData:iterations to result=
+46
+TestOnData:,time to best result=
+00:01:11.4161921
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+282606
+TestOnData:,cache hits=
+227486
+550248973
+00:01:19.1099376
+capa4_1
+n=1000, m=100, k=100
+GA:
+[0101011001001101000110011001110111111000100000100011110010100001001010100100101011110000010101101101]
+TestOnData:iterations to result=
+31
+TestOnData:,time to best result=
+00:00:05.8047323
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9926
+TestOnData:,cache hits=
+5035
+316475579
+00:00:06.1750562
+ILS:
+[0001001100100001000000000110110010100010000000010011110010010001001010001010010010000100010101101100]
+TestOnData:iterations to result=
+962/1000;
+TestOnData:,time to best result=
+00:00:03.8748774
+TestOnData:,calls to eval=
+9232
+TestOnData:,cache hits=
+6225
+343165644
+00:00:03.9450925
+GAA:
+GAAdvanced:500
+[1001011001111101000111011001111011111001100000011011110010100000101011000000101011000000010101101000]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:09.9842846
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32038
+TestOnData:,cache hits=
+21507
+318679738
+00:00:15.1240235
+Mem:
+Memetic:500
+[0001011011001101000111011001110011111001100000000011111010100001101011100000101011000000010101101001]
+TestOnData:iterations to result=
+50
+TestOnData:,time to best result=
+00:02:04.9022308
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403566
+TestOnData:,cache hits=
+331611
+314792952
+00:02:07.1573602
+capb1
+n=1000, m=100, k=11
+GA:
+[0000000000000000011000100001001000000000000000000000000000001000110000010100000000001000000000000000]
+TestOnData:iterations to result=
+49
+TestOnData:,time to best result=
+00:01:36.3516496
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6317
+TestOnData:,cache hits=
+703
+515622070
+00:01:38.3788491
+ILS:
+[0010000000000000000000000100000000101100000000000000000000001000000010010000000100010000000000100000]
+TestOnData:iterations to result=
+499/1000;
+TestOnData:,time to best result=
+00:00:00.5159620
+TestOnData:,calls to eval=
+5008
+TestOnData:,cache hits=
+4058
+572737525
+00:00:01.1108720
+GAA:
+GAAdvanced:500
+[0000000000000000000000000000100000000000000000000000000000011010100000000010000001000010000000011100]
+TestOnData:iterations to result=
+48
+TestOnData:,time to best result=
+00:00:43.5839823
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+37210
+TestOnData:,cache hits=
+28160
+505146961
+00:00:55.3047351
+Mem:
+Memetic:500
+[0000000000000100101000000000000000000000000001000000000000010000000000000000000000000011010100010100]
+TestOnData:iterations to result=
+45
+TestOnData:,time to best result=
+00:01:47.4183734
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275346
+TestOnData:,cache hits=
+222809
+486836335
+00:01:59.6903074
+capb1_1
+n=1000, m=100, k=100
+GA:
+[1101001011111110110001111101111111011101110000010111110101111111101001110101100111011001111001000101]
+TestOnData:iterations to result=
+26
+TestOnData:,time to best result=
+00:00:05.8275239
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9944
+TestOnData:,cache hits=
+5192
+253869206
+00:00:06.3338281
+ILS:
+[0000101000111000100000010001001110010100100000010001110000100010100010100101000010101000100100001000]
+TestOnData:iterations to result=
+716/1000;
+TestOnData:,time to best result=
+00:00:03.6155104
+TestOnData:,calls to eval=
+9838
+TestOnData:,cache hits=
+6522
+304100004
+00:00:03.9790016
+GAA:
+GAAdvanced:500
+[1101001011111110111001111100101111011101100101010111011101011111101001110101001111011111101001011111]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:08.9071248
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+15948
+TestOnData:,cache hits=
+9794
+256079268
+00:00:08.9341998
+Mem:
+Memetic:500
+[1001001001111110110001111101111110011101110000010111010100011111101011110101100111001001101001001111]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:01:07.7310301
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403234
+TestOnData:,cache hits=
+333528
+252480772
+00:02:12.6157152
+capb2
+n=1000, m=100, k=9
+GA:
+[1010100000000000000000000000000000000000000000000100000000010000000000010100000001000000000100000000]
+TestOnData:iterations to result=
+39
+TestOnData:,time to best result=
+00:01:13.9436846
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6290
+TestOnData:,cache hits=
+529
+567001642
+00:01:32.9781717
+ILS:
+[0000000000001000001000000000000100000000000000001100000000000000000010000000000000010000010000000001]
+TestOnData:iterations to result=
+833/1000;
+TestOnData:,time to best result=
+00:00:00.9500033
+TestOnData:,calls to eval=
+5008
+TestOnData:,cache hits=
+4051
+667394033
+00:00:01.1470054
+GAA:
+GAAdvanced:500
+[1000000000000000000000000000000010000000000000000000000100010010000000000100000000000000000100100100]
+TestOnData:iterations to result=
+31
+TestOnData:,time to best result=
+00:00:26.6155720
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+28790
+TestOnData:,cache hits=
+21238
+566473237
+00:00:49.1459749
+Mem:
+Memetic:500
+[0000000010000000000010000000000000001000000000000000000000010000100000000000000000000010010000010100]
+TestOnData:iterations to result=
+43
+TestOnData:,time to best result=
+00:01:39.3014066
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275366
+TestOnData:,cache hits=
+222878
+506917887
+00:01:56.0761414
+capb2_1
+n=1000, m=100, k=100
+GA:
+[1101001011111110110001111101111111011101110000010111110101111111101001110101100111011001111001000101]
+TestOnData:iterations to result=
+26
+TestOnData:,time to best result=
+00:00:05.8952222
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9944
+TestOnData:,cache hits=
+5192
+253869206
+00:00:06.4049855
+ILS:
+[1100001000011001000100000000101000001000110010001100000000000010101001011100000100000000101011101101]
+TestOnData:iterations to result=
+880/1000;
+TestOnData:,time to best result=
+00:00:03.8770195
+TestOnData:,calls to eval=
+9838
+TestOnData:,cache hits=
+6518
+308453050
+00:00:04.0383706
+GAA:
+GAAdvanced:500
+[1101001011111110111001111100101111011101100101010111011101011111101001110101001111011111101001011111]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:09.1123867
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+15948
+TestOnData:,cache hits=
+9794
+256079268
+00:00:09.1417391
+Mem:
+Memetic:500
+[1001001001111110110001111101111110011101110000010111010100011111101011110101100111001001101001001111]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:01:06.5825632
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403234
+TestOnData:,cache hits=
+333528
+252480772
+00:02:10.3567162
+capb3
+n=1000, m=100, k=8
+GA:
+[0000000000000000000000000000000000000000000000000000000000000011001001000000000001000100000000010100]
+TestOnData:iterations to result=
+21
+TestOnData:,time to best result=
+00:00:39.4266468
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6467
+TestOnData:,cache hits=
+2073
+559929462
+00:01:26.6048206
+ILS:
+[0000000000000000000000000100000000000000000000000000101100000000000000001000000000000000010000010100]
+TestOnData:iterations to result=
+763/1000;
+TestOnData:,time to best result=
+00:00:01.1206260
+TestOnData:,calls to eval=
+5006
+TestOnData:,cache hits=
+4045
+664169620
+00:00:01.4346877
+GAA:
+GAAdvanced:500
+[0000000000000000010000000000000000000000000000000100100000010000000000000000000100000000001000010100]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:45.9856454
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+27874
+TestOnData:,cache hits=
+21075
+592914264
+00:00:47.9005029
+Mem:
+Memetic:500
+[0000000010000000000010010000000000000000000000000000000000000001000001000000000000001000010000000100]
+TestOnData:iterations to result=
+49
+TestOnData:,time to best result=
+00:01:51.5569162
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275381
+TestOnData:,cache hits=
+223219
+551712110
+00:01:55.4517848
+capb3_1
+n=1000, m=100, k=100
+GA:
+[1101001011111110110001111101111111011101110000010111110101111111101001110101100111011001111001000101]
+TestOnData:iterations to result=
+26
+TestOnData:,time to best result=
+00:00:06.5212983
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9944
+TestOnData:,cache hits=
+5192
+253869206
+00:00:07.0930841
+ILS:
+[1100001000011001000100000000101000001000110010001100000000000010101001011100000100000000101011101101]
+TestOnData:iterations to result=
+880/1000;
+TestOnData:,time to best result=
+00:00:03.9813159
+TestOnData:,calls to eval=
+9838
+TestOnData:,cache hits=
+6518
+308453050
+00:00:04.1503366
+GAA:
+GAAdvanced:500
+[1101001011111110111001111100101111011101100101010111011101011111101001110101001111011111101001011111]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:09.4723540
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+15948
+TestOnData:,cache hits=
+9794
+256079268
+00:00:09.5040655
+Mem:
+Memetic:500
+[1001001001111110110001111101111110011101110000010111010100011111101011110101100111001001101001001111]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:01:10.2203931
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403234
+TestOnData:,cache hits=
+333528
+252480772
+00:02:17.3253239
+capb4
+n=1000, m=100, k=8
+GA:
+[0000000000000000000000010000000000000000000000000000000000000001001001010000000001000000100000010000]
+TestOnData:iterations to result=
+37
+TestOnData:,time to best result=
+00:00:30.9333120
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+8603
+TestOnData:,cache hits=
+3567
+561987580
+00:00:38.0575343
+ILS:
+[0000001010000000100000010000000000000001000000000000000000010000000000000000000000000000110000000000]
+TestOnData:iterations to result=
+915/1000;
+TestOnData:,time to best result=
+00:00:01.1566614
+TestOnData:,calls to eval=
+5465
+TestOnData:,cache hits=
+4237
+582074957
+00:00:01.2630205
+GAA:
+GAAdvanced:500
+[0000000010000001010000000000000000000000000000000000010000010000000000000000000000001000010000000100]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:29.5480891
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+52190
+TestOnData:,cache hits=
+37981
+541010194
+00:00:32.9128753
+Mem:
+Memetic:500
+[0000000000000000010000000100000000000000000000000000010000010010000000000000000000001000000000001100]
+TestOnData:iterations to result=
+47
+TestOnData:,time to best result=
+00:01:26.4675454
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+281401
+TestOnData:,cache hits=
+227799
+539395881
+00:01:33.8131357
+capb4_1
+n=1000, m=100, k=100
+GA:
+[1101001011111110110001111101111111011101110000010111110101111111101001110101100111011001111001000101]
+TestOnData:iterations to result=
+26
+TestOnData:,time to best result=
+00:00:06.2863990
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9944
+TestOnData:,cache hits=
+5192
+253869206
+00:00:06.8361918
+ILS:
+[1100001000011001000100000000101000001000110010001100000000000010101001011100000100000000101011101101]
+TestOnData:iterations to result=
+880/1000;
+TestOnData:,time to best result=
+00:00:04.0822296
+TestOnData:,calls to eval=
+9838
+TestOnData:,cache hits=
+6518
+308453050
+00:00:04.2511394
+GAA:
+GAAdvanced:500
+[1101001011111110111001111100101111011101100101010111011101011111101001110101001111011111101001011111]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:09.4588522
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+15948
+TestOnData:,cache hits=
+9794
+256079268
+00:00:09.4889547
+Mem:
+Memetic:500
+[1001001001111110110001111101111110011101110000010111010100011111101011110101100111001001101001001111]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:01:13.8358363
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+403234
+TestOnData:,cache hits=
+333528
+252480772
+00:02:18.5403201
+pn56
+n=200, m=30, k=16
+GA:
+[011011001111001011011000100101]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:32.9575848
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6597
+TestOnData:,cache hits=
+2883
+542720
+00:01:20.8049991
+ILS:
+[101011011101001110010010001101]
+TestOnData:iterations to result=
+153/1000;
+TestOnData:,time to best result=
+00:00:00.1015304
+TestOnData:,calls to eval=
+5002
+TestOnData:,cache hits=
+4057
+554236
+00:00:23.3623095
+GAA:
+GAAdvanced:447
+[011011001111001011011000001101]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:48.9623290
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32341
+TestOnData:,cache hits=
+25321
+544099
+00:00:49.8016553
+Mem:
+Memetic:447
+[001011011111000111010010001101]
+TestOnData:iterations to result=
+7
+TestOnData:,time to best result=
+00:00:18.0207954
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275451
+TestOnData:,cache hits=
+232251
+539561
+00:01:22.2195828
+pn56_1
+n=200, m=30, k=20
+GA:
+[101111001111101111010100100111]
+TestOnData:iterations to result=
+10
+TestOnData:,time to best result=
+00:00:02.9494369
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9770
+TestOnData:,cache hits=
+4578
+475837
+00:00:03.3955651
+ILS:
+[000111001111011111011100110111]
+TestOnData:iterations to result=
+149/1000;
+TestOnData:,time to best result=
+00:00:00.1092043
+TestOnData:,calls to eval=
+5208
+TestOnData:,cache hits=
+4153
+482903
+00:00:24.3854561
+GAA:
+GAAdvanced:500
+[101111001111001111011001110110]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:03.3689132
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+49455
+TestOnData:,cache hits=
+37792
+476556
+00:00:06.9849601
+Mem:
+Memetic:500
+[101111011111001111001001100111]
+TestOnData:iterations to result=
+7
+TestOnData:,time to best result=
+00:00:05.7237864
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+291879
+TestOnData:,cache hits=
+249877
+473513
+00:00:37.6174085
+pn56_2
+n=200, m=30, k=30
+GA:
+[111111111111111111111111111111]
+TestOnData:iterations to result=
+6
+TestOnData:,time to best result=
+00:00:02.9125558
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9837
+TestOnData:,cache hits=
+8136
+420850
+00:00:03.0985113
+ILS:
+[001011011111011111011001001101]
+TestOnData:iterations to result=
+722/1000;
+TestOnData:,time to best result=
+00:00:00.3119144
+TestOnData:,calls to eval=
+5360
+TestOnData:,cache hits=
+4274
+499977
+00:00:00.3906244
+GAA:
+GAAdvanced:499
+[111111111111111111111111111111]
+TestOnData:iterations to result=
+10
+TestOnData:,time to best result=
+00:00:00.3593790
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+27194
+TestOnData:,cache hits=
+24762
+420850
+00:00:02.7335833
+Mem:
+Memetic:499
+[111111111111111111111111111111]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:01.1244680
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+311836
+TestOnData:,cache hits=
+307561
+420850
+00:00:33.8217384
+pn57
+n=200, m=30, k=16
+GA:
+[011011001111001011011000100101]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:33.3440429
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6597
+TestOnData:,cache hits=
+2883
+547520
+00:01:22.5921254
+ILS:
+[101011011101001110010010001101]
+TestOnData:iterations to result=
+153/1000;
+TestOnData:,time to best result=
+00:00:00.1053590
+TestOnData:,calls to eval=
+5002
+TestOnData:,cache hits=
+4057
+559036
+00:00:24.8696834
+GAA:
+GAAdvanced:447
+[011011001111001011011000001101]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:50.8103013
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32341
+TestOnData:,cache hits=
+25321
+548899
+00:00:51.6823233
+Mem:
+Memetic:447
+[001011011111000111010010001101]
+TestOnData:iterations to result=
+7
+TestOnData:,time to best result=
+00:00:18.9389081
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275451
+TestOnData:,cache hits=
+232251
+544361
+00:01:25.6545645
+pn58
+n=200, m=30, k=16
+GA:
+[011011001111001011011000100101]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:34.7728305
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6597
+TestOnData:,cache hits=
+2883
+558720
+00:01:24.5404316
+ILS:
+[101011011101001110010010001101]
+TestOnData:iterations to result=
+153/1000;
+TestOnData:,time to best result=
+00:00:00.1098266
+TestOnData:,calls to eval=
+5002
+TestOnData:,cache hits=
+4057
+570236
+00:00:24.8118650
+GAA:
+GAAdvanced:447
+[011011001111001011011000001101]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:51.6795724
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32341
+TestOnData:,cache hits=
+25321
+560099
+00:00:52.5265193
+Mem:
+Memetic:447
+[001011011111000111010010001101]
+TestOnData:iterations to result=
+7
+TestOnData:,time to best result=
+00:00:17.9623701
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275451
+TestOnData:,cache hits=
+232251
+555561
+00:01:25.5925476
+pn59
+n=200, m=30, k=16
+GA:
+[010011101111001011001001001101]
+TestOnData:iterations to result=
+44
+TestOnData:,time to best result=
+00:01:16.6094711
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6545
+TestOnData:,cache hits=
+3226
+553167
+00:01:27.2218252
+ILS:
+[101011011101001110010010001101]
+TestOnData:iterations to result=
+153/1000;
+TestOnData:,time to best result=
+00:00:00.1096694
+TestOnData:,calls to eval=
+5002
+TestOnData:,cache hits=
+4057
+564180
+00:00:24.3470882
+GAA:
+GAAdvanced:446
+[111011001111001001001001100101]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:24.6855804
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+33277
+TestOnData:,cache hits=
+26425
+556164
+00:00:52.5862975
+Mem:
+Memetic:446
+[001011001111001011011001001101]
+TestOnData:iterations to result=
+29
+TestOnData:,time to best result=
+00:00:53.7204388
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275406
+TestOnData:,cache hits=
+230022
+548421
+00:01:28.3472324
+pn60
+n=200, m=30, k=11
+GA:
+[001011001001001100010011000100]
+TestOnData:iterations to result=
+15
+TestOnData:,time to best result=
+00:00:28.1839528
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6602
+TestOnData:,cache hits=
+2908
+624469
+00:01:25.5865065
+ILS:
+[011011001111010000000010000100]
+TestOnData:iterations to result=
+178/1000;
+TestOnData:,time to best result=
+00:00:00.0999471
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4052
+656609
+00:00:21.7714459
+GAA:
+GAAdvanced:499
+[001011011001000110000010001100]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:39.6984337
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+26919
+TestOnData:,cache hits=
+21304
+625032
+00:00:42.8908535
+Mem:
+Memetic:499
+[000011001111001001010000100100]
+TestOnData:iterations to result=
+22
+TestOnData:,time to best result=
+00:00:34.5578571
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275430
+TestOnData:,cache hits=
+228175
+617133
+00:01:20.1675256
+pn61
+n=200, m=30, k=11
+GA:
+[001011001001001100010011000100]
+TestOnData:iterations to result=
+15
+TestOnData:,time to best result=
+00:00:28.0227332
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6602
+TestOnData:,cache hits=
+2908
+627769
+00:01:24.7269366
+ILS:
+[011011001111010000000010000100]
+TestOnData:iterations to result=
+178/1000;
+TestOnData:,time to best result=
+00:00:00.1030507
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4052
+659909
+00:00:21.7210569
+GAA:
+GAAdvanced:499
+[001011011001000110000010001100]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:38.1866342
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+26919
+TestOnData:,cache hits=
+21304
+628332
+00:00:41.2666438
+Mem:
+Memetic:499
+[000011001111001001010000100100]
+TestOnData:iterations to result=
+22
+TestOnData:,time to best result=
+00:00:34.7147499
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275430
+TestOnData:,cache hits=
+228175
+620433
+00:01:20.8573875
+pn62
+n=200, m=30, k=11
+GA:
+[001011001001001100010011000100]
+TestOnData:iterations to result=
+15
+TestOnData:,time to best result=
+00:00:27.8420916
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6602
+TestOnData:,cache hits=
+2908
+635469
+00:01:24.6423740
+ILS:
+[011011001111010000000010000100]
+TestOnData:iterations to result=
+178/1000;
+TestOnData:,time to best result=
+00:00:00.1016545
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4052
+667609
+00:00:21.9343836
+GAA:
+GAAdvanced:499
+[001011011001000110000010001100]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:38.1521811
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+26919
+TestOnData:,cache hits=
+21304
+636032
+00:00:41.1654040
+Mem:
+Memetic:499
+[000011001111001001010000100100]
+TestOnData:iterations to result=
+22
+TestOnData:,time to best result=
+00:00:34.3976713
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275430
+TestOnData:,cache hits=
+228175
+628133
+00:01:19.1131938
+pn63
+n=200, m=30, k=11
+GA:
+[001011001001001100010011000100]
+TestOnData:iterations to result=
+9
+TestOnData:,time to best result=
+00:00:17.4096700
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6573
+TestOnData:,cache hits=
+3069
+630796
+00:01:26.8529054
+ILS:
+[011011001111010000000010000100]
+TestOnData:iterations to result=
+178/1000;
+TestOnData:,time to best result=
+00:00:00.1021509
+TestOnData:,calls to eval=
+5000
+TestOnData:,cache hits=
+4052
+663724
+00:00:22.1083226
+GAA:
+GAAdvanced:499
+[100011011111000010010000000100]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:15.4176942
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+29888
+TestOnData:,cache hits=
+23658
+633136
+00:00:42.7023010
+Mem:
+Memetic:499
+[000011001111001001010000100100]
+TestOnData:iterations to result=
+13
+TestOnData:,time to best result=
+00:00:20.2050104
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275366
+TestOnData:,cache hits=
+228559
+623281
+00:01:19.5060831
+pn64
+n=200, m=30, k=8
+GA:
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+14
+TestOnData:,time to best result=
+00:00:26.0673209
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6538
+TestOnData:,cache hits=
+3498
+720930
+00:01:25.0531404
+ILS:
+[011001011001000100000010000000]
+TestOnData:iterations to result=
+974/1000;
+TestOnData:,time to best result=
+00:00:00.3806820
+TestOnData:,calls to eval=
+5006
+TestOnData:,cache hits=
+4060
+760477
+00:00:00.3873911
+GAA:
+GAAdvanced:498
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+44
+TestOnData:,time to best result=
+00:00:35.0227426
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32822
+TestOnData:,cache hits=
+25770
+720930
+00:00:44.5225298
+Mem:
+Memetic:498
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+15
+TestOnData:,time to best result=
+00:00:23.2023243
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275473
+TestOnData:,cache hits=
+228805
+720930
+00:01:18.6324456
+pn65
+n=200, m=30, k=8
+GA:
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+14
+TestOnData:,time to best result=
+00:00:25.5317856
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6538
+TestOnData:,cache hits=
+3498
+723330
+00:01:30.4063519
+ILS:
+[011001011001000100000010000000]
+TestOnData:iterations to result=
+974/1000;
+TestOnData:,time to best result=
+00:00:00.4258733
+TestOnData:,calls to eval=
+5006
+TestOnData:,cache hits=
+4060
+762877
+00:00:00.4348687
+GAA:
+GAAdvanced:498
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+44
+TestOnData:,time to best result=
+00:00:39.7276695
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32822
+TestOnData:,cache hits=
+25770
+723330
+00:00:50.3657793
+Mem:
+Memetic:498
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+15
+TestOnData:,time to best result=
+00:00:26.2766245
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275473
+TestOnData:,cache hits=
+228805
+723330
+00:01:28.5924981
+pn66
+n=200, m=30, k=8
+GA:
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+14
+TestOnData:,time to best result=
+00:00:28.8326754
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6538
+TestOnData:,cache hits=
+3498
+728930
+00:01:35.6044936
+ILS:
+[011001011001000100000010000000]
+TestOnData:iterations to result=
+974/1000;
+TestOnData:,time to best result=
+00:00:00.4171358
+TestOnData:,calls to eval=
+5006
+TestOnData:,cache hits=
+4060
+768477
+00:00:00.4243511
+GAA:
+GAAdvanced:498
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+44
+TestOnData:,time to best result=
+00:00:37.7562041
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+32822
+TestOnData:,cache hits=
+25770
+728930
+00:00:48.4477804
+Mem:
+Memetic:498
+[001011001001001000010010000000]
+TestOnData:iterations to result=
+15
+TestOnData:,time to best result=
+00:00:25.7968737
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275473
+TestOnData:,cache hits=
+228805
+728930
+00:01:27.7934655
+pn67
+n=200, m=30, k=11
+GA:
+[011011011101000010000010000100]
+TestOnData:iterations to result=
+19
+TestOnData:,time to best result=
+00:00:37.7538511
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6645
+TestOnData:,cache hits=
+3886
+607508
+00:01:31.9641511
+ILS:
+[101011001001000110000011000100]
+TestOnData:iterations to result=
+342/1000;
+TestOnData:,time to best result=
+00:00:00.1516834
+TestOnData:,calls to eval=
+5001
+TestOnData:,cache hits=
+4057
+628944
+00:00:12.3042737
+GAA:
+GAAdvanced:500
+[011011011101000010000010000100]
+TestOnData:iterations to result=
+15
+TestOnData:,time to best result=
+00:00:12.7560012
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+30869
+TestOnData:,cache hits=
+24536
+607508
+00:00:46.2806602
+Mem:
+Memetic:500
+[011011011101000010000010000100]
+TestOnData:iterations to result=
+12
+TestOnData:,time to best result=
+00:00:21.1424346
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275507
+TestOnData:,cache hits=
+228899
+607508
+00:01:26.7483521
+pn68
+n=200, m=30, k=9
+GA:
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:14.6225484
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6490
+TestOnData:,cache hits=
+4555
+702643
+00:01:38.6756394
+ILS:
+[000001011101000010010010001000]
+TestOnData:iterations to result=
+248/1000;
+TestOnData:,time to best result=
+00:00:00.1334485
+TestOnData:,calls to eval=
+4998
+TestOnData:,cache hits=
+4327
+738073
+00:00:18.6022488
+GAA:
+GAAdvanced:497
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+11
+TestOnData:,time to best result=
+00:00:12.7054410
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+30948
+TestOnData:,cache hits=
+26336
+702643
+00:00:48.9326137
+Mem:
+Memetic:497
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:06.0321863
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275506
+TestOnData:,cache hits=
+254684
+702643
+00:01:25.9981330
+pn69
+n=200, m=30, k=9
+GA:
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:14.9929913
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6490
+TestOnData:,cache hits=
+4555
+705343
+00:01:31.5622706
+ILS:
+[000001011101000010010010001000]
+TestOnData:iterations to result=
+248/1000;
+TestOnData:,time to best result=
+00:00:00.1059943
+TestOnData:,calls to eval=
+4998
+TestOnData:,cache hits=
+4327
+740773
+00:00:16.8207088
+GAA:
+GAAdvanced:497
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+11
+TestOnData:,time to best result=
+00:00:11.1631676
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+30948
+TestOnData:,cache hits=
+26336
+705343
+00:00:44.1611113
+Mem:
+Memetic:497
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:06.0822716
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275506
+TestOnData:,cache hits=
+254684
+705343
+00:01:24.0921333
+pn69_1
+n=200, m=30, k=10
+GA:
+[001001011001000110000010001100]
+TestOnData:iterations to result=
+9
+TestOnData:,time to best result=
+00:00:14.4388274
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+8354
+TestOnData:,cache hits=
+5627
+659572
+00:00:45.1698245
+ILS:
+[011001011001000100000010000101]
+TestOnData:iterations to result=
+851/1000;
+TestOnData:,time to best result=
+00:00:03.5320594
+TestOnData:,calls to eval=
+5065
+TestOnData:,cache hits=
+4077
+683172
+00:00:03.5900476
+GAA:
+GAAdvanced:500
+[001001011001000110000010001100]
+TestOnData:iterations to result=
+ils
+TestOnData:,time to best result=
+00:00:26.2900428
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+35462
+TestOnData:,cache hits=
+27609
+659572
+00:00:27.2433825
+Mem:
+Memetic:500
+[001001011001000110000010001100]
+TestOnData:iterations to result=
+8
+TestOnData:,time to best result=
+00:00:11.3933166
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+280328
+TestOnData:,cache hits=
+233847
+659572
+00:01:04.9257431
+pn69_2
+n=200, m=30, k=8
+GA:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
+Problem unfeasable
+NaN
+00:00:02.1542454
+ILS:
+UnfeasableProblemException:Unfeasable problem:Not able to create initial solution
+Problem unfeasable
+NaN
+00:00:00.0565094
+GAA:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
+Problem unfeasable
+NaN
+00:00:12.1209376
+Mem:
+UnfeasableProblemException:Unfeasable problem:Not able to create population
+Problem unfeasable
+NaN
+00:00:12.2506817
+pn70
+n=200, m=30, k=9
+GA:
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:14.9046044
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6490
+TestOnData:,cache hits=
+4555
+711643
+00:01:32.7637231
+ILS:
+[000001011101000010010010001000]
+TestOnData:iterations to result=
+248/1000;
+TestOnData:,time to best result=
+00:00:00.1151414
+TestOnData:,calls to eval=
+4998
+TestOnData:,cache hits=
+4327
+747073
+00:00:16.9538229
+GAA:
+GAAdvanced:497
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+11
+TestOnData:,time to best result=
+00:00:11.3692085
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+30948
+TestOnData:,cache hits=
+26336
+711643
+00:00:44.1689806
+Mem:
+Memetic:497
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:05.2167614
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275506
+TestOnData:,cache hits=
+254684
+711643
+00:01:17.2406278
+pn71
+n=200, m=30, k=9
+GA:
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:13.0382820
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+6500
+TestOnData:,cache hits=
+4708
+709660
+00:01:26.4098692
+ILS:
+[000001011101000010010010001000]
+TestOnData:iterations to result=
+248/1000;
+TestOnData:,time to best result=
+00:00:00.1206348
+TestOnData:,calls to eval=
+4998
+TestOnData:,cache hits=
+4327
+744923
+00:00:16.2213951
+GAA:
+GAAdvanced:496
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+10
+TestOnData:,time to best result=
+00:00:10.1222596
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+26986
+TestOnData:,cache hits=
+22840
+709660
+00:00:44.1393581
+Mem:
+Memetic:496
+[000001011111000010000010000100]
+TestOnData:iterations to result=
+7
+TestOnData:,time to best result=
+00:00:14.4465596
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+275503
+TestOnData:,cache hits=
+254134
+709660
+00:01:17.9086097
