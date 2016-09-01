@@ -1,0 +1,224 @@
+cap101
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:00.7792497
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9394
+TestOnData:,cache hits=
+9151
+3883226133
+00:00:13.2627008
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+565/1000;
+TestOnData:,time to best result=
+00:00:00.2039808
+TestOnData:,calls to eval=
+5058
+TestOnData:,cache hits=
+4760
+3883226133
+00:00:00.2866552
+GAA:
+GAAdvanced:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:00.5508149
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+21318
+TestOnData:,cache hits=
+20993
+3883226133
+00:00:08.0578182
+Mem:
+Memetic:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:01.0500608
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+279607
+TestOnData:,cache hits=
+279282
+3883226133
+00:00:41.8050940
+cap102
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:00.8953682
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9394
+TestOnData:,cache hits=
+9151
+3883231133
+00:00:13.8308029
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+565/1000;
+TestOnData:,time to best result=
+00:00:00.2363873
+TestOnData:,calls to eval=
+5058
+TestOnData:,cache hits=
+4760
+3883231133
+00:00:00.3333708
+GAA:
+GAAdvanced:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:00.6550366
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+21318
+TestOnData:,cache hits=
+20993
+3883231133
+00:00:08.1055246
+Mem:
+Memetic:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:01.0948557
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+279607
+TestOnData:,cache hits=
+279282
+3883231133
+00:00:44.5063731
+cap103
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:00.7515829
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9394
+TestOnData:,cache hits=
+9151
+3883236133
+00:00:13.2949506
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+565/1000;
+TestOnData:,time to best result=
+00:00:00.2285337
+TestOnData:,calls to eval=
+5058
+TestOnData:,cache hits=
+4760
+3883236133
+00:00:00.3230863
+GAA:
+GAAdvanced:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:00.6311503
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+21318
+TestOnData:,cache hits=
+20993
+3883236133
+00:00:08.0351322
+Mem:
+Memetic:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:01.1140023
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+279607
+TestOnData:,cache hits=
+279282
+3883236133
+00:00:41.5759355
+cap104
+n=50, m=25, k=2
+GA:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+00:00:00.8233477
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+9394
+TestOnData:,cache hits=
+9151
+3883243633
+00:00:13.4713360
+ILS:
+[0000000000100000100000000]
+TestOnData:iterations to result=
+565/1000;
+TestOnData:,time to best result=
+00:00:00.2298712
+TestOnData:,calls to eval=
+5058
+TestOnData:,cache hits=
+4760
+3883243633
+00:00:00.3245016
+GAA:
+GAAdvanced:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+5
+TestOnData:,time to best result=
+00:00:00.6988392
+TestOnData:,number of generations=
+51
+TestOnData:,calls to eval=
+21318
+TestOnData:,cache hits=
+20993
+3883243633
+00:00:08.2578431
+Mem:
+Memetic:229
+[0000000000100000100000000]
+TestOnData:iterations to result=
+2
+TestOnData:,time to best result=
+0
