@@ -68,6 +68,7 @@
     <Compile Include="Genetic_Algorithm\InitialPopulation\UnfeasableDeciders\FactorUnfeasableDecider.cs" />
     <Compile Include="Genetic_Algorithm\InitialPopulation\UnfeasableDeciders\UnfeasableDecider.cs" />
     <Compile Include="Genetic_Algorithm\InitialPopulation\UnfeasableProblemException.cs" />
+    <Compile Include="Genetic_Algorithm\PlateauStoppingCriterion.cs" />
     <Compile Include="Genetic_Algorithm\Selection\FineGrainedTournamentSelector.cs" />
     <Compile Include="HashedVars.cs" />
     <Compile Include="Hybrid\GAAdvanced.cs" />

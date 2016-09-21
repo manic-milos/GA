@@ -12,7 +12,7 @@ namespace CFLP_GA
     {
         static void Main(string[] args)
         {
-            int starting_iteration = 5;
+            int starting_iteration = 0;
             Random r = new Random(2);
             for (int i = 0; i < starting_iteration; i++)
             {
