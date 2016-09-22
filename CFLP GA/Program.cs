@@ -25,7 +25,7 @@ namespace CFLP_GA
                 ControlledRandom.reset(r.Next());
                 ControlledRandom.reset();
                 TestOnData test = new TestOnData();
-                test.testSelectOnFolder(@"D:\reinstalacija\F\Projects\ConsoleApplication8\ConsoleApplication8\FormatedInstances",
+                test.testSelectOnFolder(@"FormatedInstances",
                     true, true, true, true);
                 Execution_Reports.ReportController.RestartReports();
             }

@@ -169,7 +169,7 @@ namespace CFLP_GA
                     problem,
                     decider, 0.8),
                 new IteratedLocalSearch.Perturbation.AdaptivePerturbation(
-                    new IteratedLocalSearch.Perturbation.OneSwitchPerturbation(),//problematicno,ima dve instance iste klase na razlicita mesta
+                    new IteratedLocalSearch.Perturbation.OneSwitchPerturbation(),
                     50, 0.9, 0.01
                     ),
                 new IteratedLocalSearch.AcceptanceCriteria.RestartWalk(
