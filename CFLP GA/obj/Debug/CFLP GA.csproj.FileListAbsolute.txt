@@ -10,3 +10,10 @@ C:\Users\master\Downloads\CFLP GA\CFLP GA\obj\Debug\CFLP GA.pdb
 C:\Users\master\Downloads\CFLP GA\CFLP GA\bin\Debug\CFLP GA.exe
 C:\Users\master\Downloads\CFLP GA\CFLP GA\bin\Debug\CFLP GA.pdb
 C:\Users\master\Downloads\CFLP GA\CFLP GA\obj\Debug\CFLP GA.csprojResolveAssemblyReference.cache
+C:\Users\master\Documents\CFLPGA\CFLP GA\bin\Debug\CFLP GA.exe.config
+C:\Users\master\Documents\CFLPGA\CFLP GA\bin\Debug\CFLP GA.exe
+C:\Users\master\Documents\CFLPGA\CFLP GA\bin\Debug\CFLP GA.pdb
+C:\Users\master\Documents\CFLPGA\CFLP GA\obj\Debug\CFLP GA.csprojAssemblyReference.cache
+C:\Users\master\Documents\CFLPGA\CFLP GA\obj\Debug\CFLP GA.csproj.CoreCompileInputs.cache
+C:\Users\master\Documents\CFLPGA\CFLP GA\obj\Debug\CFLP GA.exe
+C:\Users\master\Documents\CFLPGA\CFLP GA\obj\Debug\CFLP GA.pdb
